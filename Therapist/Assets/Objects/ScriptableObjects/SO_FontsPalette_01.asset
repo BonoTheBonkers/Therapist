@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1addf3b6b04e3f94b8cb4d710680d9f9, type: 3}
+  m_Name: SO_FontsPalette_01
+  m_EditorClassIdentifier: 
+  fontPresets:
+  - flatFont: 0
+    font: {fileID: 12800000, guid: 0b430ee1e6d509e4e8f2388d8e3fdf40, type: 3}
+  - flatFont: 1
+    font: {fileID: 12800000, guid: 58fbdc1e84e83c6418edcb570dd7c3a7, type: 3}
+  - flatFont: 2
+    font: {fileID: 12800000, guid: 58fbdc1e84e83c6418edcb570dd7c3a7, type: 3}
+  - flatFont: 3
+    font: {fileID: 12800000, guid: 64bceea722e7557489f58af5f07c72af, type: 3}
+  - flatFont: 4
+    font: {fileID: 12800000, guid: 58fbdc1e84e83c6418edcb570dd7c3a7, type: 3}
+  - flatFont: 5
+    font: {fileID: 12800000, guid: 58fbdc1e84e83c6418edcb570dd7c3a7, type: 3}
+  - flatFont: 6
+    font: {fileID: 12800000, guid: 58fbdc1e84e83c6418edcb570dd7c3a7, type: 3}
+  - flatFont: 7
+    font: {fileID: 12800000, guid: 0b430ee1e6d509e4e8f2388d8e3fdf40, type: 3}
+  - flatFont: 8
+    font: {fileID: 12800000, guid: 64bceea722e7557489f58af5f07c72af, type: 3}
+  - flatFont: 9
+    font: {fileID: 12800000, guid: a1552c18ff5313e4887f2176dac6ba6d, type: 3}

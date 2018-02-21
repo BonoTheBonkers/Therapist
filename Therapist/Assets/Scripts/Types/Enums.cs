@@ -34,8 +34,11 @@ public enum EFlatFont
     SmallText,
     MediumText,
     LargeText,
+    SmallTitleText,
     TitleText,
+    LargeTitleText,
     SmallValue,
     MediumValue,
-    LargeValue
+    LargeValue,
+    ProductTitle
 }
