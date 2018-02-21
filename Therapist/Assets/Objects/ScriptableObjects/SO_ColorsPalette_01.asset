@@ -84,3 +84,10 @@ MonoBehaviour:
   - flatColor: 23
     fullColor: {r: 0.3137255, g: 0.39607847, b: 0.6313726, a: 1}
     shadowedColor: {r: 0.22352943, g: 0.29803923, b: 0.5058824, a: 1}
+  colorThemes:
+  - theme: 13
+    themeBackground: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
+    themeButtonFull: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
+    themeButtonShadowed: {r: 0.1764706, g: 0.3137255, b: 0.21176472, a: 1}
+    themeAmbientLight: {r: 0.5480645, g: 0.6838235, b: 0.5891079, a: 1}
+    themeAmbientDark: {r: 0.4053309, g: 0.46323532, b: 0.42283687, a: 1}

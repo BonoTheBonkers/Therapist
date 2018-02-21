@@ -29,6 +29,16 @@ public enum EFlatColor
     PowderBlue,
     Blue
 }
+
+    public enum EThemePart
+{
+    Background,
+    ButtonFull,
+    ButtonShadowed,
+    AmbientLight,
+    AmbientDark
+}
+
 public enum EFlatFont
 {
     SmallText,

@@ -9,6 +9,7 @@ public class ColorsPalette : SingletonScriptableObject<ColorsPalette>
 
     /* Public variables - START */
     public List<FColorPreset> colorPresets = new List<FColorPreset>();
+    public List<FColorTheme> colorThemes = new List<FColorTheme>();
     /* Public variables - END */
 
     void OnValidate()
