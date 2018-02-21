@@ -9,3 +9,10 @@ public class FColorPreset
     public Color fullColor;
     public Color shadowedColor;
 }
+
+[System.Serializable]
+public class FFontPreset
+{
+    public EFlatFont flatFont;
+    public Font font;
+}

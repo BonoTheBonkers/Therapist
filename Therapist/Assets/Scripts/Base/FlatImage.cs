@@ -20,16 +20,11 @@ public class FlatImage : MonoBehaviour
         }
         set
         {
-            Debug.Log("aasd");
             _flatColor = flatColor;
         }
     }
     public bool isShadowed = false;
     /* Public variables - END */
-
-    public void Awake()
-    {
-    }
 
     void OnValidate()
     {

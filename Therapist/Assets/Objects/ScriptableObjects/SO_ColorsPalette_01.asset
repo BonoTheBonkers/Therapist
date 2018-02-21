@@ -40,8 +40,8 @@ MonoBehaviour:
     fullColor: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
     shadowedColor: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
   - flatColor: 9
-    fullColor: {r: 0.18039216, g: 0.8000001, b: 0.4431373, a: 1}
-    shadowedColor: {r: 0.15294118, g: 0.68235296, b: 0.37647063, a: 1}
+    fullColor: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
+    shadowedColor: {r: 0.066771194, g: 0.47794116, b: 0.24112806, a: 1}
   - flatColor: 10
     fullColor: {r: 0.10196079, g: 0.7372549, b: 0.6117647, a: 1}
     shadowedColor: {r: 0.08627451, g: 0.627451, b: 0.52156866, a: 1}

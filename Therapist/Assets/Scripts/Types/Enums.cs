@@ -29,3 +29,13 @@ public enum EFlatColor
     PowderBlue,
     Blue
 }
+public enum EFlatFont
+{
+    SmallText,
+    MediumText,
+    LargeText,
+    TitleText,
+    SmallValue,
+    MediumValue,
+    LargeValue
+}
