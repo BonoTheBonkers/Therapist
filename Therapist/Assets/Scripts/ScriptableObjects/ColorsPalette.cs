@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ColorsPalette", menuName = "Therapist/ColorsPalette", order = 1)]
+[CreateAssetMenu(fileName = "ColorsPalette", menuName = "Therapist/Singletons/ColorsPalette", order = 1)]
 public class ColorsPalette : SingletonScriptableObject<ColorsPalette>
 {
     /** VARIABLES */

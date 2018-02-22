@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelsConfig", menuName = "Therapist/LevelsConfig", order = 1)]
+[CreateAssetMenu(fileName = "LevelsConfig", menuName = "Therapist/Singletons/LevelsConfig", order = 1)]
 public class LevelsConfig : SingletonScriptableObject<LevelsConfig>
 {
     /** VARIABLES */

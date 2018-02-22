@@ -52,3 +52,29 @@ public enum EFlatFont
     LargeValue,
     ProductTitle
 }
+
+public enum EDifficulty
+{
+    VeryEasy,
+    Easy,
+    Medium,
+    Hard,
+    VeryHard
+}
+
+public enum EAttribute
+{
+    Size,
+    Brightness,
+    ColorIntensity,
+    Amount,
+    Position,
+    Rotation,
+    Shape
+}
+
+public enum EContraindications
+{
+    ColorBlindess,
+    Deafness
+}
