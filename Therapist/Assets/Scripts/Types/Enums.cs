@@ -59,7 +59,7 @@ public enum EDifficulty
     Easy,
     Medium,
     Hard,
-    VeryHard
+    VeryHard,
 }
 
 public enum EAttribute
@@ -77,4 +77,32 @@ public enum EContraindications
 {
     ColorBlindess,
     Deafness
+}
+
+public enum EGameScreen
+{
+    Intro,
+    MainMenu,
+    ModeMenu,
+    Settings,
+    Statistics,
+    UserSelection,
+}
+
+public enum ELanguage
+{
+    English,
+    Spanish,
+    SimplifiedChinese,
+    Japanese,
+    Korean,
+    French,
+    German,
+    Italian,
+    Portuguese,
+    Arabic,
+    Russian,
+    Hindi,
+    Swedish,
+    Polish
 }

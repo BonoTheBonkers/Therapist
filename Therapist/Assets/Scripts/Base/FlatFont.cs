@@ -9,6 +9,8 @@ public class FlatFont : MonoBehaviour
 
     /* Public variables - START */
 
+    public int localisationId = -1;
+
     [SerializeField]
     private EFlatFont _flatFont;
     public EFlatFont flatFont
@@ -27,11 +29,11 @@ public class FlatFont : MonoBehaviour
 
     void OnValidate()
     {
+        ApplyLanguage();
         if (Application.isPlaying)
         {
             return;
         }
-
         ApplyFont();
     }
 
@@ -42,6 +44,19 @@ public class FlatFont : MonoBehaviour
         if (GetComponent<Text>())
         {
             GetComponent<Text>().font = newFont;
+        }
+    }
+
+    public void ApplyLanguage()
+    {
+        if(localisationId < 0)
+        {
+            return;
+        }
+
+        if (GetComponent<Text>())
+        {
+            GetComponent<Text>().text = LocalisationSingleton.GetStringForId(localisationId).ToUpper();
         }
     }
 }

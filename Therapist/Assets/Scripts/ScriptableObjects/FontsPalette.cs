@@ -8,6 +8,7 @@ public class FontsPalette : SingletonScriptableObject<FontsPalette>
     /** VARIABLES */
 
     /* Public variables - START */
+    [Tooltip("All presents of fonts in this projects")]
     public List<FFontPreset> fontPresets = new List<FFontPreset>();
     /* Public variables - END */
 

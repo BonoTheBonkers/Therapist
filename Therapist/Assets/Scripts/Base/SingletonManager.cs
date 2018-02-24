@@ -11,7 +11,9 @@ public abstract class SingletonManager<T> : MonoBehaviour where T : MonoBehaviou
         get
         {
             if (!_instance)
+            {
                 _instance = Resources.FindObjectsOfTypeAll<T>().FirstOrDefault();
+            }
             return _instance;
         }
     }

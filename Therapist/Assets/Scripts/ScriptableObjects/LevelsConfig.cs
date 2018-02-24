@@ -8,6 +8,7 @@ public class LevelsConfig : SingletonScriptableObject<LevelsConfig>
     /** VARIABLES */
 
     /* Public variables - START */
-    public List<FLevelConfig> colorPresets = new List<FLevelConfig>();
+    [Tooltip("List of all levels in game")]
+    public List<FLevelConfig> levels = new List<FLevelConfig>();
     /* Public variables - END */
 }

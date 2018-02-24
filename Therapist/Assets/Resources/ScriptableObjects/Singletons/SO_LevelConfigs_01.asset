@@ -11,6 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9bb2fe215daf94b8e801238457eda6, type: 3}
   m_Name: SO_LevelConfigs_01
   m_EditorClassIdentifier: 
-  colorPresets:
-  - name: Green Forest
-    themeColor: 13
+  levels: []

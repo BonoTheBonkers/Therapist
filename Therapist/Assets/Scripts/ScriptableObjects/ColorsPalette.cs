@@ -8,7 +8,9 @@ public class ColorsPalette : SingletonScriptableObject<ColorsPalette>
     /** VARIABLES */
 
     /* Public variables - START */
+    [Tooltip("All presets in this color palette")]
     public List<FColorPreset> colorPresets = new List<FColorPreset>();
+    [Tooltip("Presets of single color themes for levels")]
     public List<FColorTheme> colorThemes = new List<FColorTheme>();
     /* Public variables - END */
 
