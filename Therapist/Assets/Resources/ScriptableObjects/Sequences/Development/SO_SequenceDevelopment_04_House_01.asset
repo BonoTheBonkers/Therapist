@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff60999d4ed4f1045bc6b136ae918e8d, type: 3}
+  m_Name: SO_SequenceDevelopment_04_House_01
+  m_EditorClassIdentifier: 
+  titleId: -1
+  attributes: 07000000
+  contraindications: 
+  difficulty: 0
+  ageRange: {x: 1, y: 99}
+  images:
+  - {fileID: 2800000, guid: a5dd3fd2f36a4b34dac0bbdc2783a68d, type: 3}
+  - {fileID: 2800000, guid: 5d45e80fe9cbd9241b091674f404e6a8, type: 3}
+  - {fileID: 2800000, guid: 933821bda6edc944e9984adf8daa9626, type: 3}
+  - {fileID: 2800000, guid: 8f432ebbe19537243a76760c66b372e3, type: 3}
+  - {fileID: 2800000, guid: 83e3e45cbe9b62744bc7f21d51f24026, type: 3}

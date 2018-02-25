@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class MainManager : SingletonManager<MainManager>
 {
+    public UserData currentUser;
+    public PlayerData currentPlayer;
+
     protected static EGameScreen currentScreen = EGameScreen.Intro;
     protected static int currentLevel = 1;
     protected static EAttribute currentAttribute;
     
+    public void Start()
+    {
+        LocalisationDatabase.ReloadLocalisationDatabase();
+    }
+
     public static EGameScreen GetCurrentScreen()
     {
         return currentScreen;

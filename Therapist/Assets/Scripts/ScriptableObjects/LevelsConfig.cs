@@ -9,6 +9,6 @@ public class LevelsConfig : SingletonScriptableObject<LevelsConfig>
 
     /* Public variables - START */
     [Tooltip("List of all levels in game")]
-    public List<FLevelConfig> levels = new List<FLevelConfig>();
+    public List<LevelConfig> levels = new List<LevelConfig>();
     /* Public variables - END */
 }

@@ -40,21 +40,22 @@ public class FFontPreset
 }
 
 [System.Serializable]
-public class FLevelConfig
+public class FBoardConfig
 {
-    [Tooltip("Name of the Level")]
-    public string name;
-    [Tooltip("Main theme color of entire level")]
-    public EFlatColor themeColor;
-    [Tooltip("Boards that player have to solve while playing this level")]
-    public List<FBoardConfig> boardConfigs;
+    [Tooltip("Minimal allowed difficulty of sequence in this board")]
+    public EDifficulty minDifficulty = EDifficulty.VeryEasy;
+
+    [Tooltip("Maximal allowed difficulty of sequence in this board")]
+    public EDifficulty maxDifficulty = EDifficulty.VeryHard;
+
+    public List<FBoardSequenceValues> sequencesValues;
 }
 
 [System.Serializable]
-public class FBoardConfig
+public class FBoardSequenceValues
 {
-    [Tooltip("Difficulties of sequence that are allowed in this board")]
-    public List<EDifficulty> allowedDifficulties = new List<EDifficulty>();
+    public int value = -1;
+    public bool bSolvedOnStart = false;
 }
 
 [System.Serializable]
@@ -62,4 +63,66 @@ public class FLanguageDatabase
 {
     [Tooltip("List of every texts in language")]
     public List<string> texts = new List<string>();
+}
+
+[System.Serializable]
+public class FSequencesDatabase
+{
+    [Tooltip("List of every sequence in attribute")]
+    public List<Sequence> sequences = new List<Sequence>();
+}
+
+[System.Serializable]
+public class FPersonalData
+{
+    public string firstName = "FirstName";
+    public string surName = "SurName";
+    //public int birthDate = (int)System.DateTime.Now.DayOfWeek;
+    public ELanguage langueage = ELanguage.English; 
+}
+
+[System.Serializable]
+public class FEntireProgressData
+{
+    public List<FLevelProgressData> levelsProgress = new List<FLevelProgressData>();
+
+    public FEntireProgressData()
+    {
+        levelsProgress = new List<FLevelProgressData>();
+        for (int i = 0; i < 10; ++i)
+        {
+            levelsProgress.Add(new FLevelProgressData());
+        }
+    }
+}
+
+[System.Serializable]
+public class FLevelProgressData
+{
+    public List<FAttributeAndProgressData> attributesProgress;
+
+    public FLevelProgressData()
+    {
+        attributesProgress = new List<FAttributeAndProgressData>();
+        for (int i = 0; i < (int)EAttribute.Max; ++i)
+        {
+            attributesProgress.Add(new FAttributeAndProgressData(((EAttribute)i)));
+        }
+    }
+}
+
+[System.Serializable]
+public class FAttributeAndProgressData
+{
+    public EAttribute attribute;
+    public List<float> progresses;
+    public FAttributeAndProgressData(EAttribute newAttribute)
+    {
+        attribute = newAttribute;
+        progresses = new List<float>();
+        for(int i = 0; i < 10; ++i)
+        {
+            progresses.Add(0.0f);
+        }
+    }
 }

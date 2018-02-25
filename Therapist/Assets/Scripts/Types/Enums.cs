@@ -27,7 +27,8 @@ public enum EFlatColor
     Maroon,
     Coffee,
     PowderBlue,
-    Blue
+    Blue,
+    Max
 }
 
     public enum EThemePart
@@ -36,7 +37,8 @@ public enum EFlatColor
     ButtonFull,
     ButtonShadowed,
     AmbientLight,
-    AmbientDark
+    AmbientDark,
+    Max
 }
 
 public enum EFlatFont
@@ -50,7 +52,8 @@ public enum EFlatFont
     SmallValue,
     MediumValue,
     LargeValue,
-    ProductTitle
+    ProductTitle,
+    Max
 }
 
 public enum EDifficulty
@@ -60,6 +63,7 @@ public enum EDifficulty
     Medium,
     Hard,
     VeryHard,
+    Max
 }
 
 public enum EAttribute
@@ -70,13 +74,16 @@ public enum EAttribute
     Amount,
     Position,
     Rotation,
-    Shape
+    Shape,
+    Development,
+    Max
 }
 
 public enum EContraindications
 {
     ColorBlindess,
-    Deafness
+    Deafness,
+    Max
 }
 
 public enum EGameScreen
@@ -87,6 +94,7 @@ public enum EGameScreen
     Settings,
     Statistics,
     UserSelection,
+    Max
 }
 
 public enum ELanguage
@@ -104,5 +112,22 @@ public enum ELanguage
     Russian,
     Hindi,
     Swedish,
-    Polish
+    Polish,
+    Max
+}
+
+public enum EExampleConfig
+{
+    None,
+    SameSequence,
+    SameAttribute,
+    SameLogic,
+    Max
+}
+
+public enum EUserType
+{
+    Guardian,
+    Therapist,
+    Max
 }

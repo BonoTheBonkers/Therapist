@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Sequence", menuName = "Therapist/Sequence", order = 1)]
 public class Sequence : ScriptableObject
 {
-    [Tooltip("Title of this sequence to be used on top under logo of game")]
-    public string title = "Sequence";
+    [Tooltip("Title id of this sequence to be used on top under logo of game")]
+    public int titleId = -1;
     [Tooltip("Attributes that describes this sequence")]
     public List<EAttribute> attributes;
     [Tooltip("Contraindications that may be a problem in this sequence")]

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
+    public FBoardConfig currentBoard;
 	void Start ()
     {
 		
@@ -14,8 +15,19 @@ public class BoardController : MonoBehaviour
 		
 	}
 
-    public void InitializeBoard()
+    public void InitializeCurrentBoard()
     {
-        
+        InitializeNewBoard(currentBoard);
+    }
+
+    public void InitializeNewBoard(FBoardConfig newBoard)
+    {
+        if(newBoard != currentBoard)
+        {
+            currentBoard = newBoard;
+            EventManager.TriggerEvent("OnBoardChanged");
+        }
+
+        EventManager.TriggerEvent("OnInitializeBoard");
     }
 }

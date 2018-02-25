@@ -9,11 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff60999d4ed4f1045bc6b136ae918e8d, type: 3}
-  m_Name: SO_Sequence_01
+  m_Name: SO_SequenceSize_01_Mushrooms_01
   m_EditorClassIdentifier: 
-  title: Sequence
-  attributes: 
+  titleId: -1
+  attributes: 00000000
   contraindications: 
-  difficulty: 2
+  difficulty: 0
   ageRange: {x: 1, y: 99}
-  images: []
+  images:
+  - {fileID: 2800000, guid: 273ec495c7c8fd14b908210096a73e6a, type: 3}
+  - {fileID: 2800000, guid: e9ad25411d06a66488ba655cec59b65e, type: 3}
+  - {fileID: 2800000, guid: 2853c1cc1c9977143af76ce4c721d606, type: 3}
+  - {fileID: 2800000, guid: fa3a2684fa77ed44080b7d5f50398326, type: 3}

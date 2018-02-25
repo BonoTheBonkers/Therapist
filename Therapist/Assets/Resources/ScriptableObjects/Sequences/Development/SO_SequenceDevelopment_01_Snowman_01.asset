@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff60999d4ed4f1045bc6b136ae918e8d, type: 3}
+  m_Name: SO_SequenceDevelopment_01_Snowman_01
+  m_EditorClassIdentifier: 
+  titleId: -1
+  attributes: 07000000
+  contraindications: 
+  difficulty: 2
+  ageRange: {x: 1, y: 99}
+  images:
+  - {fileID: 2800000, guid: 76bf40474038da24da84796aa783aa5f, type: 3}
+  - {fileID: 2800000, guid: 886f25095ce712147b9683c43987bec9, type: 3}
+  - {fileID: 2800000, guid: 8d4116bda1fc85c479b59ad869985f65, type: 3}
+  - {fileID: 2800000, guid: 1e51d1ddfc36c2f4fb1e84d9a4840cf6, type: 3}
+  - {fileID: 2800000, guid: 99a3288dea7125640b062309505a6483, type: 3}
+  - {fileID: 2800000, guid: 3a885433281ec4940b3e8a8ae1575e24, type: 3}
+  - {fileID: 2800000, guid: 32eba0be85c1493439d4ecfa6abf0ff5, type: 3}

@@ -5,12 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LocalisationDatabase", menuName = "Therapist/Singletons/LocalisationDatabase", order = 1)]
 public class LocalisationDatabase : SingletonScriptableObject<ColorsPalette>
 {
+    [Tooltip("Button for reloading database")]
     public bool reloadLocalisationDatabase = false;
+    [Tooltip("Path to csv table with languages")]
     public static string csvDatabasePath = "Localisation Database - DB_localisation";
 
     [Tooltip("Databases for every language")]
     public static Dictionary<ELanguage, FLanguageDatabase> languages = new Dictionary<ELanguage, FLanguageDatabase>();
-
+    
     void OnValidate()
     {
         if (Application.isPlaying)
@@ -24,16 +26,11 @@ public class LocalisationDatabase : SingletonScriptableObject<ColorsPalette>
 
             reloadLocalisationDatabase = false;
         }
-        FlatImage[] flatImages = FindObjectsOfType(typeof(FlatImage)) as FlatImage[];
-        foreach (FlatImage current in flatImages)
-        {
-            current.ApplyColor();
-        }
     }
 
     public static void ReloadLocalisationDatabase()
     {
-        for (int i = 0; i <= (int)ELanguage.Polish; ++i)
+        for (int i = 0; i < (int)ELanguage.Max; ++i)
         {
             FLanguageDatabase languageDatabase;
             if (languages.TryGetValue((ELanguage)i, out languageDatabase))
@@ -61,12 +58,19 @@ public class LocalisationDatabase : SingletonScriptableObject<ColorsPalette>
                         languageDatabase.texts.Add(lineData[j]);
                     }
                 }
-                
             }
+
+            Debug.Log("Generated localisation database for languages:  " + languages.Count.ToString());
         }
         else
         {
             Debug.LogError("[Database]: Couldn't find LocalisationDatabase file: CSV/" + csvDatabasePath);
+        }
+
+        FlatFont[] flatFonts = FindObjectsOfType(typeof(FlatFont)) as FlatFont[];
+        foreach (FlatFont current in flatFonts)
+        {
+            current.ApplyLanguage();
         }
     }
 

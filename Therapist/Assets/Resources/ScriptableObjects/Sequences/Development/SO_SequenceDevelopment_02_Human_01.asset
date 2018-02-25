@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff60999d4ed4f1045bc6b136ae918e8d, type: 3}
+  m_Name: SO_SequenceDevelopment_02_Human_01
+  m_EditorClassIdentifier: 
+  titleId: -1
+  attributes: 07000000
+  contraindications: 
+  difficulty: 1
+  ageRange: {x: 1, y: 99}
+  images:
+  - {fileID: 2800000, guid: ca035996234d33c4ab5e06b4793cadd8, type: 3}
+  - {fileID: 2800000, guid: fe4d463a6a759a94b989318497f9960a, type: 3}
+  - {fileID: 2800000, guid: c41b0def5d1f5e84792b01729d297d78, type: 3}
+  - {fileID: 2800000, guid: fdc3114fb4fbb924abb1abe04a1b42db, type: 3}
+  - {fileID: 2800000, guid: ef99a66d0fef6134885934e46a90d41c, type: 3}
+  - {fileID: 2800000, guid: c50b545b0a543374988a1caa03678492, type: 3}
