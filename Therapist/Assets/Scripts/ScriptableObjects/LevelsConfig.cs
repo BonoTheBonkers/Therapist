@@ -11,4 +11,9 @@ public class LevelsConfig : SingletonScriptableObject<LevelsConfig>
     [Tooltip("List of all levels in game")]
     public List<LevelConfig> levels = new List<LevelConfig>();
     /* Public variables - END */
+
+    public static List<LevelConfig> GetLevels()
+    {
+        return Instance.levels;
+    }
 }

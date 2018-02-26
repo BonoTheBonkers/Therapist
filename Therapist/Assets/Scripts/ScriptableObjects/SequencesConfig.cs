@@ -71,6 +71,27 @@ public class SequencesConfig : SingletonScriptableObject<SequencesConfig>
             }
         }
         Debug.Log(finalString);
+    }
 
+    public static bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, out Sequence outSequence)
+    {
+        FSequencesDatabase sequencesDatabase;
+        if(sequencesSorted.TryGetValue(inAttribute, out sequencesDatabase))
+        {
+            if(sequencesDatabase.sequences.Count > 0)
+            {
+                int randomSequence = Random.Range(0, sequencesDatabase.sequences.Count - 1);
+                outSequence = sequencesDatabase.sequences[randomSequence];
+                return true;
+            }
+            else
+            {
+                Debug.Log("SequenceConfig -  no sequences of " + inAttribute.ToString());
+            }
+        }
+
+        Debug.Log("SequenceConfig - GetRandomSequence failed! " + inAttribute.ToString());
+        outSequence = new Sequence();
+        return false;
     }
 }

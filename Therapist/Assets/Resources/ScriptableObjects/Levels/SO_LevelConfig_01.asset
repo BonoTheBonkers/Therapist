@@ -15,9 +15,92 @@ MonoBehaviour:
   themeColor: 13
   boardConfigs:
   - minDifficulty: 0
-    maxDifficulty: 0
+    maxDifficulty: 4
     sequencesValues:
     - value: 0
-      bSolvedOnStart: 1
+      IsSolvedOnStart: 1
     - value: 1
-      bSolvedOnStart: 0
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 1
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 1
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 1
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 1
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 1
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 1
+  - minDifficulty: 0
+    maxDifficulty: 4
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 1
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0

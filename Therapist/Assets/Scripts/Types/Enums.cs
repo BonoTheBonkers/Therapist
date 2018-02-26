@@ -131,3 +131,12 @@ public enum EUserType
     Therapist,
     Max
 }
+
+public enum ETokenPlaceType
+{
+    None,
+    ExampleSequence,
+    CurrentSequence,
+    CurrentTokens,
+    Max
+}

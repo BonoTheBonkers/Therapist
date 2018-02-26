@@ -17,4 +17,6 @@ public class Sequence : ScriptableObject
     public Vector2 ageRange = new Vector2(1, 99);
     [Tooltip("List of images to be used in board of this sequence")]
     public List<Texture2D> images;
+    [Tooltip("List of images to be used in board of this sequence")]
+    public List<Sprite> sprites;
 }

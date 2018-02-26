@@ -42,12 +42,6 @@ public class FFontPreset
 [System.Serializable]
 public class FBoardConfig
 {
-    [Tooltip("Minimal allowed difficulty of sequence in this board")]
-    public EDifficulty minDifficulty = EDifficulty.VeryEasy;
-
-    [Tooltip("Maximal allowed difficulty of sequence in this board")]
-    public EDifficulty maxDifficulty = EDifficulty.VeryHard;
-
     public List<FBoardSequenceValues> sequencesValues;
 }
 
@@ -55,7 +49,7 @@ public class FBoardConfig
 public class FBoardSequenceValues
 {
     public int value = -1;
-    public bool bSolvedOnStart = false;
+    public bool IsSolvedOnStart = false;
 }
 
 [System.Serializable]
@@ -115,14 +109,10 @@ public class FLevelProgressData
 public class FAttributeAndProgressData
 {
     public EAttribute attribute;
-    public List<float> progresses;
+    public float progress;
     public FAttributeAndProgressData(EAttribute newAttribute)
     {
         attribute = newAttribute;
-        progresses = new List<float>();
-        for(int i = 0; i < 10; ++i)
-        {
-            progresses.Add(0.0f);
-        }
+        progress = 0.0f;
     }
 }

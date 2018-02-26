@@ -22,3 +22,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 933821bda6edc944e9984adf8daa9626, type: 3}
   - {fileID: 2800000, guid: 8f432ebbe19537243a76760c66b372e3, type: 3}
   - {fileID: 2800000, guid: 83e3e45cbe9b62744bc7f21d51f24026, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: a5dd3fd2f36a4b34dac0bbdc2783a68d, type: 3}
+  - {fileID: 21300000, guid: 5d45e80fe9cbd9241b091674f404e6a8, type: 3}
+  - {fileID: 21300000, guid: 933821bda6edc944e9984adf8daa9626, type: 3}
+  - {fileID: 21300000, guid: 8f432ebbe19537243a76760c66b372e3, type: 3}
+  - {fileID: 21300000, guid: 83e3e45cbe9b62744bc7f21d51f24026, type: 3}

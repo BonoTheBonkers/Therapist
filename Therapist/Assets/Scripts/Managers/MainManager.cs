@@ -8,12 +8,87 @@ public class MainManager : SingletonManager<MainManager>
     public PlayerData currentPlayer;
 
     protected static EGameScreen currentScreen = EGameScreen.Intro;
-    protected static int currentLevel = 1;
-    protected static EAttribute currentAttribute;
-    
+    protected static int currentLevel = 0;
+    protected static EAttribute currentAttribute = EAttribute.Development;
+    protected static int currentProgressLevel = 0;
+
     public void Start()
     {
         LocalisationDatabase.ReloadLocalisationDatabase();
+        SequencesConfig.ReloadSequencesDatabase();
+    }
+
+    public void OnEnable()
+    {
+        GenerateBoard();
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            GenerateBoard();
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            OnWin();
+        }
+    }
+
+    public bool GetBestBoardConfig(EAttribute inAttribute, int inLevel, out FBoardConfig outBoardConfig)
+    {
+        currentLevel = inLevel;
+        currentAttribute = inAttribute;
+        float currentProgressValue = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress;
+        //currentProgressLevel = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress < 1.0f ? (Mathf.Clamp((int)(currentProgressValue * 10.0f), 0, 9)) : 0;
+        outBoardConfig = LevelsConfig.GetLevels()[currentLevel].boardConfigs[currentProgressLevel];
+        return true;
+    }
+
+    public bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, out Sequence outSequence)
+    {
+        if(SequencesConfig.GetRandomSequence(inAttribute, inBoardConfig, out outSequence))
+        {
+            return true;
+        }
+
+        Debug.Log("MainManager - GetRandomSequence failed!");
+        outSequence = new Sequence();
+        return false;
+    }
+
+    public void GenerateBoard()
+    {
+        FBoardConfig bestBoardConfig;
+        if(GetBestBoardConfig(currentAttribute, currentLevel, out bestBoardConfig))
+        {
+            Sequence bestSequence;
+            if (GetRandomSequence(currentAttribute, bestBoardConfig, out bestSequence))
+            {
+                BoardController.InitializeBoardPublic(bestBoardConfig, bestSequence);
+            }
+        }
+    }
+
+    public void OnWin()
+    {
+        if(currentProgressLevel < 9)
+        {
+            currentProgressLevel = currentProgressLevel + 1;
+            float newProgressValue = Mathf.Clamp(currentProgressLevel / 10.0f, 0.0f, 1.0f);
+            if (newProgressValue > currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress)
+            {
+                currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = newProgressValue;
+                EventManager.TriggerEvent(currentAttribute.ToString() + " progress increased to " + newProgressValue.ToString());
+            }
+        }
+        else
+        {
+            currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = 1.0f;
+            currentProgressLevel = 0;
+        }
+        GenerateBoard();
     }
 
     public static EGameScreen GetCurrentScreen()
