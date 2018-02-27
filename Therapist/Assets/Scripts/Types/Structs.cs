@@ -117,3 +117,10 @@ public class FAttributeAndProgressData
         progress = 0.0f;
     }
 }
+
+[System.Serializable]
+public class FGameObjectsForScreens
+{
+    public EGameScreen screen;
+    public GameObject gameObject;
+}

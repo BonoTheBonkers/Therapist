@@ -27,6 +27,12 @@ public class FlatFont : MonoBehaviour
 
     /* Public variables - END */
 
+    void OnEnable()
+    {
+        ApplyLanguage();
+        ApplyFont();
+    }
+
     void OnValidate()
     {
         ApplyLanguage();

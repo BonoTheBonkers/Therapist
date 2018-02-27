@@ -90,10 +90,11 @@ public enum EGameScreen
 {
     Intro,
     MainMenu,
-    ModeMenu,
+    AttributeMenu,
     Settings,
     Statistics,
     UserSelection,
+    Board,
     Max
 }
 

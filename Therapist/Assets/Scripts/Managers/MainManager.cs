@@ -7,7 +7,7 @@ public class MainManager : SingletonManager<MainManager>
     public UserData currentUser;
     public PlayerData currentPlayer;
 
-    protected static EGameScreen currentScreen = EGameScreen.Intro;
+    protected static EGameScreen currentScreen = EGameScreen.AttributeMenu;
     protected static int currentLevel = 0;
     protected static EAttribute currentAttribute = EAttribute.Development;
     protected static int currentProgressLevel = 0;
@@ -99,6 +99,10 @@ public class MainManager : SingletonManager<MainManager>
     {
         currentScreen = inScreen;
         EventManager.TriggerEvent("OnCurrentScreenChanged");
+        if(currentScreen == EGameScreen.Board)
+        {
+            Instance.GenerateBoard();
+        }
     }
 
     public static int GetCurrentLevel()
@@ -121,4 +125,56 @@ public class MainManager : SingletonManager<MainManager>
         EventManager.TriggerEvent("OnCurrentAttributeChanged");
     }
 
+    public static float GetProgressPercentageAtLevel(int inLevel)
+    {
+        if(!Instance)
+        {
+            return 0.0f;
+        }
+
+        return Instance.GetProgressPercentageAtLevelPrivate(inLevel);
+    }
+
+    protected float GetProgressPercentageAtLevelPrivate(int inLevel)
+    {
+        if (!currentPlayer)
+        {
+            return 0.0f;
+        }
+
+        float valueToReturn = 0.0f;
+        for(int i = 0; i < (int)EAttribute.Max; ++i)
+        {
+            valueToReturn += currentPlayer.progressData.levelsProgress[inLevel].attributesProgress[i].progress;
+        }
+
+        valueToReturn /= (int)EAttribute.Max;
+
+        return valueToReturn;
+    }
+
+    public static float GetAttributeProgressPercentageAtCurrentLevel(EAttribute inAttribute)
+    {
+        return GetAttributeProgressPercentageAtLevel(inAttribute, GetCurrentLevel());
+    }
+
+    public static float GetAttributeProgressPercentageAtLevel(EAttribute inAttribute, int inLevel)
+    {
+        if(Instance == null)
+        {
+            return 0.0f;
+        }
+
+        return Instance.GetAttributeProgressPercentageAtLevelPrivate(inAttribute, inLevel);
+    }
+
+    protected float GetAttributeProgressPercentageAtLevelPrivate(EAttribute inAttribute, int inLevel)
+    {
+        if(currentPlayer == null)
+        {
+            return 0.0f;
+        }
+
+        return currentPlayer.progressData.levelsProgress[inLevel].attributesProgress[(int)inAttribute].progress;
+    }
 }

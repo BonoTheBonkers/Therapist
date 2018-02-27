@@ -20,6 +20,11 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
         currentTokensController = GetComponentInChildren<CurrentTokensController>();
     }
 
+    void OnEnable()
+    {
+        //InitializeCurrentBoard();
+    }
+
     public void InitializeCurrentBoard()
     {
         InitializeBoard(currentBoard, currentSequence);
