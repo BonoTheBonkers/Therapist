@@ -43,7 +43,23 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
                         TokenController newToken = Instantiate(PrefabsConfig.GetTokenPrefab(), boardController.gameObject.transform).GetComponent<TokenController>();
                         if (newToken != null)
                         {
-                            newToken.SetupToken(inBoardConfig.sequencesValues[i].value, inSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                            if(tokenPlaceType == ETokenPlaceType.ExampleSequence && inBoardConfig.exampleConfig != EExampleConfig.SameSequence)
+                            {
+                                Sequence exampleSequence;
+                                if(inBoardConfig.exampleConfig == EExampleConfig.SameAttribute)
+                                {
+                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, out exampleSequence);
+                                }
+                                else
+                                {
+                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, out exampleSequence);
+                                }
+                                newToken.SetupToken(inBoardConfig.sequencesValues[i].value, exampleSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                            }
+                            else
+                            {
+                                newToken.SetupToken(inBoardConfig.sequencesValues[i].value, inSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                            }
                             Vector3 newPosition = newToken.transform.position;
                             newPosition.y = 1000.0f;
                             newToken.transform.position = newPosition;

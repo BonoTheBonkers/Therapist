@@ -42,6 +42,7 @@ public class FFontPreset
 [System.Serializable]
 public class FBoardConfig
 {
+    public EExampleConfig exampleConfig = EExampleConfig.SameAttribute;
     public List<FBoardSequenceValues> sequencesValues;
 }
 

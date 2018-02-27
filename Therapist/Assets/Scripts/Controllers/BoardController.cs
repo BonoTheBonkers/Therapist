@@ -55,9 +55,19 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
             EventManager.TriggerEvent("OnSequenceChanged");
         }
 
-        exampleSequenceController.InitializeBoard(inBoardConfig, inSequence);
-        currentSequenceController.InitializeBoard(inBoardConfig, inSequence);
-        currentTokensController.InitializeBoard(inBoardConfig, inSequence);
+        if(exampleSequenceController != null)
+        {
+            exampleSequenceController.InitializeBoard(inBoardConfig, inSequence);
+        }
+        if (currentSequenceController != null)
+        {
+            currentSequenceController.InitializeBoard(inBoardConfig, inSequence);
+        }
+        if (currentTokensController != null)
+        {
+            currentTokensController.InitializeBoard(inBoardConfig, inSequence);
+        }
+        
         EventManager.TriggerEvent("OnInitializeBoard");
     }
 

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3fd7b64f7dc854880763290a519ffe, type: 3}
-  m_Name: SO_LevelConfig_01
+  m_Name: SO_LevelConfig_04
   m_EditorClassIdentifier: 
   id: -1
   themeColor: 13
@@ -24,14 +24,6 @@ MonoBehaviour:
     sequencesValues:
     - value: 0
       IsSolvedOnStart: 0
-  - exampleConfig: 1
-    sequencesValues:
-    - value: 0
-      IsSolvedOnStart: 0
-  - exampleConfig: 1
-    sequencesValues:
-    - value: 0
-      IsSolvedOnStart: 1
     - value: 1
       IsSolvedOnStart: 0
   - exampleConfig: 1
@@ -39,18 +31,40 @@ MonoBehaviour:
     - value: 0
       IsSolvedOnStart: 0
     - value: 1
-      IsSolvedOnStart: 1
-  - exampleConfig: 1
-    sequencesValues:
-    - value: 0
-      IsSolvedOnStart: 1
-    - value: 1
       IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
     - value: 0
       IsSolvedOnStart: 0
     - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+  - exampleConfig: 1
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+  - exampleConfig: 1
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+  - exampleConfig: 1
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 0
+    - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
       IsSolvedOnStart: 1
   - exampleConfig: 1
     sequencesValues:
@@ -59,7 +73,9 @@ MonoBehaviour:
     - value: 1
       IsSolvedOnStart: 0
     - value: 2
-      IsSolvedOnStart: 1
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
     - value: 0
@@ -67,12 +83,16 @@ MonoBehaviour:
     - value: 1
       IsSolvedOnStart: 1
     - value: 2
-      IsSolvedOnStart: 1
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
     - value: 0
-      IsSolvedOnStart: 1
+      IsSolvedOnStart: 0
     - value: 1
-      IsSolvedOnStart: 1
+      IsSolvedOnStart: 0
     - value: 2
+      IsSolvedOnStart: 1
+    - value: 3
       IsSolvedOnStart: 0
