@@ -60,7 +60,7 @@ public class LocalisationDatabase : SingletonScriptableObject<ColorsPalette>
                 }
             }
 
-            Debug.Log("Generated localisation database for languages:  " + languages.Count.ToString());
+            //Debug.Log("Generated localisation database for languages:  " + languages.Count.ToString());
         }
         else
         {

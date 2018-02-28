@@ -20,20 +20,20 @@ MonoBehaviour:
     themeAmbientDark: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
   - flatColor: 1
     fullColor: {r: 0.8897059, g: 0.42507204, b: 0.1177552, a: 1}
-    shadowedColor: {r: 0.41176468, g: 0.251398, b: 0.1453287, a: 1}
-    backgroundColor: {r: 0.72794116, g: 0.42120963, b: 0.14987025, a: 1}
+    shadowedColor: {r: 0.77205884, g: 0.36544728, b: 0.096507356, a: 1}
+    backgroundColor: {r: 0.9117647, g: 0.5418049, b: 0.21453287, a: 1}
     themeAmbientLight: {r: 0.90196085, g: 0.49411768, b: 0.13333334, a: 1}
     themeAmbientDark: {r: 0.90196085, g: 0.49411768, b: 0.13333334, a: 1}
   - flatColor: 2
-    fullColor: {r: 1, g: 0.80392164, b: 0.007843138, a: 1}
-    shadowedColor: {r: 0.33823532, g: 0.30517352, b: 0.09201991, a: 1}
-    backgroundColor: {r: 1, g: 0.87648225, b: 0.375, a: 1}
+    fullColor: {r: 0.6102941, g: 0.48968267, b: 0, a: 1}
+    shadowedColor: {r: 0.45588237, g: 0.3946665, b: 0, a: 1}
+    backgroundColor: {r: 0.61764705, g: 0.49558246, b: 0, a: 1}
     themeAmbientLight: {r: 1, g: 0.80392164, b: 0.007843138, a: 1}
     themeAmbientDark: {r: 1, g: 0.80392164, b: 0.007843138, a: 1}
   - flatColor: 3
     fullColor: {r: 0.8235294, g: 0.68183386, b: 0.35121107, a: 1}
     shadowedColor: {r: 0.61764705, g: 0.47186416, b: 0.13170417, a: 1}
-    backgroundColor: {r: 0.75735295, g: 0.6738214, b: 0.47891438, a: 1}
+    backgroundColor: {r: 0.8014706, g: 0.68655384, b: 0.41841477, a: 1}
     themeAmbientLight: {r: 0.94117653, g: 0.8705883, b: 0.7058824, a: 1}
     themeAmbientDark: {r: 0.94117653, g: 0.8705883, b: 0.7058824, a: 1}
   - flatColor: 4
@@ -62,14 +62,14 @@ MonoBehaviour:
     themeAmbientDark: {r: 0.227451, g: 0.43529415, b: 0.5058824, a: 1}
   - flatColor: 8
     fullColor: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
-    shadowedColor: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
-    backgroundColor: {r: 0.14192258, g: 0.38716087, b: 0.5514706, a: 1}
+    shadowedColor: {r: 0.15614188, g: 0.39942876, b: 0.5588235, a: 1}
+    backgroundColor: {r: 0.3049308, g: 0.5362156, b: 0.6911765, a: 1}
     themeAmbientLight: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
     themeAmbientDark: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
   - flatColor: 9
     fullColor: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
-    shadowedColor: {r: 0.066771194, g: 0.47794116, b: 0.24112806, a: 1}
-    backgroundColor: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
+    shadowedColor: {r: 0.116781995, g: 0.5294118, b: 0.2917579, a: 1}
+    backgroundColor: {r: 0.14803202, g: 0.5441177, b: 0.3159924, a: 1}
     themeAmbientLight: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
     themeAmbientDark: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
   - flatColor: 10
@@ -93,7 +93,7 @@ MonoBehaviour:
   - flatColor: 13
     fullColor: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
     shadowedColor: {r: 0.1764706, g: 0.3137255, b: 0.21176472, a: 1}
-    backgroundColor: {r: 0.2506488, g: 0.5588235, b: 0.34381786, a: 1}
+    backgroundColor: {r: 0.22707613, g: 0.5147059, b: 0.31403396, a: 1}
     themeAmbientLight: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
     themeAmbientDark: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
   - flatColor: 14
@@ -122,8 +122,8 @@ MonoBehaviour:
     themeAmbientDark: {r: 0.93725497, g: 0.4431373, b: 0.4784314, a: 1}
   - flatColor: 18
     fullColor: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
-    shadowedColor: {r: 0.34580678, g: 0.44852942, b: 0.016490042, a: 1}
-    backgroundColor: {r: 0.30988616, g: 0.36764705, b: 0.12435122, a: 1}
+    shadowedColor: {r: 0.48798078, g: 0.5661765, b: 0.23729454, a: 1}
+    backgroundColor: {r: 0.39935178, g: 0.46323532, b: 0.19415009, a: 1}
     themeAmbientLight: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
     themeAmbientDark: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
   - flatColor: 19

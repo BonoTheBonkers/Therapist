@@ -20,7 +20,7 @@ public class MainManager : SingletonManager<MainManager>
 
     public void OnEnable()
     {
-        GenerateBoard();
+        //GenerateBoard();
     }
 
     public void Update()
@@ -36,35 +36,34 @@ public class MainManager : SingletonManager<MainManager>
         }
     }
 
-    public bool GetBestBoardConfig(EAttribute inAttribute, int inLevel, out FBoardConfig outBoardConfig)
+    public bool GetBestBoardConfig(EAttribute inAttribute, int inLevel, ref FBoardConfig outBoardConfig)
     {
         currentLevel = inLevel;
         currentAttribute = inAttribute;
-        float currentProgressValue = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress;
+        //float currentProgressValue = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress;
         //currentProgressLevel = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress < 1.0f ? (Mathf.Clamp((int)(currentProgressValue * 10.0f), 0, 9)) : 0;
         outBoardConfig = LevelsConfig.GetLevels()[currentLevel].boardConfigs[currentProgressLevel];
         return true;
     }
 
-    public bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, out Sequence outSequence)
+    public bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, ref Sequence outSequence)
     {
-        if(SequencesConfig.GetRandomSequence(inAttribute, inBoardConfig, out outSequence))
+        if(SequencesConfig.GetRandomSequence(inAttribute, inBoardConfig, ref outSequence))
         {
             return true;
         }
 
-        Debug.Log("MainManager - GetRandomSequence failed!");
-        outSequence = new Sequence();
+        //Debug.Log("MainManager - GetRandomSequence failed!");
         return false;
     }
 
     public void GenerateBoard()
     {
-        FBoardConfig bestBoardConfig;
-        if(GetBestBoardConfig(currentAttribute, currentLevel, out bestBoardConfig))
+        FBoardConfig bestBoardConfig = null;
+        if(GetBestBoardConfig(currentAttribute, currentLevel, ref bestBoardConfig))
         {
-            Sequence bestSequence;
-            if (GetRandomSequence(currentAttribute, bestBoardConfig, out bestSequence))
+            Sequence bestSequence = null;
+            if (GetRandomSequence(currentAttribute, bestBoardConfig, ref bestSequence))
             {
                 BoardController.InitializeBoardPublic(bestBoardConfig, bestSequence);
             }
@@ -99,7 +98,7 @@ public class MainManager : SingletonManager<MainManager>
     {
         currentScreen = inScreen;
         EventManager.TriggerEvent("OnCurrentScreenChanged");
-        if(currentScreen == EGameScreen.Board)
+        if(inScreen == EGameScreen.Board)
         {
             Instance.GenerateBoard();
         }

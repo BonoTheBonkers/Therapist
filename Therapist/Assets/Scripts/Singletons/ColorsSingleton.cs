@@ -19,7 +19,6 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
 
     public static Color GetColorFromTheme(EFlatColor themeColor, EThemePart themePart)
     {
-        EFlatColor colorToReturn = themeColor;
         foreach (FColorPreset current in ColorsPalette.Instance.colorPresets)
         {
             if (current.flatColor == themeColor)

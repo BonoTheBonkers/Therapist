@@ -9,7 +9,14 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
     protected BoardController boardController;
     void Start()
     {
-        boardController = GetComponentInParent<BoardController>();
+    }
+    public BoardController GetBoardController()
+    {
+        if (!boardController)
+        {
+            boardController = GetComponentInParent<BoardController>();
+        }
+        return boardController;
     }
 
     public void InitializeBoard(FBoardConfig inBoardConfig, Sequence inSequence)
@@ -23,7 +30,7 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
         }
         currentTokenPlaces.Clear();
 
-        if (inBoardConfig == null || boardController == null)
+        if (inBoardConfig == null || GetBoardController() == null)
         {
             return;
         }
@@ -40,21 +47,24 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
 
                     if (!(tokenPlaceType == ETokenPlaceType.CurrentSequence && !inBoardConfig.sequencesValues[i].IsSolvedOnStart))
                     {
-                        TokenController newToken = Instantiate(PrefabsConfig.GetTokenPrefab(), boardController.gameObject.transform).GetComponent<TokenController>();
+                        TokenController newToken = Instantiate(PrefabsConfig.GetTokenPrefab(), GetBoardController().gameObject.transform).GetComponent<TokenController>();
                         if (newToken != null)
                         {
                             if(tokenPlaceType == ETokenPlaceType.ExampleSequence && inBoardConfig.exampleConfig != EExampleConfig.SameSequence)
                             {
-                                Sequence exampleSequence;
+                                Sequence exampleSequence = null;
                                 if(inBoardConfig.exampleConfig == EExampleConfig.SameAttribute)
                                 {
-                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, out exampleSequence);
+                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, ref exampleSequence);
                                 }
                                 else
                                 {
-                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, out exampleSequence);
+                                    SequencesConfig.GetRandomSequence(MainManager.GetCurrentAttribute(), inBoardConfig, ref exampleSequence);
                                 }
-                                newToken.SetupToken(inBoardConfig.sequencesValues[i].value, exampleSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                                if(exampleSequence)
+                                {
+                                    newToken.SetupToken(inBoardConfig.sequencesValues[i].value, exampleSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                                }
                             }
                             else
                             {
@@ -63,7 +73,7 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
                             Vector3 newPosition = newToken.transform.position;
                             newPosition.y = 1000.0f;
                             newToken.transform.position = newPosition;
-                            boardController.RegisterToken(newToken);
+                            GetBoardController().RegisterToken(newToken);
                         }
                     }
                 }

@@ -70,10 +70,10 @@ public class SequencesConfig : SingletonScriptableObject<SequencesConfig>
                 finalString += (((EAttribute)i).ToString() + "-" + sequencesDatabase.sequences.Count + " | ");
             }
         }
-        Debug.Log(finalString);
+        //Debug.Log(finalString);
     }
 
-    public static bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, out Sequence outSequence)
+    public static bool GetRandomSequence(EAttribute inAttribute, FBoardConfig inBoardConfig, ref Sequence outSequence)
     {
         FSequencesDatabase sequencesDatabase;
         if(sequencesSorted.TryGetValue(inAttribute, out sequencesDatabase))
@@ -86,12 +86,11 @@ public class SequencesConfig : SingletonScriptableObject<SequencesConfig>
             }
             else
             {
-                Debug.Log("SequenceConfig -  no sequences of " + inAttribute.ToString());
+                //Debug.Log("SequenceConfig -  no sequences of " + inAttribute.ToString());
             }
         }
 
-        Debug.Log("SequenceConfig - GetRandomSequence failed! " + inAttribute.ToString());
-        outSequence = new Sequence();
+        //Debug.Log("SequenceConfig - GetRandomSequence failed! " + inAttribute.ToString());
         return false;
     }
 }

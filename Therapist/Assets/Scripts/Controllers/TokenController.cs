@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TokenController : MonoBehaviour
 {
     protected ETokenPlaceType tokenPlaceType = ETokenPlaceType.None;
-    int value = -1;
+    //int value = -1;
     public TokenPlaceController targetTokenPlace;
     public Image backgroundImage;
     public Image iconImage;
@@ -18,7 +18,7 @@ public class TokenController : MonoBehaviour
 
     public void SetupToken(int inValue, Sprite inImage, TokenPlaceController inTargetTokenPlace, ETokenPlaceType inTokenPlaceType)
     {
-        value = inValue;
+        //value = inValue;
         iconImage.sprite = inImage;
         targetTokenPlace = inTargetTokenPlace;
         tokenPlaceType = inTokenPlaceType;

@@ -15,14 +15,38 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
 
     void Start()
     {
-        exampleSequenceController = GetComponentInChildren<ExampleSequenceController>();
-        currentSequenceController = GetComponentInChildren<CurrentSequenceController>();
-        currentTokensController = GetComponentInChildren<CurrentTokensController>();
     }
 
     void OnEnable()
     {
         //InitializeCurrentBoard();
+    }
+
+    public ExampleSequenceController GetExampleSequenceController()
+    {
+        if (!exampleSequenceController)
+        {
+            exampleSequenceController = GetComponentInChildren<ExampleSequenceController>();
+        }
+        return exampleSequenceController;
+    }
+
+    public CurrentSequenceController GetCurrentSequenceController()
+    {
+        if (!currentSequenceController)
+        {
+            currentSequenceController = GetComponentInChildren<CurrentSequenceController>();
+        }
+        return currentSequenceController;
+    }
+
+    public CurrentTokensController GetCurrentTokensController()
+    {
+        if (!currentTokensController)
+        {
+            currentTokensController = GetComponentInChildren<CurrentTokensController>();
+        }
+        return currentTokensController;
     }
 
     public void InitializeCurrentBoard()
@@ -60,17 +84,17 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
             EventManager.TriggerEvent("OnSequenceChanged");
         }
 
-        if(exampleSequenceController != null)
+        if (GetExampleSequenceController() != null)
         {
-            exampleSequenceController.InitializeBoard(inBoardConfig, inSequence);
+            GetExampleSequenceController().InitializeBoard(inBoardConfig, inSequence);
         }
-        if (currentSequenceController != null)
+        if (GetCurrentSequenceController() != null)
         {
-            currentSequenceController.InitializeBoard(inBoardConfig, inSequence);
+            GetCurrentSequenceController().InitializeBoard(inBoardConfig, inSequence);
         }
-        if (currentTokensController != null)
+        if (GetCurrentTokensController() != null)
         {
-            currentTokensController.InitializeBoard(inBoardConfig, inSequence);
+            GetCurrentTokensController().InitializeBoard(inBoardConfig, inSequence);
         }
         
         EventManager.TriggerEvent("OnInitializeBoard");

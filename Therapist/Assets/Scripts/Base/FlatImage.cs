@@ -29,17 +29,35 @@ public class FlatImage : MonoBehaviour
 
     public void Start()
     {
-        image = GetComponent<Image>();
-        text = GetComponent<Text>();
     }
 
     public void Update()
     {
         if(currentLerpTime > 0.0f)
         {
-            currentLerpTime = Mathf.Max(currentLerpTime - Time.deltaTime, 0.0f);
+            currentLerpTime = Mathf.Max(currentLerpTime - (Time.deltaTime * 0.9f), 0.0f);
             ApplyColor(Color.Lerp(targetColor, previousColor, currentLerpTime));
         }
+    }
+
+    public Image GetImage()
+    {
+        if(!image)
+        {
+            image = GetComponent<Image>();
+        }
+
+        return image;
+    }
+
+    public Text GetText()
+    {
+        if (!text)
+        {
+            text = GetComponent<Text>();
+        }
+
+        return text;
     }
 
     public void OnEnable()
@@ -47,9 +65,7 @@ public class FlatImage : MonoBehaviour
         if(themePart != EThemePart.None)
         {
             EventManager.StartListening("OnCurrentLevelChanged", ReadColorForLevel);
-            ReadColorForLevel();
-            currentLerpTime = 0.0f;
-            ApplyColor(targetColor);
+            ForceColorForLevel();
         }
     }
     public void OnDisable()
@@ -63,7 +79,7 @@ public class FlatImage : MonoBehaviour
     protected void ReadColorForLevel()
     {
         currentLerpTime = 1.0f;
-        previousColor = GetComponent<Image>() ? GetComponent<Image>().color : (GetComponent<Text>() ? GetComponent<Text>().color : Color.white);
+        previousColor = GetImage() ? GetImage().color : (GetText() ? GetText().color : Color.white);
         targetColor = ColorsSingleton.GetColorFromThemeForCurrentLevel(themePart);
     }
 
@@ -86,13 +102,13 @@ public class FlatImage : MonoBehaviour
 
     public void ApplyColor(Color inColor)
     {
-        if (image)
+        if (GetImage())
         {
-            image.color = inColor;
+            GetImage().color = inColor;
         }
-        if (text)
+        if (GetText())
         {
-            text.color = inColor;
+            GetText().color = inColor;
         }
     }
 

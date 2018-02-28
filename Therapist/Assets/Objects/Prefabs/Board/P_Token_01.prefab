@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flatColor: 12
   isShadowed: 0
-  themePart: 3
+  themePart: 2
 --- !u!114 &114784825275041600
 MonoBehaviour:
   m_ObjectHideFlags: 1

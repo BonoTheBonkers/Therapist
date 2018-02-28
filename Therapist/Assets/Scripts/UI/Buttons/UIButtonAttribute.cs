@@ -12,6 +12,7 @@ public class UIButtonAttribute : MonoBehaviour
 
     protected float currentPercentage = 0.0f;
     protected float targetPercentage = 1.0f;
+    protected float percentageDifference = 0.0f;
 
     public void Start()
     {
@@ -26,6 +27,7 @@ public class UIButtonAttribute : MonoBehaviour
     {
         EventManager.StartListening("OnCurrentLevelChanged", ReloadPercentage);
         currentPercentage = 0.0f;
+        percentageDifference = Mathf.Abs(currentPercentage - targetPercentage);
         ReloadPercentage();
     }
 
@@ -41,15 +43,15 @@ public class UIButtonAttribute : MonoBehaviour
             return;
         }
 
-        if (currentPercentage != targetPercentage)
+        if (currentPercentage != targetPercentage && percentageDifference != 0.0f)
         {
             if(targetPercentage > currentPercentage)
             {
-                currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 0.6f), targetPercentage);
+                currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 0.9f * percentageDifference), targetPercentage);
             }
             else if(targetPercentage < currentPercentage)
             {
-                currentPercentage = Mathf.Max(currentPercentage - (Time.deltaTime * 0.6f), targetPercentage);
+                currentPercentage = Mathf.Max(currentPercentage - (Time.deltaTime * 0.9f * percentageDifference), targetPercentage);
             }
         }
 
@@ -72,5 +74,6 @@ public class UIButtonAttribute : MonoBehaviour
     protected void ReloadPercentage()
     {
         targetPercentage = MainManager.GetAttributeProgressPercentageAtCurrentLevel(attribute);
+        percentageDifference = Mathf.Abs(currentPercentage - targetPercentage);
     }
 }
