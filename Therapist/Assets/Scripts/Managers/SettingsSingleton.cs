@@ -9,6 +9,10 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
 
     public static ELanguage GetLanguage()
     {
+        if(!Instance)
+        {
+            return ELanguage.English;
+        }
         return Instance.language;
     }
 
