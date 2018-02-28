@@ -14,7 +14,7 @@ public class UILevelsPanelController : MonoBehaviour
 	void Update ()
     {
         Vector3 targetPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
-        targetPosition.y = MainManager.GetCurrentScreen() == EGameScreen.AttributeMenu ? 0.0f : -150.0f;
+        targetPosition.y = MainManager.GetCurrentScreen() == EGameScreen.AttributeMenu || MainManager.GetCurrentScreen() == EGameScreen.MainMenu ? 0.0f : -150.0f;
         gameObject.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(gameObject.GetComponent<RectTransform>().anchoredPosition, targetPosition, Time.deltaTime * 5.0f);
     }
 }

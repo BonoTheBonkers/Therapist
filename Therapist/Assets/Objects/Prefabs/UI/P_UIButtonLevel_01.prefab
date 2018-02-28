@@ -163,8 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 0
   isShadowed: 1
+  themePart: 0
 --- !u!114 &114032225055411294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,8 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 12
+  flatColor: 12
   isShadowed: 0
+  themePart: 0
 --- !u!114 &114372122573370238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,8 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 12
-  isShadowed: 0
+  flatColor: 12
+  isShadowed: 1
+  themePart: 0
 --- !u!114 &114760291894195304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,8 +386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 0
   isShadowed: 0
+  themePart: 0
 --- !u!114 &114947040641820608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,6 +404,7 @@ MonoBehaviour:
   percentage: {fileID: 114008646622229678}
   levelValueText: {fileID: 114235721252185410}
   fillImageFull: {fileID: 114372122573370238}
+  background: {fileID: 114032225055411294}
 --- !u!222 &222129187574273584
 CanvasRenderer:
   m_ObjectHideFlags: 1

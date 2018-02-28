@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: SO_LevelConfig_06
   m_EditorClassIdentifier: 
   id: -1
-  themeColor: 13
+  themeColor: 6
   minDifficulty: 0
   maxDifficulty: 4
   boardConfigs:

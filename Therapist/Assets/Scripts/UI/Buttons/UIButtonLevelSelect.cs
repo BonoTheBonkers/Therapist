@@ -9,6 +9,7 @@ public class UIButtonLevelSelect : MonoBehaviour
     public Text percentage;
     public Text levelValueText;
     public Image fillImageFull;
+    public Image background;
     protected Button button;
 
     protected float currentPercentage = 0.0f;
@@ -26,6 +27,14 @@ public class UIButtonLevelSelect : MonoBehaviour
         {
             levelValueText.text = (levelValue + 1).ToString();
         }
+
+        fillImageFull.gameObject.GetComponent<FlatImage>().flatColor = LevelsConfig.GetLevels()[levelValue].themeColor;
+        fillImageFull.gameObject.GetComponent<FlatImage>().isShadowed = false;
+        fillImageFull.gameObject.GetComponent<FlatImage>().ApplyFlatColor();
+
+        background.gameObject.GetComponent<FlatImage>().flatColor = LevelsConfig.GetLevels()[levelValue].themeColor;
+        background.gameObject.GetComponent<FlatImage>().isShadowed = true;
+        background.gameObject.GetComponent<FlatImage>().ApplyFlatColor();
     }
 
     public void OnEnable()

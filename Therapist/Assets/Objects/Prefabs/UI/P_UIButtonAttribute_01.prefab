@@ -175,8 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 12
+  flatColor: 12
   isShadowed: 0
+  themePart: 0
 --- !u!114 &114091294750817964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,8 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 0
   isShadowed: 1
+  themePart: 3
 --- !u!114 &114335322603770926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,8 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 0
   isShadowed: 1
+  themePart: 3
 --- !u!114 &114388878430153740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,8 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 0
   isShadowed: 0
+  themePart: 2
 --- !u!114 &114887855277551862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -455,8 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 12
+  flatColor: 12
   isShadowed: 0
+  themePart: 0
 --- !u!222 &222243353412161012
 CanvasRenderer:
   m_ObjectHideFlags: 1

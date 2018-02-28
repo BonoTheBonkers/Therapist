@@ -9,22 +9,70 @@ public class FlatImage : MonoBehaviour
     /** VARIABLES */
 
     /* Public variables - START */
+    
+    public EFlatColor flatColor;
+    public bool isShadowed = false;
 
-    [SerializeField]
-    private EFlatColor _flatColor;
-    public EFlatColor flatColor
+    public EThemePart themePart = EThemePart.None;
+    /* Public variables - END */
+
+    /* Protected variables - START */
+
+    protected Image image;
+    protected Text text;
+
+    protected Color previousColor = Color.white;
+    protected Color targetColor = Color.white;
+    float currentLerpTime = 0.0f;
+
+    /* Protected variables - END */
+
+    public void Start()
     {
-        get
+        image = GetComponent<Image>();
+        text = GetComponent<Text>();
+    }
+
+    public void Update()
+    {
+        if(currentLerpTime > 0.0f)
         {
-            return _flatColor;
-        }
-        set
-        {
-            _flatColor = flatColor;
+            currentLerpTime = Mathf.Max(currentLerpTime - Time.deltaTime, 0.0f);
+            ApplyColor(Color.Lerp(targetColor, previousColor, currentLerpTime));
         }
     }
-    public bool isShadowed = false;
-    /* Public variables - END */
+
+    public void OnEnable()
+    {
+        if(themePart != EThemePart.None)
+        {
+            EventManager.StartListening("OnCurrentLevelChanged", ReadColorForLevel);
+            ReadColorForLevel();
+            currentLerpTime = 0.0f;
+            ApplyColor(targetColor);
+        }
+    }
+    public void OnDisable()
+    {
+        if (themePart != EThemePart.None)
+        {
+           EventManager.StopListening("OnCurrentLevelChanged", ReadColorForLevel);
+        }
+    }
+
+    protected void ReadColorForLevel()
+    {
+        currentLerpTime = 1.0f;
+        previousColor = GetComponent<Image>() ? GetComponent<Image>().color : (GetComponent<Text>() ? GetComponent<Text>().color : Color.white);
+        targetColor = ColorsSingleton.GetColorFromThemeForCurrentLevel(themePart);
+    }
+
+    protected void ForceColorForLevel()
+    {
+        ReadColorForLevel();
+        currentLerpTime = 0.0f;
+        ApplyColor(targetColor);
+    }
 
     void OnValidate()
     {
@@ -33,20 +81,30 @@ public class FlatImage : MonoBehaviour
             return;
         }
 
-        ApplyColor();
+        ApplyFlatColor();
     }
 
-    public void ApplyColor()
+    public void ApplyColor(Color inColor)
     {
-
-        Color newColor = ColorsSingleton.GetColorFromFlat(flatColor, isShadowed);
-        if (GetComponent<Image>())
+        if (image)
         {
-            GetComponent<Image>().color = newColor;
+            image.color = inColor;
         }
-        if (GetComponent<Text>())
+        if (text)
         {
-            GetComponent<Text>().color = newColor;
+            text.color = inColor;
+        }
+    }
+
+    public void ApplyFlatColor()
+    {
+        if(themePart != EThemePart.None)
+        {
+            ForceColorForLevel();
+        }
+        else
+        {
+            ApplyColor(ColorsSingleton.GetColorFromFlat(flatColor, isShadowed));
         }
     }
 }

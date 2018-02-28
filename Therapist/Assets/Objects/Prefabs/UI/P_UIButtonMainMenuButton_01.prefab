@@ -196,8 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 13
+  flatColor: 5
   isShadowed: 0
+  themePart: 0
 --- !u!114 &114254215094801970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,8 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 11
+  flatColor: 11
   isShadowed: 1
+  themePart: 0
 --- !u!114 &114268554979468250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,8 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1955f1bb72a50a4d85e9c93643eb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flatColor: 11
+  flatColor: 11
   isShadowed: 1
+  themePart: 0
 --- !u!114 &114874195790377136
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,19 +11,8 @@ public class FColorPreset
     public Color fullColor;
     [Tooltip("Shadowed color of this color preset")]
     public Color shadowedColor;
-}
-
-[System.Serializable]
-public class FColorTheme
-{
-    [Tooltip("FlatColor that is base of this theme")]
-    public EFlatColor theme;
     [Tooltip("Color that will be used for background of this theme")]
-    public Color themeBackground;
-    [Tooltip("Color that will be used for full button of this theme")]
-    public Color themeButtonFull;
-    [Tooltip("Color that will be used for shadowed button of this theme")]
-    public Color themeButtonShadowed;
+    public Color backgroundColor;
     [Tooltip("Color that will be used for lighted ambient elements of this theme")]
     public Color themeAmbientLight;
     [Tooltip("Color that will be used for shadowed ambient elements of this theme")]

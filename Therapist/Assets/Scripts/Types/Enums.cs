@@ -33,6 +33,7 @@ public enum EFlatColor
 
     public enum EThemePart
 {
+    None,
     Background,
     ButtonFull,
     ButtonShadowed,

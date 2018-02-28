@@ -10,21 +10,19 @@ public class ColorsPalette : SingletonScriptableObject<ColorsPalette>
     /* Public variables - START */
     [Tooltip("All presets in this color palette")]
     public List<FColorPreset> colorPresets = new List<FColorPreset>();
-    [Tooltip("Presets of single color themes for levels")]
-    public List<FColorTheme> colorThemes = new List<FColorTheme>();
     /* Public variables - END */
 
     void OnValidate()
     {
         if (Application.isPlaying)
         {
-            return;
+            //return;
         }
 
         FlatImage[] flatImages = FindObjectsOfType(typeof(FlatImage)) as FlatImage[];
         foreach(FlatImage current in flatImages)
         {
-            current.ApplyColor();
+            current.ApplyFlatColor();
         }
     }
 }

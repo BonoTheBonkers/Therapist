@@ -20,21 +20,21 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
     public static Color GetColorFromTheme(EFlatColor themeColor, EThemePart themePart)
     {
         EFlatColor colorToReturn = themeColor;
-        foreach (FColorTheme current in ColorsPalette.Instance.colorThemes)
+        foreach (FColorPreset current in ColorsPalette.Instance.colorPresets)
         {
-            if (current.theme == themeColor)
+            if (current.flatColor == themeColor)
             {
                 if(themePart == EThemePart.Background)
                 {
-                    return current.themeBackground;
+                    return current.backgroundColor;
                 }
                 else if (themePart == EThemePart.ButtonFull)
                 {
-                    return current.themeButtonFull;
+                    return current.fullColor;
                 }
                 else if (themePart == EThemePart.ButtonShadowed)
                 {
-                    return current.themeButtonShadowed;
+                    return current.shadowedColor;
                 }
                 else if (themePart == EThemePart.AmbientLight)
                 {
@@ -47,7 +47,16 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
                 return Color.black;
             }
         }
-
         return Color.black;
+    }
+
+    public static Color GetColorFromThemeForLevel(int levelValue, EThemePart themePart)
+    {
+        return GetColorFromTheme(LevelsConfig.GetLevels()[levelValue].themeColor, themePart);
+    }
+
+    public static Color GetColorFromThemeForCurrentLevel(EThemePart themePart)
+    {
+        return GetColorFromThemeForLevel(MainManager.GetCurrentLevel(), themePart);
     }
 }

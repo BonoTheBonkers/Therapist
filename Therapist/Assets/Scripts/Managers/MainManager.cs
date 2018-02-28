@@ -7,7 +7,7 @@ public class MainManager : SingletonManager<MainManager>
     public UserData currentUser;
     public PlayerData currentPlayer;
 
-    protected static EGameScreen currentScreen = EGameScreen.AttributeMenu;
+    protected static EGameScreen currentScreen = EGameScreen.MainMenu;
     protected static int currentLevel = 0;
     protected static EAttribute currentAttribute = EAttribute.Development;
     protected static int currentProgressLevel = 0;

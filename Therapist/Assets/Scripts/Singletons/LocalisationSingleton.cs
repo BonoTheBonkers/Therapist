@@ -106,7 +106,7 @@ public class LocalisationSingleton : SingletonMonoBehaviour<LocalisationSingleto
         FlatImage[] flatImages = FindObjectsOfType(typeof(FlatImage)) as FlatImage[];
         foreach (FlatImage current in flatImages)
         {
-            current.ApplyColor();
+            current.ApplyFlatColor();
         }
     }
 }
