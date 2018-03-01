@@ -31,6 +31,12 @@ public class FlatFont : MonoBehaviour
     {
         ApplyLanguage();
         ApplyFont();
+        EventManager.StartListening("OnLanguageChanged", ApplyLanguage);
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening("OnLanguageChanged", ApplyLanguage);
     }
 
     void OnValidate()

@@ -8,6 +8,7 @@ public class MainManager : SingletonManager<MainManager>
     public PlayerData currentPlayer;
 
     protected static EGameScreen currentScreen = EGameScreen.MainMenu;
+    protected static EGameScreen previousScreen = EGameScreen.MainMenu;
     protected static int currentLevel = 0;
     protected static EAttribute currentAttribute = EAttribute.Development;
     protected static int currentProgressLevel = 0;
@@ -21,6 +22,7 @@ public class MainManager : SingletonManager<MainManager>
     public void OnEnable()
     {
         //GenerateBoard();
+        SetCurrentScreen(EGameScreen.MainMenu);
     }
 
     public void Update()
@@ -42,7 +44,7 @@ public class MainManager : SingletonManager<MainManager>
         currentAttribute = inAttribute;
         //float currentProgressValue = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress;
         //currentProgressLevel = currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)inAttribute].progress < 1.0f ? (Mathf.Clamp((int)(currentProgressValue * 10.0f), 0, 9)) : 0;
-        outBoardConfig = LevelsConfig.GetLevels()[currentLevel].boardConfigs[currentProgressLevel];
+        outBoardConfig = LevelsConfig.GetLevels()[currentLevel].boardConfigs[GetCurrentProgressLevel()];
         return true;
     }
 
@@ -72,10 +74,10 @@ public class MainManager : SingletonManager<MainManager>
 
     public void OnWin()
     {
-        if(currentProgressLevel < 9)
+        if(GetCurrentProgressLevel() < 9)
         {
-            currentProgressLevel = currentProgressLevel + 1;
-            float newProgressValue = Mathf.Clamp(currentProgressLevel / 10.0f, 0.0f, 1.0f);
+            SetCurrentProgressLevel(GetCurrentProgressLevel() + 1);
+            float newProgressValue = GetCurrentProgressLevelPercentage();
             if (newProgressValue > currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress)
             {
                 currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = newProgressValue;
@@ -85,7 +87,7 @@ public class MainManager : SingletonManager<MainManager>
         else
         {
             currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = 1.0f;
-            currentProgressLevel = 0;
+            SetCurrentProgressLevel(0);
         }
         GenerateBoard();
     }
@@ -94,8 +96,15 @@ public class MainManager : SingletonManager<MainManager>
     {
         return currentScreen;
     }
+
+    public static EGameScreen GetPreviousScreen()
+    {
+        return previousScreen;
+    }
+
     public static void SetCurrentScreen(EGameScreen inScreen)
     {
+        previousScreen = currentScreen;
         currentScreen = inScreen;
         EventManager.TriggerEvent("OnCurrentScreenChanged");
         if(inScreen == EGameScreen.Board)
@@ -113,7 +122,22 @@ public class MainManager : SingletonManager<MainManager>
         currentLevel = inLevel;
         EventManager.TriggerEvent("OnCurrentLevelChanged");
     }
-    
+
+    public static int GetCurrentProgressLevel()
+    {
+        return currentProgressLevel;
+    }
+    public static float GetCurrentProgressLevelPercentage()
+    {
+        return Mathf.Clamp(GetCurrentProgressLevel() / 10.0f, 0.0f, 1.0f);
+    }
+
+    public static void SetCurrentProgressLevel(int inProgressLevel)
+    {
+        currentProgressLevel = inProgressLevel;
+        EventManager.TriggerEvent("OnCurrentProgressLevelChanged");
+    }
+
     public static EAttribute GetCurrentAttribute()
     {
         return currentAttribute;

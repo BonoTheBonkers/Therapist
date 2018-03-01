@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LocalisationDatabase", menuName = "Therapist/Singletons/LocalisationDatabase", order = 1)]
-public class LocalisationDatabase : SingletonScriptableObject<ColorsPalette>
+public class LocalisationDatabase : SingletonScriptableObject<LocalisationDatabase>
 {
     [Tooltip("Button for reloading database")]
     public bool reloadLocalisationDatabase = false;
+
     [Tooltip("Path to csv table with languages")]
     public static string csvDatabasePath = "Localisation Database - DB_localisation";
 
     [Tooltip("Databases for every language")]
     public static Dictionary<ELanguage, FLanguageDatabase> languages = new Dictionary<ELanguage, FLanguageDatabase>();
-    
+//     [Tooltip("Databases for flags")]
+//     public Dictionary<ELanguage, Sprite> languageFlags = new Dictionary<ELanguage, Sprite>();
     void OnValidate()
     {
         if (Application.isPlaying)

@@ -92,7 +92,6 @@ public class LocalisationSingleton : SingletonMonoBehaviour<LocalisationSingleto
 
     void OnValidate()
     {
-        Debug.Log("TEST");
         if (Application.isPlaying)
         {
             return;
@@ -103,10 +102,10 @@ public class LocalisationSingleton : SingletonMonoBehaviour<LocalisationSingleto
 
     void OnLanguageChanged()
     {
-        FlatImage[] flatImages = FindObjectsOfType(typeof(FlatImage)) as FlatImage[];
-        foreach (FlatImage current in flatImages)
+        FlatFont[] flatFonts = FindObjectsOfType(typeof(FlatFont)) as FlatFont[];
+        foreach (FlatFont current in flatFonts)
         {
-            current.ApplyFlatColor();
+            current.ApplyLanguage();
         }
     }
 }

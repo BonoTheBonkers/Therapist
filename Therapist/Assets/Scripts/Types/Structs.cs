@@ -45,7 +45,7 @@ public class FBoardSequenceValues
 [System.Serializable]
 public class FLanguageDatabase
 {
-    [Tooltip("List of every texts in language")]
+    [Tooltip("List of flags for language")]
     public List<string> texts = new List<string>();
 }
 
