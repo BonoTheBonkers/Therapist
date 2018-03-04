@@ -86,6 +86,12 @@ public class MainManager : SingletonManager<MainManager>
 
     public void OnWinPrivate()
     {
+        if(currentPlayer == null)
+        {
+            Debug.Log("No player");
+            return;
+        }
+
         if(GetCurrentProgressLevel() < 9)
         {
             SetCurrentProgressLevel(GetCurrentProgressLevel() + 1);
@@ -165,6 +171,11 @@ public class MainManager : SingletonManager<MainManager>
 
     public bool FindNextBestLevelAndAttributePrivate()
     {
+        if(currentPlayer == null)
+        {
+            return false;
+        }
+
         for(int i = 0; i < currentPlayer.progressData.levelsProgress.Count; ++i)
         {
             for(int j = 0; j < currentPlayer.progressData.levelsProgress[i].attributesProgress.Count; ++j)
@@ -204,7 +215,7 @@ public class MainManager : SingletonManager<MainManager>
 
     protected float GetProgressPercentageAtLevelPrivate(int inLevel)
     {
-        if (!currentPlayer)
+        if (currentPlayer == null)
         {
             return 0.0f;
         }
