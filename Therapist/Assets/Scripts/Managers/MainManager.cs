@@ -17,6 +17,8 @@ public class MainManager : SingletonManager<MainManager>
     {
         LocalisationDatabase.ReloadLocalisationDatabase();
         SequencesConfig.ReloadSequencesDatabase();
+
+        FindNextBestLevelAndAttribute();
     }
 
     public void OnEnable()
@@ -97,7 +99,10 @@ public class MainManager : SingletonManager<MainManager>
         else
         {
             currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = 1.0f;
-            SetCurrentProgressLevel(0);
+            if(!FindNextBestLevelAndAttribute())
+            {
+                SetCurrentScreen(EGameScreen.AttributeMenu);
+            }
         }
         GenerateBoard();
     }
@@ -146,6 +151,35 @@ public class MainManager : SingletonManager<MainManager>
     {
         currentProgressLevel = inProgressLevel;
         EventManager.TriggerEvent("OnCurrentProgressLevelChanged");
+    }
+
+    public static bool FindNextBestLevelAndAttribute()
+    {
+        if(!Instance)
+        {
+            return false;
+        }
+
+        return Instance.FindNextBestLevelAndAttributePrivate();
+    }
+
+    public bool FindNextBestLevelAndAttributePrivate()
+    {
+        for(int i = 0; i < currentPlayer.progressData.levelsProgress.Count; ++i)
+        {
+            for(int j = 0; j < currentPlayer.progressData.levelsProgress[i].attributesProgress.Count; ++j)
+            {
+                if(currentPlayer.progressData.levelsProgress[i].attributesProgress[j].progress < 1.0f)
+                {
+                    SetCurrentLevel(i);
+                    SetCurrentAttribute(currentPlayer.progressData.levelsProgress[i].attributesProgress[j].attribute);
+                    SetCurrentProgressLevel(0);
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     public static EAttribute GetCurrentAttribute()

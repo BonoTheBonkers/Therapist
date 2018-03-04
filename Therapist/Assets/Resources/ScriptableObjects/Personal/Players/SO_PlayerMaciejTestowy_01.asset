@@ -21,19 +21,36 @@ MonoBehaviour:
       - attribute: 0
         progress: 0
       - attribute: 1
-        progress: 0
-      - attribute: 2
-        progress: 0
-      - attribute: 3
-        progress: 0
-      - attribute: 4
-        progress: 0
-      - attribute: 5
-        progress: 0
-      - attribute: 6
-        progress: 0
-      - attribute: 7
         progress: 1
+      - attribute: 2
+        progress: 1
+      - attribute: 3
+        progress: 1
+      - attribute: 4
+        progress: 1
+      - attribute: 5
+        progress: 1
+      - attribute: 6
+        progress: 1
+      - attribute: 7
+        progress: 0
+    - attributesProgress:
+      - attribute: 0
+        progress: 1
+      - attribute: 1
+        progress: 0
+      - attribute: 2
+        progress: 0
+      - attribute: 3
+        progress: 0
+      - attribute: 4
+        progress: 0
+      - attribute: 5
+        progress: 0
+      - attribute: 6
+        progress: 0
+      - attribute: 7
+        progress: 0
     - attributesProgress:
       - attribute: 0
         progress: 0
@@ -44,7 +61,7 @@ MonoBehaviour:
       - attribute: 3
         progress: 0
       - attribute: 4
-        progress: 0
+        progress: 0.1
       - attribute: 5
         progress: 0
       - attribute: 6
@@ -155,24 +172,7 @@ MonoBehaviour:
         progress: 0
     - attributesProgress:
       - attribute: 0
-        progress: 0
-      - attribute: 1
-        progress: 0
-      - attribute: 2
-        progress: 0
-      - attribute: 3
-        progress: 0
-      - attribute: 4
-        progress: 0
-      - attribute: 5
-        progress: 0
-      - attribute: 6
-        progress: 0
-      - attribute: 7
-        progress: 0
-    - attributesProgress:
-      - attribute: 0
-        progress: 0
+        progress: 0.4
       - attribute: 1
         progress: 0
       - attribute: 2

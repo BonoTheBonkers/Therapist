@@ -7,7 +7,7 @@ public class WinScreenController : MonoBehaviour
 
     public AnimationCurve alphaCurve;
     private float currentTime = 0.0f;
-    private float targetTime = 3.0f;
+    private float targetTime = 2.0f;
     private bool shouldBeActive = false;
 
     private CanvasGroup canvasGroup;

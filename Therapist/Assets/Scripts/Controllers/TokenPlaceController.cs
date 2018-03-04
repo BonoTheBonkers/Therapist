@@ -14,6 +14,7 @@ public class TokenPlaceController : MonoBehaviour, IDropHandler
     {
         value = inValue;
         tokenPlaceType = inTokenPlaceType;
+        backgroundImage.enabled = tokenPlaceType != ETokenPlaceType.CurrentTokens;
     }
 
     public ETokenPlaceType GetTokenPlaceType()
