@@ -19,7 +19,25 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
 
     void OnEnable()
     {
-        //InitializeCurrentBoard();
+        EventManager.StartListening("OnTargetTokenPlaceChanged", OnTargetTokenPlaceChanged);
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening("OnTargetTokenPlaceChanged", OnTargetTokenPlaceChanged);
+    }
+
+    public void OnTargetTokenPlaceChanged()
+    {
+        foreach(TokenController current in tokenControllers)
+        {
+            if(current != null && !current.IsTokenInFinalPlace())
+            {
+                return;
+            }
+        }
+
+        EventManager.TriggerEvent("OnCorrectAnswer");
     }
 
     public ExampleSequenceController GetExampleSequenceController()

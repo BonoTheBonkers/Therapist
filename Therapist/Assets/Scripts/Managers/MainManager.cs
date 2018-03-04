@@ -34,7 +34,7 @@ public class MainManager : SingletonManager<MainManager>
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            OnWin();
+            OnWinPrivate();
         }
     }
 
@@ -72,7 +72,17 @@ public class MainManager : SingletonManager<MainManager>
         }
     }
 
-    public void OnWin()
+    public static void OnWin()
+    {
+        if(!Instance)
+        {
+            return;
+        }
+
+        Instance.OnWinPrivate();
+    }
+
+    public void OnWinPrivate()
     {
         if(GetCurrentProgressLevel() < 9)
         {

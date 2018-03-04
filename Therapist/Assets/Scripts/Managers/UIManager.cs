@@ -7,6 +7,7 @@ public class UIManager : SingletonManager<UIManager>
 {
     public List<FGameObjectsForScreens> gameObjectForScreen = new List<FGameObjectsForScreens>();
     public GameObject languagesListGameObject;
+    public GameObject currentlyDraggedGameObject;
 
     public void Start()
     {

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 222044361756541990}
   - component: {fileID: 114965574639396048}
   - component: {fileID: 114400718626335016}
+  - component: {fileID: 114913494191514624}
   m_Layer: 0
   m_Name: I_Background_01
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -117,6 +118,17 @@ MonoBehaviour:
   m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114913494191514624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860318320986484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4adc872ef018740a729096db147dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114965574639396048
 MonoBehaviour:
   m_ObjectHideFlags: 1

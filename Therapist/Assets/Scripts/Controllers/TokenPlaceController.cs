@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class TokenPlaceController : MonoBehaviour
+public class TokenPlaceController : MonoBehaviour, IDropHandler
 {
     protected ETokenPlaceType tokenPlaceType = ETokenPlaceType.None;
     protected int value = -1;
@@ -13,5 +14,30 @@ public class TokenPlaceController : MonoBehaviour
     {
         value = inValue;
         tokenPlaceType = inTokenPlaceType;
+    }
+
+    public ETokenPlaceType GetTokenPlaceType()
+    {
+        return tokenPlaceType;
+    }
+
+    public int GetValue()
+    {
+        return value;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        TokenController currentToken = UIManager.Instance.currentlyDraggedGameObject != null ? UIManager.Instance.currentlyDraggedGameObject.GetComponentInParent<TokenController>() : null;
+        if(currentToken != null)
+        {
+            foreach (GameObject current in eventData.hovered)
+            {
+                if (current.GetComponent<TokenPlaceController>() == this)
+                {
+                    currentToken.TrySetTargetTokenPlace(this);
+                }
+            }
+        }
     }
 }
