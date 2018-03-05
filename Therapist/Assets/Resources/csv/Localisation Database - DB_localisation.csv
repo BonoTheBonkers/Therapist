@@ -12,7 +12,7 @@ Something More,Algo más,更多的东西,もっと何か,뭔가 더,Quelque chos
 Mixed,Mezclado,杂,ミックス,혼합 된,Mixte,Gemischt,Misto,Misturado,مختلط,смешанный,मिश्रित,Blandad,Mieszany
 Quick Play,Juego rápido,快玩,クイックプレイ,빠른 플레이,Jeu rapide,Schnelles Spiel,Partita veloce,Jogo rápido,التشغيل السريع,Быстрая игра,त्वरित खेले,Snabbt spel,Szybka gra
 Exercise Selection,Selección de los ejercicios,运动的选择,エクササイズの選択,운동 선택,Sélection exercice,Übungsauswahl,esercizio di selezione,Seleção exercício,ممارسة الاختيار,Выбор упражнения,व्यायाम चयन,motion Selection,Wybór ćwiczenia
-Statistics,Estadística,统计,統計,통계,Statistiques,Statistiken,statistica,Estatisticas,الإحصاء,Статистика,आंकड़े,Statistik,Statystyka
+View Statistics,Ver estadísticas,查看统计,統計値を見ます,통계보기,Voir les statistiques,Statistiken anzeigen,Visualizza statistiche,Ver estatísticas,عرض الاحصائيات,Просмотр статистики,आंकड़े देखें,Se statistik,Zobacz Statystyki
 English Language,Idioma en Inglés,英语,英語,영어,Langue Anglaise,Englische Sprache,Lingua inglese,Língua Inglesa,اللغة الانجليزية,Английский язык,अंग्रेजी भाषा,Engelska språket,Język angielski
 Spanish Language,Lengua española,西班牙语,スペイン語,스페인어,L'Espagnol,Spanische Sprache,Lingua spagnola,Língua espanhola,اللغة الإسبانية,Испанский язык,स्पनिश भाषा,Spanska språket,Język hiszpański
 Simplified Chinese Language,Idioma Chino simplificado,简体中国语言,簡体字中国語,중국어 간체,Langue Chinois simplifié,Vereinfachtes Chinesisch Sprache,Semplificato lingua cinese,Simplificado Língua Chinesa,اللغة الصينية المبسطة,Упрощенный китайский язык,चीनी भाषा,Förenklad kinesiska språket,Język chiński uproszczony
@@ -29,3 +29,6 @@ Swedish Language,Lenguaje sueco,瑞典语,スウェーデン語,스웨덴어,La 
 Polish Language,Idioma polaco,波兰语,ポーランド語,폴란드어,Langue polonaise,Polnische Sprache,Lingua polacca,Língua polonesa,اللغة البولندية,Польский язык,पोलिश भाषा,Polska språket,Język polski
 Level,Nivel,水平,レベル,수평,Niveau,Niveau,Livello,Nível,مستوى,уровень,स्तर,Nivå,Poziom
 Therapist,Terapeuta,治疗师,セラピスト,치료 학자,Thérapeute,Therapeut,Terapista,Terapeuta,المعالج,Терапевт,चिकित्सक,Terapeut,Terapeuta
+Difficulty Selection,Selección dificultad,难度选择,難易度の選択,난이도 선택,Sélection de difficulté,Schwierigkeitsgrad Auswahl,Selezione di difficoltà,Seleção dificuldade,اختيار صعوبة,Выбор сложности,कठिनाई चयन,Svårighetsgrad Val,Wybór trudność
+Correct,Correcto,正确,正しい,옳은,Correct,Richtig,Corretta,Corrigir,صيح,Верный,सही बात,Korrekt,Poprawny
+Select difficulty,Seleccione dificultad,选择了难度,難易度を選択します,선택의 어려움,Sélectionnez une difficulté,Wählen Sie Schwierigkeiten,Selezionare difficoltà,Select dificuldade,اختر صعوبة,Выберите трудности,कठिनाई का चयन करें,Välj svårighet,Wybierz trudności

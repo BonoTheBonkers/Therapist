@@ -20,7 +20,7 @@ public class UIButtonReturn : MonoBehaviour
     {
         if(MainManager.GetCurrentScreen() == EGameScreen.Board)
         {
-            MainManager.SetCurrentScreen(EGameScreen.AttributeMenu);
+            MainManager.SetCurrentScreen(MainManager.GetPreviousScreen());
         }
         else
         {

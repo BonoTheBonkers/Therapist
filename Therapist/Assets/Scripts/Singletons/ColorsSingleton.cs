@@ -43,6 +43,14 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
                 {
                     return current.themeAmbientDark;
                 }
+                else if (themePart == EThemePart.FontFullColor)
+                {
+                    return current.fontFullColor;
+                }
+                else if (themePart == EThemePart.FontShadowedColor)
+                {
+                    return current.fontShadowedColor;
+                }
                 return Color.black;
             }
         }

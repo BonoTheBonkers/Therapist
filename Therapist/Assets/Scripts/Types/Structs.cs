@@ -17,6 +17,10 @@ public class FColorPreset
     public Color themeAmbientLight;
     [Tooltip("Color that will be used for shadowed ambient elements of this theme")]
     public Color themeAmbientDark;
+    [Tooltip("Color that will be used for lighted ambient elements of this theme")]
+    public Color fontFullColor = Color.white;
+    [Tooltip("Color that will be used for shadowed ambient elements of this theme")]
+    public Color fontShadowedColor = Color.gray;
 }
 
 [System.Serializable]

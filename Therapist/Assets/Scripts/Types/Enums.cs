@@ -39,6 +39,8 @@ public enum EFlatColor
     ButtonShadowed,
     AmbientLight,
     AmbientDark,
+    FontFullColor,
+    FontShadowedColor,
     Max
 }
 
@@ -96,6 +98,7 @@ public enum EGameScreen
     Statistics,
     UserSelection,
     Board,
+    Levels,
     Max
 }
 
