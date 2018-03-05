@@ -35,7 +35,7 @@ public class FlatImage : MonoBehaviour
     {
         if(currentLerpTime > 0.0f)
         {
-            currentLerpTime = Mathf.Max(currentLerpTime - (Time.deltaTime * 0.9f), 0.0f);
+            currentLerpTime = Mathf.Max(currentLerpTime - (Time.deltaTime * 1.2f), 0.0f);
             ApplyColor(Color.Lerp(targetColor, previousColor, currentLerpTime));
         }
     }

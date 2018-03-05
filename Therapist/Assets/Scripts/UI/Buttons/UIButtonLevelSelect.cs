@@ -55,7 +55,7 @@ public class UIButtonLevelSelect : MonoBehaviour
 
         if (currentPercentage != targetPercentage)
         {
-            currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 0.6f), targetPercentage);
+            currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 1.2f), targetPercentage);
         }
 
         if (percentage)
@@ -67,7 +67,7 @@ public class UIButtonLevelSelect : MonoBehaviour
             fillImageFull.fillAmount = currentPercentage;
         }
         
-        gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, MainManager.GetCurrentLevel() == levelValue ? Vector3.one : Vector3.one * 0.85f, Time.deltaTime * 20.0f);
+        gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f, Time.deltaTime * 5.0f);
     }
 
     protected void OnButtonClick()
@@ -83,6 +83,6 @@ public class UIButtonLevelSelect : MonoBehaviour
     {
         currentPercentage = 0.0f;
         targetPercentage = MainManager.GetProgressPercentageAtLevel(levelValue);
-        gameObject.transform.localScale = MainManager.GetCurrentLevel() == levelValue ? Vector3.one : Vector3.one * 0.85f;
+        gameObject.transform.localScale = MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f;
     }
 }

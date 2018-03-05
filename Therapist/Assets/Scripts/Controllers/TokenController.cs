@@ -55,7 +55,7 @@ public class TokenController : MonoBehaviour
 
         if(!IsTokenInFinalPlace() && currentPointerEventData != null)
         {
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, currentPointerEventData.position, Time.deltaTime * 50.0f);
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, currentPointerEventData.position, Time.deltaTime * 550.0f);
         }
         else
         {
