@@ -6,6 +6,9 @@ public class WinScreenController : MonoBehaviour
 {
 
     public AnimationCurve alphaCurve;
+    public int idCorrent;
+    public int idCategoryFinished;
+    public int idLevelFinished;
     private float currentTime = 0.0f;
     private float targetTime = 2.0f;
     private bool shouldBeActive = false;
