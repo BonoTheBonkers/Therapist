@@ -32,4 +32,9 @@ public class UIButtonLanguageSelect : MonoBehaviour
         SettingsSingleton.SetLanguage(language);
         UIManager.SetLanguagesListActive(false);
     }
+
+    public void Awake()
+    {
+        flagImage.sprite = LocalisationSingleton.GetFlagForLanguage(language);
+    }
 }

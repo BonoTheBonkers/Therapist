@@ -13,8 +13,12 @@ public class LocalisationDatabase : SingletonScriptableObject<LocalisationDataba
 
     [Tooltip("Databases for every language")]
     public static Dictionary<ELanguage, FLanguageDatabase> languages = new Dictionary<ELanguage, FLanguageDatabase>();
-//     [Tooltip("Databases for flags")]
-//     public Dictionary<ELanguage, Sprite> languageFlags = new Dictionary<ELanguage, Sprite>();
+
+    [Tooltip("Databases for every language")]
+    public List<Sprite> flags = new List<Sprite>();
+
+    //     [Tooltip("Databases for flags")]
+    //     public Dictionary<ELanguage, Sprite> languageFlags = new Dictionary<ELanguage, Sprite>();
     void OnValidate()
     {
         if (Application.isPlaying)

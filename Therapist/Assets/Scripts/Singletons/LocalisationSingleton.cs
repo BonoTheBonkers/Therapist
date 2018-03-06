@@ -90,6 +90,22 @@ public class LocalisationSingleton : SingletonMonoBehaviour<LocalisationSingleto
         return "Text and language unknown";
     }
 
+    public static Sprite GetFlagForLanguage(ELanguage inLanguage)
+    {
+        Sprite spriteToReturn = new Sprite();
+        if(LocalisationDatabase.Instance == null)
+        {
+            return spriteToReturn;
+        }
+
+        return LocalisationDatabase.Instance.flags[(int)inLanguage];
+    }
+
+    public static Sprite GetFlagForCurrentLanguage()
+    {
+        return GetFlagForLanguage(SettingsSingleton.GetLanguage());
+    }
+
     void OnValidate()
     {
         if (Application.isPlaying)
