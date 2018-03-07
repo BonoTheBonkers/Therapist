@@ -37,6 +37,7 @@ public enum EFlatColor
     Background,
     ButtonFull,
     ButtonShadowed,
+    SettingsBackground,
     AmbientLight,
     AmbientDark,
     FontFullColor,

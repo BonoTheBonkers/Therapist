@@ -13,6 +13,8 @@ public class FColorPreset
     public Color shadowedColor;
     [Tooltip("Color that will be used for background of this theme")]
     public Color backgroundColor;
+    [Tooltip("Color that will be used for background of this theme")]
+    public Color settingsBackground = Color.black;
     [Tooltip("Color that will be used for lighted ambient elements of this theme")]
     public Color themeAmbientLight;
     [Tooltip("Color that will be used for shadowed ambient elements of this theme")]
@@ -66,7 +68,8 @@ public class FPersonalData
     public string firstName = "FirstName";
     public string surName = "SurName";
     //public int birthDate = (int)System.DateTime.Now.DayOfWeek;
-    public ELanguage langueage = ELanguage.English; 
+    public ELanguage langueage = ELanguage.English;
+    public Sprite avatarSprite;
 }
 
 [System.Serializable]

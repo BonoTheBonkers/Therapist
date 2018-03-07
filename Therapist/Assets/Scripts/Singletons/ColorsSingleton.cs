@@ -35,6 +35,10 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
                 {
                     return current.shadowedColor;
                 }
+                else if (themePart == EThemePart.SettingsBackground)
+                {
+                    return current.settingsBackground;
+                }
                 else if (themePart == EThemePart.AmbientLight)
                 {
                     return current.themeAmbientLight;

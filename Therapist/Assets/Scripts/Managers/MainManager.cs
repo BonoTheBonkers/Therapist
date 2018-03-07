@@ -159,6 +159,11 @@ public class MainManager : SingletonManager<MainManager>
         EventManager.TriggerEvent("OnCurrentProgressLevelChanged");
     }
 
+    public static PlayerData GetCurrentPlayer()
+    {
+        return Instance.currentPlayer;
+    }
+
     public static bool FindNextBestLevelAndAttribute()
     {
         if(!Instance)

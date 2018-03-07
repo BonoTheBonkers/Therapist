@@ -7,6 +7,8 @@ public class UIManager : SingletonManager<UIManager>
 {
     public List<FGameObjectsForScreens> gameObjectForScreen = new List<FGameObjectsForScreens>();
     public GameObject languagesListGameObject;
+    public GameObject playersListGameObject;
+    [HideInInspector]
     public GameObject currentlyDraggedGameObject;
 
     public void Start()
@@ -27,5 +29,10 @@ public class UIManager : SingletonManager<UIManager>
     public static void SetLanguagesListActive(bool newIsActive)
     {
         Instance.languagesListGameObject.SetActive(newIsActive);
+    }
+
+    public static void SetPlayersListActive(bool newIsActive)
+    {
+        Instance.playersListGameObject.SetActive(newIsActive);
     }
 }

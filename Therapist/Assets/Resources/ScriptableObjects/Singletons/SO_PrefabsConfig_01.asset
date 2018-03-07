@@ -15,3 +15,7 @@ MonoBehaviour:
     type: 2}
   tokenPlacePrefab: {fileID: 1355518859709188, guid: 7f28317df80b29c42a941af19415fd70,
     type: 2}
+  missingAvatarSprite: {fileID: 21300000, guid: 4ef9a74b3afbe7d40890f180624dca08,
+    type: 3}
+  defaultAvatarSprite: {fileID: 21300000, guid: bb67f7172378df04abe532c68a38e48c,
+    type: 3}

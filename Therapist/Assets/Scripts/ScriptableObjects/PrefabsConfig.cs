@@ -7,14 +7,24 @@ public class PrefabsConfig : SingletonScriptableObject<PrefabsConfig>
 {
     public GameObject tokenPrefab;
     public GameObject tokenPlacePrefab;
+    public Sprite missingAvatarSprite;
+    public Sprite defaultAvatarSprite;
 
     public static GameObject GetTokenPrefab()
     {
         return Instance.tokenPrefab;
     }
-
     public static GameObject GetTokenPlacePrefab()
     {
         return Instance.tokenPlacePrefab;
+    }
+
+    public static Sprite GetMissingAvatarSprite()
+    {
+        return Instance.missingAvatarSprite;
+    }
+    public static Sprite GetDefaultAvatarSprite()
+    {
+        return Instance.defaultAvatarSprite;
     }
 }
