@@ -26,6 +26,8 @@ public class UIButtonReturn : MonoBehaviour
         {
             MainManager.SetCurrentScreen(EGameScreen.MainMenu);
         }
+
+        UIManager.SetLanguagesListActive(false);
+        UIManager.SetPlayersListActive(false);
     }
-    
 }
