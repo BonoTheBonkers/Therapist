@@ -37,7 +37,7 @@ public class ColorsSingleton : SingletonMonoBehaviour<ColorsSingleton>
                 }
                 else if (themePart == EThemePart.SettingsBackground)
                 {
-                    return current.settingsBackground;
+                    return new Color(current.backgroundColor.r, current.backgroundColor.g, current.backgroundColor.b, 0.9f);
                 }
                 else if (themePart == EThemePart.AmbientLight)
                 {

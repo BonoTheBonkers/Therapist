@@ -13,8 +13,6 @@ public class FColorPreset
     public Color shadowedColor;
     [Tooltip("Color that will be used for background of this theme")]
     public Color backgroundColor;
-    [Tooltip("Color that will be used for background of this theme")]
-    public Color settingsBackground = Color.black;
     [Tooltip("Color that will be used for lighted ambient elements of this theme")]
     public Color themeAmbientLight;
     [Tooltip("Color that will be used for shadowed ambient elements of this theme")]
