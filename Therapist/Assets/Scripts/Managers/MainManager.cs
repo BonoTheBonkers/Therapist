@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainManager : SingletonManager<MainManager>
 {
     public UserData currentUser;
-    public PlayerData currentPlayer;
+    protected PlayerData currentPlayer;
 
     protected static EGameScreen currentScreen = EGameScreen.MainMenu;
     protected static EGameScreen previousScreen = EGameScreen.MainMenu;
@@ -17,8 +17,11 @@ public class MainManager : SingletonManager<MainManager>
     {
         LocalisationDatabase.ReloadLocalisationDatabase();
         SequencesConfig.ReloadSequencesDatabase();
-
         FindNextBestLevelAndAttribute();
+        if(currentPlayer == null)
+        {
+            UIManager.SetPlayersListActive(true);
+        }
     }
 
     public void OnEnable()
@@ -164,6 +167,11 @@ public class MainManager : SingletonManager<MainManager>
         return Instance.currentPlayer;
     }
 
+    public static UserData GetCurrentUser()
+    {
+        return Instance.currentUser;
+    }
+
     public static bool FindNextBestLevelAndAttribute()
     {
         if(!Instance)
@@ -259,5 +267,27 @@ public class MainManager : SingletonManager<MainManager>
         }
 
         return currentPlayer.progressData.levelsProgress[inLevel].attributesProgress[(int)inAttribute].progress;
+    }
+
+    public static void CreateNewPlayer(string inFirstName, string inSurName, int inAge)
+    {
+        if(GetCurrentUser() == null)
+        {
+            return;
+        }
+        
+        GetCurrentUser().players.Add(new PlayerData(inFirstName, inSurName, inAge));
+    }
+
+    public static void DeletePlayer(PlayerData playerData)
+    {
+        GetCurrentUser().players.Remove(playerData);
+        EventManager.TriggerEvent("OnPlayersListChanged");
+    }
+
+    public static void SetCurrentPlayer(PlayerData playerData)
+    {
+        Instance.currentPlayer = playerData;
+        EventManager.TriggerEvent("OnPlayerChanged");
     }
 }

@@ -100,6 +100,7 @@ public enum EGameScreen
     UserSelection,
     Board,
     Levels,
+    CreatePlayer,
     Max
 }
 

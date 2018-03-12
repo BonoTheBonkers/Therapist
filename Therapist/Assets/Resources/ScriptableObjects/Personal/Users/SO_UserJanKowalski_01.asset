@@ -14,7 +14,9 @@ MonoBehaviour:
   personalData:
     firstName: Jan
     surName: Kowalski
-    langueage: 0
+    language: 13
+    avatarSprite: {fileID: 0}
+    age: 8
   userType: 0
   players:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b0e79c109ba6d4e4a9a4265442da583d, type: 2}

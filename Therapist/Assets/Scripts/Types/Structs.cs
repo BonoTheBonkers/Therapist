@@ -63,11 +63,16 @@ public class FSequencesDatabase
 [System.Serializable]
 public class FPersonalData
 {
+    [SerializeField]
     public string firstName = "FirstName";
+    [SerializeField]
     public string surName = "SurName";
-    //public int birthDate = (int)System.DateTime.Now.DayOfWeek;
-    public ELanguage langueage = ELanguage.English;
+    [SerializeField]
+    public ELanguage language = ELanguage.English;
+    [SerializeField]
     public Sprite avatarSprite;
+    [SerializeField]
+    public int age = 8;
 }
 
 [System.Serializable]
@@ -117,4 +122,20 @@ public class FGameObjectsForScreens
 {
     public EGameScreen screen;
     public GameObject gameObject;
+}
+
+[System.Serializable]
+public class PlayerData
+{
+    [SerializeField]
+    public FPersonalData personalData = new FPersonalData();
+    [SerializeField]
+    public FEntireProgressData progressData = new FEntireProgressData();
+
+    public PlayerData(string inFirstName, string inSurName, int inAge)
+    {
+        personalData.firstName = inFirstName;
+        personalData.surName = inSurName;
+        personalData.age = inAge;
+    }
 }

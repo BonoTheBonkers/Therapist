@@ -6,6 +6,15 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
 {
     public ELanguage language = ELanguage.Polish;
     public List<EContraindications> currentContraindications;
+    public ProfilesData profilesData;
+
+    public void Start()
+    {
+        if(MainManager.GetCurrentUser() != null)
+        {
+            SetLanguage(MainManager.GetCurrentUser().personalData.language);
+        }
+    }
 
     public static ELanguage GetLanguage()
     {
@@ -19,6 +28,10 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
     public static void SetLanguage(ELanguage inLanguage)
     {
         Instance.language = inLanguage;
+        if(MainManager.GetCurrentUser() != null)
+        {
+            MainManager.GetCurrentUser().personalData.language = inLanguage;
+        }
         EventManager.TriggerEvent("OnLanguageChanged");
     }
 

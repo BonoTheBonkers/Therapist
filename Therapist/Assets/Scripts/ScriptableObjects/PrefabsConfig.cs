@@ -7,6 +7,7 @@ public class PrefabsConfig : SingletonScriptableObject<PrefabsConfig>
 {
     public GameObject tokenPrefab;
     public GameObject tokenPlacePrefab;
+    public GameObject playerAtListPrefab;
     public Sprite missingAvatarSprite;
     public Sprite defaultAvatarSprite;
 
@@ -18,7 +19,10 @@ public class PrefabsConfig : SingletonScriptableObject<PrefabsConfig>
     {
         return Instance.tokenPlacePrefab;
     }
-
+    public static GameObject GetPlayerAtListPrefab()
+    {
+        return Instance.playerAtListPrefab;
+    }
     public static Sprite GetMissingAvatarSprite()
     {
         return Instance.missingAvatarSprite;

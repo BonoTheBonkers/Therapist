@@ -17,12 +17,7 @@ public class UIButtonUserSelect : MonoBehaviour
     protected PlayerData playerData;
     // Use this for initialization
 
-    public void Start()
-    {
-        InitializePlayerButton(MainManager.GetCurrentPlayer());
-    }
-
-    void InitializePlayerButton(PlayerData inPlayerData)
+    public void InitializePlayerButton(PlayerData inPlayerData)
     {
         if (inPlayerData == null)
         {
@@ -63,16 +58,17 @@ public class UIButtonUserSelect : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.StartListening("OnPlayerChanged", OnPlayerChanged);
+        EventManager.StartListening("OnPlayersListChanged", OnPlayerChanged);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnPlayerChanged", OnPlayerChanged);
+        EventManager.StopListening("OnPlayersListChanged", OnPlayerChanged);
     }
 
     protected void OnSelectButtonClick()
     {
+        MainManager.SetCurrentPlayer(playerData);
         UIManager.SetPlayersListActive(false);
     }
 
@@ -87,7 +83,7 @@ public class UIButtonUserSelect : MonoBehaviour
     }
     protected void OnDeleteButtonClick()
     {
-
+        MainManager.DeletePlayer(playerData);
     }
     protected void OnShareButtonClick()
     {

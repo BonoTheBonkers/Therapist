@@ -18,16 +18,23 @@ public class UIButtonReturn : MonoBehaviour
     
     protected void OnButtonClick()
     {
-        if(MainManager.GetCurrentScreen() == EGameScreen.Board)
+        if(UIManager.Instance.newPlayerGameObject.active)
         {
-            MainManager.SetCurrentScreen(MainManager.GetPreviousScreen());
+            UIManager.SetNewPlayerScreenActive(false);
         }
         else
         {
-            MainManager.SetCurrentScreen(EGameScreen.MainMenu);
-        }
+            if (MainManager.GetCurrentScreen() == EGameScreen.Board)
+            {
+                MainManager.SetCurrentScreen(MainManager.GetPreviousScreen());
+            }
+            else
+            {
+                MainManager.SetCurrentScreen(EGameScreen.MainMenu);
+            }
 
-        UIManager.SetLanguagesListActive(false);
-        UIManager.SetPlayersListActive(false);
+            UIManager.SetLanguagesListActive(false);
+            UIManager.SetPlayersListActive(false);
+        }
     }
 }
