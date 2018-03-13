@@ -31,11 +31,20 @@ public class AudioManager : SingletonManager<AudioManager>
         EventManager.StartListening(EventManager.OnOptionScreenOpened, OnOptionApplied);
     }
 
-    private void PlayClip(AudioClip clipToPlay, float delay = 0.0f)
+    private void PlayClip(AudioClip clipToPlay, float delay = 0.0f, bool isSingleInstance = true)
     {
-        Debug.Log(clipToPlay);
         if(clipToPlay)
         {
+            if(isSingleInstance)
+            {
+                for (int i = 0; i < audioSources.GetLength(0); ++i)
+                {
+                    if (audioSources[i].isPlaying && audioSources[i].clip == clipToPlay)
+                    {
+                        return;
+                    }
+                }
+            }
             for (int i = 0; i < audioSources.GetLength(0); ++i)
             {
                 if (!audioSources[i].isPlaying)
@@ -66,26 +75,26 @@ public class AudioManager : SingletonManager<AudioManager>
     }
     private void OnCursorClick()
     {
-        PlayClip(AudioDatabase.Instance.onCursorClick.GetRandomClip(), AudioDatabase.Instance.onCursorClick.playDelay);
+        PlayClip(AudioDatabase.Instance.onCursorClick.GetRandomClip(), AudioDatabase.Instance.onCursorClick.playDelay, AudioDatabase.Instance.onCursorClick.isSingleInstance);
     }
     private void OnCorrectAnswer()
     {
-        PlayClip(AudioDatabase.Instance.correctAnswer.GetRandomClip(), AudioDatabase.Instance.correctAnswer.playDelay);
+        PlayClip(AudioDatabase.Instance.correctAnswer.GetRandomClip(), AudioDatabase.Instance.correctAnswer.playDelay, AudioDatabase.Instance.correctAnswer.isSingleInstance);
     }
     private void OnWrongAnswer()
     {
-        PlayClip(AudioDatabase.Instance.wrongAnswer.GetRandomClip(), AudioDatabase.Instance.wrongAnswer.playDelay);
+        PlayClip(AudioDatabase.Instance.wrongAnswer.GetRandomClip(), AudioDatabase.Instance.wrongAnswer.playDelay, AudioDatabase.Instance.wrongAnswer.isSingleInstance);
     }
     private void OnTargetTokenPlaceChanged()
     {
-        PlayClip(AudioDatabase.Instance.targetTokenPlaceChanged.GetRandomClip(), AudioDatabase.Instance.targetTokenPlaceChanged.playDelay);
+        PlayClip(AudioDatabase.Instance.targetTokenPlaceChanged.GetRandomClip(), AudioDatabase.Instance.targetTokenPlaceChanged.playDelay, AudioDatabase.Instance.targetTokenPlaceChanged.isSingleInstance);
     }
     private void OnOptionApplied()
     {
-        PlayClip(AudioDatabase.Instance.onOptionApplied.GetRandomClip(), AudioDatabase.Instance.onOptionApplied.playDelay);
+        PlayClip(AudioDatabase.Instance.onOptionApplied.GetRandomClip(), AudioDatabase.Instance.onOptionApplied.playDelay, AudioDatabase.Instance.onOptionApplied.isSingleInstance);
     }
     private void OnInitializeBoard()
     {
-        PlayClip(AudioDatabase.Instance.initializeBoard.GetRandomClip(), AudioDatabase.Instance.initializeBoard.playDelay);
+        PlayClip(AudioDatabase.Instance.initializeBoard.GetRandomClip(), AudioDatabase.Instance.initializeBoard.playDelay, AudioDatabase.Instance.initializeBoard.isSingleInstance);
     }
 }
