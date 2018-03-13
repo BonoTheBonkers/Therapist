@@ -21,17 +21,18 @@ public class UIButtonLanguage : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.StartListening("OnLanguageChanged", OnLanguageChanged);
+        EventManager.StartListening(EventManager.OnLanguageChanged, OnLanguageChanged);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnLanguageChanged", OnLanguageChanged);
+        EventManager.StopListening(EventManager.OnLanguageChanged, OnLanguageChanged);
     }
 
     protected void OnButtonClick()
     {
         UIManager.SetLanguagesListActive(true);
+        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }
 
     protected void OnLanguageChanged()

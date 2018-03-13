@@ -31,12 +31,12 @@ public class FlatFont : MonoBehaviour
     {
         ApplyLanguage();
         ApplyFont();
-        EventManager.StartListening("OnLanguageChanged", ApplyLanguage);
+        EventManager.StartListening(EventManager.OnLanguageChanged, ApplyLanguage);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnLanguageChanged", ApplyLanguage);
+        EventManager.StopListening(EventManager.OnLanguageChanged, ApplyLanguage);
     }
 
     void OnValidate()

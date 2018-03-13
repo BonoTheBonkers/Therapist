@@ -19,12 +19,12 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
 
     void OnEnable()
     {
-        EventManager.StartListening("OnTargetTokenPlaceChanged", OnTargetTokenPlaceChanged);
+        EventManager.StartListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnTargetTokenPlaceChanged", OnTargetTokenPlaceChanged);
+        EventManager.StopListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
     }
 
     public void OnTargetTokenPlaceChanged()
@@ -37,7 +37,7 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
             }
         }
 
-        EventManager.TriggerEvent("OnCorrectAnswer");
+        EventManager.TriggerEvent(EventManager.OnCorrectAnswer);
     }
 
     public ExampleSequenceController GetExampleSequenceController()
@@ -94,12 +94,12 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
         if (inBoardConfig != currentBoard)
         {
             currentBoard = inBoardConfig;
-            EventManager.TriggerEvent("OnBoardChanged");
+            EventManager.TriggerEvent(EventManager.OnBoardChanged);
         }
         if (inSequence != currentSequence)
         {
             currentSequence = inSequence;
-            EventManager.TriggerEvent("OnSequenceChanged");
+            EventManager.TriggerEvent(EventManager.OnSequenceChanged);
         }
 
         if (GetExampleSequenceController() != null)
@@ -115,7 +115,7 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
             GetCurrentTokensController().InitializeBoard(inBoardConfig, inSequence);
         }
         
-        EventManager.TriggerEvent("OnInitializeBoard");
+        EventManager.TriggerEvent(EventManager.OnInitializeBoard);
     }
 
     public void RegisterToken(TokenController newToken)

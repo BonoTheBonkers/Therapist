@@ -15,7 +15,7 @@ public class UIManager : SingletonManager<UIManager>
 
     public void Start()
     {
-        EventManager.StartListening("OnCurrentScreenChanged", UpdateCurrentScreen);
+        EventManager.StartListening(EventManager.OnCurrentScreenChanged, UpdateCurrentScreen);
         SetLanguagesListActive(false);
         //UpdateCurrentScreen();
     }

@@ -25,8 +25,8 @@ public class UIButtonAttribute : MonoBehaviour
 
     public void OnEnable()
     {
-        EventManager.StartListening("OnCurrentLevelChanged", ReloadPercentage);
-        EventManager.StartListening("OnPlayerChanged", ReloadPercentage);
+        EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReloadPercentage);
+        EventManager.StartListening(EventManager.OnPlayerChanged, ReloadPercentage);
         currentPercentage = 0.0f;
         percentageDifference = Mathf.Abs(currentPercentage - targetPercentage);
         ReloadPercentage();
@@ -34,8 +34,8 @@ public class UIButtonAttribute : MonoBehaviour
 
     public void OnDisable()
     {
-        EventManager.StopListening("OnCurrentLevelChanged", ReloadPercentage);
-        EventManager.StopListening("OnPlayerChanged", ReloadPercentage);
+        EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadPercentage);
+        EventManager.StopListening(EventManager.OnPlayerChanged, ReloadPercentage);
     }
 
     public void Update()

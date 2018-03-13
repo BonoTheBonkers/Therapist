@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f905152d8085f1a42b3d37822ace37ac, type: 3}
+  m_Name: SO_AudioDatabase_01
+  m_EditorClassIdentifier: 
+  onCursorClick:
+    audioClips:
+    - {fileID: 8300000, guid: 42a15b236b7202b4e8fc74c47ef638ac, type: 3}
+    playDelay: 0
+    volumeMultiplier: 1
+  correctAnswer:
+    audioClips:
+    - {fileID: 8300000, guid: 7bb721cc63b8bf6478d9ea623aa1c0f6, type: 3}
+    - {fileID: 8300000, guid: 24c429ca657c85d4f853cff1dd7b7522, type: 3}
+    playDelay: 0.3
+    volumeMultiplier: 1
+  wrongAnswer:
+    audioClips:
+    - {fileID: 8300000, guid: 6ee8909323c6b854cb83668aac624e8e, type: 3}
+    playDelay: 0.1
+    volumeMultiplier: 1
+  targetTokenPlaceChanged:
+    audioClips:
+    - {fileID: 8300000, guid: aeb822ce7243dae488052b13b2a5217a, type: 3}
+    playDelay: 0
+    volumeMultiplier: 1
+  onOptionApplied:
+    audioClips:
+    - {fileID: 8300000, guid: 7a7badca50f93664f8ab99f13e3db14e, type: 3}
+    - {fileID: 8300000, guid: 620d13170a439a2408a1eff70b186307, type: 3}
+    playDelay: 0
+    volumeMultiplier: 1
+  initializeBoard:
+    audioClips:
+    - {fileID: 8300000, guid: 9a7b7cd64de54b44c84cd923e86b994f, type: 3}
+    - {fileID: 8300000, guid: 178b38bf883d8ec4f86191d8503b04f7, type: 3}
+    playDelay: 0.1
+    volumeMultiplier: 1

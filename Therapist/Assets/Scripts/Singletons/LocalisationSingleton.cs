@@ -7,7 +7,7 @@ public class LocalisationSingleton : SingletonMonoBehaviour<LocalisationSingleto
 {
     public void Start()
     {
-        EventManager.StartListening("OnLanguageChanged", OnLanguageChanged);
+        EventManager.StartListening(EventManager.OnLanguageChanged, OnLanguageChanged);
     }
 
     public static string GetStringForIdAndLanguage(ELanguage inLanguage, int id)

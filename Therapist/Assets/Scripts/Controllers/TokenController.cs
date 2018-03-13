@@ -41,7 +41,7 @@ public class TokenController : MonoBehaviour
             {
                 targetTokenPlace = newTargetTokenPlace;
                 tokenPlaceType = ETokenPlaceType.CurrentSequence;
-                EventManager.TriggerEvent("OnTargetTokenPlaceChanged");
+                EventManager.TriggerEvent(EventManager.OnTargetTokenPlaceChanged);
             }
         }
     }

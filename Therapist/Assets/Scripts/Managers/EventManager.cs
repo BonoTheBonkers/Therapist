@@ -5,6 +5,26 @@ using UnityEngine.Events;
 
 public class EventManager : MonoBehaviour
 {
+    public static string OnCursorClick = "OnCursorClick";
+
+    public static string OnCorrectAnswer = "OnCorrectAnswer";
+    public static string OnWrongAnswer = "OnWrongAnswer";
+    public static string OnTargetTokenPlaceChanged = "OnTargetTokenPlaceChanged";
+
+    public static string OnLanguageChanged = "OnLanguageChanged";
+    public static string OnCurrentLevelChanged = "OnCurrentLevelChanged";
+    public static string OnBoardChanged = "OnBoardChanged";
+    public static string OnSequenceChanged = "OnSequenceChanged";
+    public static string OnCurrentScreenChanged = "OnCurrentScreenChanged";
+    public static string OnCurrentProgressLevelChanged = "OnCurrentProgressLevelChanged";
+    public static string OnCurrentAttributeChanged = "OnCurrentAttributeChanged";
+    public static string OnPlayersListChanged = "OnPlayersListChanged";
+    public static string OnPlayerChanged = "OnPlayerChanged";
+    public static string OnContraindicationsChanged = "OnContraindicationsChanged";
+    public static string OnOptionScreenOpened = "OnOptionScreenOpened";
+
+    public static string OnInitializeBoard = "OnInitializeBoard";
+
 
     private Dictionary<string, UnityEvent> eventDictionary;
 

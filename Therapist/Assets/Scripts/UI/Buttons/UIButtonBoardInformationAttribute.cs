@@ -21,15 +21,15 @@ public class UIButtonBoardInformationAttribute : MonoBehaviour
 
     public void OnEnable()
     {
-        EventManager.StartListening("OnCurrentLevelChanged", ReloadCurrentAttribute);
-        EventManager.StartListening("OnLanguageChanged", ReloadCurrentAttribute);
+        EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReloadCurrentAttribute);
+        EventManager.StartListening(EventManager.OnLanguageChanged, ReloadCurrentAttribute);
         ReloadCurrentAttribute();
     }
 
     public void OnDisable()
     {
-        EventManager.StopListening("OnCurrentLevelChanged", ReloadCurrentAttribute);
-        EventManager.StopListening("OnLanguageChanged", ReloadCurrentAttribute);
+        EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadCurrentAttribute);
+        EventManager.StopListening(EventManager.OnLanguageChanged, ReloadCurrentAttribute);
     }
 
     protected void OnButtonClick()

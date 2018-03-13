@@ -24,17 +24,18 @@ public class UIButtonUser : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.StartListening("OnPlayerChanged", OnPlayerChanged);
+        EventManager.StartListening(EventManager.OnPlayerChanged, OnPlayerChanged);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnPlayerChanged", OnPlayerChanged);
+        EventManager.StopListening(EventManager.OnPlayerChanged, OnPlayerChanged);
     }
 
     protected void OnButtonClick()
     {
         UIManager.SetPlayersListActive(true);
+        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }
 
     protected void OnPlayerChanged()

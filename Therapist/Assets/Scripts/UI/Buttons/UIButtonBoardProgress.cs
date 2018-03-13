@@ -33,12 +33,12 @@ public class UIButtonBoardProgress : MonoBehaviour
     public void OnEnable()
     {
         ReloadPercentage();
-        EventManager.StartListening("OnCurrentProgressLevelChanged", ReloadPercentage);
+        EventManager.StartListening(EventManager.OnCurrentProgressLevelChanged, ReloadPercentage);
     }
 
     public void OnDisable()
     {
-        EventManager.StopListening("OnCurrentProgressLevelChanged", ReloadPercentage);
+        EventManager.StopListening(EventManager.OnCurrentProgressLevelChanged, ReloadPercentage);
     }
 
     public void Update()

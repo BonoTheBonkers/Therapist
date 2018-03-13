@@ -21,13 +21,13 @@ public class UIButtonBoardInformationLevel : MonoBehaviour
 
     public void OnEnable()
     {
-        EventManager.StartListening("OnCurrentLevelChanged", ReloadCurrentLevel);
+        EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReloadCurrentLevel);
         ReloadCurrentLevel();
     }
 
     public void OnDisable()
     {
-        EventManager.StopListening("OnCurrentLevelChanged", ReloadCurrentLevel);
+        EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadCurrentLevel);
     }
 
     protected void OnButtonClick()

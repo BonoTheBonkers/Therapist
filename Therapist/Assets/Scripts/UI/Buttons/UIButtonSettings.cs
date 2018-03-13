@@ -19,5 +19,6 @@ public class UIButtonSettings : MonoBehaviour
     protected void OnButtonClick()
     {
         UIManager.SetSettingsScreenActive(true);
+        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }
 }

@@ -19,13 +19,13 @@ public class WinScreenController : MonoBehaviour
     {
         GetCanvasGroup().alpha = 0.0f;
         GetCanvasGroup().blocksRaycasts = false;
-        EventManager.StartListening("OnCorrectAnswer", OnCorrectAnswer);
-        EventManager.StartListening("OnCurrentScreenChanged", HideScreen);
+        EventManager.StartListening(EventManager.OnCorrectAnswer, OnCorrectAnswer);
+        EventManager.StartListening(EventManager.OnCurrentScreenChanged, OnCurrentScreenChanged);
     }
     void OnDisable()
     {
-        EventManager.StopListening("OnCorrectAnswer", OnCorrectAnswer);
-        EventManager.StopListening("OnCurrentScreenChanged", HideScreen);
+        EventManager.StopListening(EventManager.OnCorrectAnswer, OnCorrectAnswer);
+        EventManager.StopListening(EventManager.OnCurrentScreenChanged, OnCurrentScreenChanged);
     }
 
     public CanvasGroup GetCanvasGroup()
@@ -50,12 +50,20 @@ public class WinScreenController : MonoBehaviour
         shouldBeActive = true;
     }
 
-    protected void HideScreen()
+    public void OnCurrentScreenChanged()
+    {
+        HideScreen(true);
+    }
+
+    protected void HideScreen(bool IsForced)
     {
         GetCanvasGroup().alpha = 0.0f;
         GetCanvasGroup().blocksRaycasts = false;
         shouldBeActive = false;
-        MainManager.OnWin();
+        if(!IsForced)
+        {
+            MainManager.OnWin();
+        }
     } 
 
 	void Update ()
@@ -68,7 +76,7 @@ public class WinScreenController : MonoBehaviour
         currentTime = Mathf.Min(currentTime + Time.deltaTime, targetTime);
         if(currentTime >= targetTime)
         {
-            HideScreen();
+            HideScreen(false);
         }
         else
         {

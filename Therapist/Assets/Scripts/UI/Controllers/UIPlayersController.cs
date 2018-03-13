@@ -9,13 +9,13 @@ public class UIPlayersController : MonoBehaviour
 	void OnEnable ()
     {
         RedrawPlayersList();
-        EventManager.StartListening("OnPlayersListChanged", RedrawPlayersList);
+        EventManager.StartListening(EventManager.OnPlayersListChanged, RedrawPlayersList);
 	}
 	
 	void OnDisable ()
     {
         RemovePlayersList();
-        EventManager.StopListening("OnPlayersListChanged", RedrawPlayersList);
+        EventManager.StopListening(EventManager.OnPlayersListChanged, RedrawPlayersList);
     }
 
     void RemovePlayersList()

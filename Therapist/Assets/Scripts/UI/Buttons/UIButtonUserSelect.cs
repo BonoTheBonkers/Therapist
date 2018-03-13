@@ -58,12 +58,12 @@ public class UIButtonUserSelect : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.StartListening("OnPlayersListChanged", OnPlayerChanged);
+        EventManager.StartListening(EventManager.OnPlayersListChanged, OnPlayerChanged);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("OnPlayersListChanged", OnPlayerChanged);
+        EventManager.StopListening(EventManager.OnPlayersListChanged, OnPlayerChanged);
     }
 
     protected void OnSelectButtonClick()

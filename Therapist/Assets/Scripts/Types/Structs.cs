@@ -139,3 +139,29 @@ public class PlayerData
         personalData.age = inAge;
     }
 }
+
+[System.Serializable]
+public class FSoundPreset
+{
+    [SerializeField]
+    public List<AudioClip> audioClips = new List<AudioClip>();
+    [SerializeField]
+    public float playDelay = 0.0f;
+    [SerializeField]
+    public float volumeMultiplier = 1.0f;
+
+    public AudioClip GetRandomClip()
+    {
+        if (audioClips.Count == 1)
+        {
+            return audioClips[0];
+        }
+        else if(audioClips.Count > 1)
+        {
+            int randomIndex = Random.Range(0, audioClips.Count - 1);
+            return audioClips[randomIndex];
+        }
+
+        return new AudioClip();
+    }
+}

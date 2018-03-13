@@ -64,7 +64,7 @@ public class FlatImage : MonoBehaviour
     {
         if(themePart != EThemePart.None)
         {
-            EventManager.StartListening("OnCurrentLevelChanged", ReadColorForLevel);
+            EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReadColorForLevel);
             ForceColorForLevel();
         }
     }
@@ -72,7 +72,7 @@ public class FlatImage : MonoBehaviour
     {
         if (themePart != EThemePart.None)
         {
-           EventManager.StopListening("OnCurrentLevelChanged", ReadColorForLevel);
+           EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReadColorForLevel);
         }
     }
 

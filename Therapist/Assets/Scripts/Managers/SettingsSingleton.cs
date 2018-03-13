@@ -32,7 +32,7 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
         {
             MainManager.GetCurrentUser().personalData.language = inLanguage;
         }
-        EventManager.TriggerEvent("OnLanguageChanged");
+        EventManager.TriggerEvent(EventManager.OnLanguageChanged);
     }
 
     public static List<EContraindications> GetContraindications()
@@ -43,6 +43,6 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
     public static void SetContraindications(List<EContraindications> inContraindications)
     {
         Instance.currentContraindications = inContraindications;
-        EventManager.TriggerEvent("OnContraindicationsChanged");
+        EventManager.TriggerEvent(EventManager.OnContraindicationsChanged);
     }
 }

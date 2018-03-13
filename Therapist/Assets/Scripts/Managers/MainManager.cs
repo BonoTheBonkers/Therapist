@@ -32,15 +32,6 @@ public class MainManager : SingletonManager<MainManager>
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            GenerateBoard();
-        }
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            OnWinPrivate();
-        }
     }
 
     public bool GetBestBoardConfig(EAttribute inAttribute, int inLevel, ref FBoardConfig outBoardConfig)
@@ -130,7 +121,7 @@ public class MainManager : SingletonManager<MainManager>
     {
         previousScreen = currentScreen;
         currentScreen = inScreen;
-        EventManager.TriggerEvent("OnCurrentScreenChanged");
+        EventManager.TriggerEvent(EventManager.OnCurrentScreenChanged);
         if(inScreen == EGameScreen.Board)
         {
             Instance.GenerateBoard();
@@ -144,7 +135,7 @@ public class MainManager : SingletonManager<MainManager>
     public static void SetCurrentLevel(int inLevel)
     {
         currentLevel = inLevel;
-        EventManager.TriggerEvent("OnCurrentLevelChanged");
+        EventManager.TriggerEvent(EventManager.OnCurrentLevelChanged);
     }
 
     public static int GetCurrentProgressLevel()
@@ -159,7 +150,7 @@ public class MainManager : SingletonManager<MainManager>
     public static void SetCurrentProgressLevel(int inProgressLevel)
     {
         currentProgressLevel = inProgressLevel;
-        EventManager.TriggerEvent("OnCurrentProgressLevelChanged");
+        EventManager.TriggerEvent(EventManager.OnCurrentProgressLevelChanged);
     }
 
     public static PlayerData GetCurrentPlayer()
@@ -213,7 +204,7 @@ public class MainManager : SingletonManager<MainManager>
     public static void SetCurrentAttribute(EAttribute inAttibute)
     {
         currentAttribute = inAttibute;
-        EventManager.TriggerEvent("OnCurrentAttributeChanged");
+        EventManager.TriggerEvent(EventManager.OnCurrentAttributeChanged);
     }
 
     public static float GetProgressPercentageAtLevel(int inLevel)
@@ -282,12 +273,12 @@ public class MainManager : SingletonManager<MainManager>
     public static void DeletePlayer(PlayerData playerData)
     {
         GetCurrentUser().players.Remove(playerData);
-        EventManager.TriggerEvent("OnPlayersListChanged");
+        EventManager.TriggerEvent(EventManager.OnPlayersListChanged);
     }
 
     public static void SetCurrentPlayer(PlayerData playerData)
     {
         Instance.currentPlayer = playerData;
-        EventManager.TriggerEvent("OnPlayerChanged");
+        EventManager.TriggerEvent(EventManager.OnPlayerChanged);
     }
 }
