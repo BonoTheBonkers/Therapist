@@ -35,6 +35,7 @@ public class UIButtonReturn : MonoBehaviour
 
             UIManager.SetLanguagesListActive(false);
             UIManager.SetPlayersListActive(false);
+            UIManager.SetSettingsScreenActive(false);
         }
     }
 }

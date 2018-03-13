@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIButtonSettings : MonoBehaviour {
+public class UIButtonSettings : MonoBehaviour
+{
+    protected Button button;
+    // Use this for initialization
+    void Start()
+    {
+        button = GetComponentInChildren<Button>();
+        if (button)
+        {
+            button.onClick.AddListener(OnButtonClick);
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    protected void OnButtonClick()
+    {
+        UIManager.SetSettingsScreenActive(true);
+    }
 }

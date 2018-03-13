@@ -20,10 +20,12 @@ public class WinScreenController : MonoBehaviour
         GetCanvasGroup().alpha = 0.0f;
         GetCanvasGroup().blocksRaycasts = false;
         EventManager.StartListening("OnCorrectAnswer", OnCorrectAnswer);
+        EventManager.StartListening("OnCurrentScreenChanged", HideScreen);
     }
     void OnDisable()
     {
         EventManager.StopListening("OnCorrectAnswer", OnCorrectAnswer);
+        EventManager.StopListening("OnCurrentScreenChanged", HideScreen);
     }
 
     public CanvasGroup GetCanvasGroup()

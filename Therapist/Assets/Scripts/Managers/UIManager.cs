@@ -9,6 +9,7 @@ public class UIManager : SingletonManager<UIManager>
     public GameObject languagesListGameObject;
     public GameObject playersListGameObject;
     public GameObject newPlayerGameObject;
+    public GameObject settingsGameObject;
     [HideInInspector]
     public GameObject currentlyDraggedGameObject;
 
@@ -40,5 +41,10 @@ public class UIManager : SingletonManager<UIManager>
     public static void SetNewPlayerScreenActive(bool newIsActive)
     {
         Instance.newPlayerGameObject.SetActive(newIsActive);
+    }
+
+    public static void SetSettingsScreenActive(bool newIsActive)
+    {
+        Instance.settingsGameObject.SetActive(newIsActive);
     }
 }
