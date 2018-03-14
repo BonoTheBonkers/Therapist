@@ -18,7 +18,7 @@ public class UIButtonReturn : MonoBehaviour
     
     protected void OnButtonClick()
     {
-        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu)
+        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.active && !UIManager.Instance.playersListGameObject.active && !UIManager.Instance.newPlayerGameObject.active && !UIManager.Instance.settingsGameObject.active)
         {
             Application.Quit();
         }
