@@ -27,22 +27,28 @@ public class FColorPreset
 public class FFontPreset
 {
     [Tooltip("Enum of used flatFont in this text")]
+    [SerializeField]
     public EFlatFont flatFont;
     [Tooltip("Font to be used in this flatFont setting")]
+    [SerializeField]
     public Font font;
 }
 
 [System.Serializable]
 public class FBoardConfig
 {
+    [SerializeField]
     public EExampleConfig exampleConfig = EExampleConfig.SameAttribute;
+    [SerializeField]
     public List<FBoardSequenceValues> sequencesValues;
 }
 
 [System.Serializable]
 public class FBoardSequenceValues
 {
+    [SerializeField]
     public int value = -1;
+    [SerializeField]
     public bool IsSolvedOnStart = false;
 }
 
@@ -50,6 +56,7 @@ public class FBoardSequenceValues
 public class FLanguageDatabase
 {
     [Tooltip("List of flags for language")]
+    [SerializeField]
     public List<string> texts = new List<string>();
 }
 
@@ -57,6 +64,7 @@ public class FLanguageDatabase
 public class FSequencesDatabase
 {
     [Tooltip("List of every sequence in attribute")]
+    [SerializeField]
     public List<Sequence> sequences = new List<Sequence>();
 }
 
@@ -68,16 +76,13 @@ public class FPersonalData
     [SerializeField]
     public string surName = "SurName";
     [SerializeField]
-    public ELanguage language = ELanguage.English;
-    [SerializeField]
-    public Sprite avatarSprite;
-    [SerializeField]
     public int age = 8;
 }
 
 [System.Serializable]
 public class FEntireProgressData
 {
+    [SerializeField]
     public List<FLevelProgressData> levelsProgress = new List<FLevelProgressData>();
 
     public FEntireProgressData()
@@ -93,6 +98,7 @@ public class FEntireProgressData
 [System.Serializable]
 public class FLevelProgressData
 {
+    [SerializeField]
     public List<FAttributeAndProgressData> attributesProgress;
 
     public FLevelProgressData()
@@ -108,7 +114,9 @@ public class FLevelProgressData
 [System.Serializable]
 public class FAttributeAndProgressData
 {
+    [SerializeField]
     public EAttribute attribute;
+    [SerializeField]
     public float progress;
     public FAttributeAndProgressData(EAttribute newAttribute)
     {
@@ -120,7 +128,9 @@ public class FAttributeAndProgressData
 [System.Serializable]
 public class FGameObjectsForScreens
 {
+    [SerializeField]
     public EGameScreen screen;
+    [SerializeField]
     public GameObject gameObject;
 }
 
@@ -138,6 +148,21 @@ public class PlayerData
         personalData.surName = inSurName;
         personalData.age = inAge;
     }
+}
+
+[System.Serializable]
+public class UserData
+{
+    [SerializeField]
+    public FPersonalData personalData;
+    [SerializeField]
+    public ELanguage language;
+    [SerializeField]
+    public EUserType userType = EUserType.Guardian;
+    [SerializeField]
+    public List<PlayerData> players;
+    [SerializeField]
+    public PlayerData currentPlayer;
 }
 
 [System.Serializable]
@@ -165,5 +190,74 @@ public class FSoundPreset
         }
 
         return new AudioClip();
+    }
+}
+
+[System.Serializable]
+public class FVideoSettings
+{
+    [SerializeField]
+    public bool isHighQuality = true;
+}
+
+[System.Serializable]
+public class FAudioSettings
+{
+    [SerializeField]
+    public float musicVolume = 1.0f;
+    [SerializeField]
+    public bool isMusicMuted = false;
+    [SerializeField]
+    public float soundsVolume = 1.0f;
+    [SerializeField]
+    public bool isSoundsMuted = false;
+}
+
+[System.Serializable]
+public class FApplicationSettings
+{
+    [SerializeField]
+    public FVideoSettings videoSettings;
+    [SerializeField]
+    public FAudioSettings audioSettings;
+}
+
+[System.Serializable]
+public class FApplicationData
+{
+    [SerializeField]
+    public UserData userData;
+    [SerializeField]
+    public FApplicationSettings applicationSettings;
+
+    public void SetLanguage(ELanguage inLanguage)
+    {
+        if(inLanguage != userData.language)
+        {
+            userData.language = inLanguage;
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+
+    public void CreateNewPlayer(string inFirstName, string inSurName, int inAge)
+    {
+        userData.players.Add(new PlayerData(inFirstName, inSurName, inAge));
+        EventManager.TriggerEvent(EventManager.OnPlayersListChanged);
+        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+    }
+    public void DeletePlayer(PlayerData playerData)
+    {
+        if(userData.players.Count > 1)
+        {
+            userData.players.Remove(playerData);
+            EventManager.TriggerEvent(EventManager.OnPlayersListChanged);
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+    public void SetCurrentPlayer(PlayerData playerData)
+    {
+        userData.currentPlayer = playerData;
+        EventManager.TriggerEvent(EventManager.OnPlayerChanged);
+        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
     }
 }

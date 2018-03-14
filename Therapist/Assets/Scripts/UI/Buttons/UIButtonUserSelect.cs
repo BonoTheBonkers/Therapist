@@ -51,7 +51,7 @@ public class UIButtonUserSelect : MonoBehaviour
 
         if (playerData != null)
         {
-            avatarImage.sprite = playerData.personalData.avatarSprite != null ? playerData.personalData.avatarSprite : PrefabsConfig.GetDefaultAvatarSprite();
+            //avatarImage.sprite = playerData.personalData.avatarSprite != null ? playerData.personalData.avatarSprite : PrefabsConfig.GetDefaultAvatarSprite();
             text.text = playerData.personalData.firstName.ToUpper() + " " + playerData.personalData.surName.ToUpper();
         }
     }

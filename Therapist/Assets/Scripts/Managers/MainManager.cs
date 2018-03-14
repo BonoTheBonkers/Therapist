@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MainManager : SingletonManager<MainManager>
 {
-    public UserData currentUser;
-    protected PlayerData currentPlayer;
+    public FApplicationData applicationData;
 
     protected static EGameScreen currentScreen = EGameScreen.MainMenu;
     protected static EGameScreen previousScreen = EGameScreen.MainMenu;
@@ -18,7 +17,7 @@ public class MainManager : SingletonManager<MainManager>
         LocalisationDatabase.ReloadLocalisationDatabase();
         SequencesConfig.ReloadSequencesDatabase();
         FindNextBestLevelAndAttribute();
-        if(currentPlayer == null)
+        if(applicationData.userData.currentPlayer == null)
         {
             UIManager.SetPlayersListActive(true);
         }
@@ -80,7 +79,7 @@ public class MainManager : SingletonManager<MainManager>
 
     public void OnWinPrivate()
     {
-        if(currentPlayer == null)
+        if(GetCurrentPlayer() == null)
         {
             Debug.Log("No player");
             return;
@@ -90,20 +89,21 @@ public class MainManager : SingletonManager<MainManager>
         {
             SetCurrentProgressLevel(GetCurrentProgressLevel() + 1);
             float newProgressValue = GetCurrentProgressLevelPercentage();
-            if (newProgressValue > currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress)
+            if (newProgressValue > GetCurrentPlayer().progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress)
             {
-                currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = newProgressValue;
+                GetCurrentPlayer().progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = newProgressValue;
                 EventManager.TriggerEvent(currentAttribute.ToString() + " progress increased to " + newProgressValue.ToString());
             }
         }
         else
         {
-            currentPlayer.progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = 1.0f;
+            GetCurrentPlayer().progressData.levelsProgress[currentLevel].attributesProgress[(int)currentAttribute].progress = 1.0f;
             if(!FindNextBestLevelAndAttribute())
             {
                 SetCurrentScreen(EGameScreen.AttributeMenu);
             }
         }
+        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         GenerateBoard();
     }
 
@@ -155,12 +155,12 @@ public class MainManager : SingletonManager<MainManager>
 
     public static PlayerData GetCurrentPlayer()
     {
-        return Instance.currentPlayer;
+        return Instance.applicationData.userData.currentPlayer;
     }
 
     public static UserData GetCurrentUser()
     {
-        return Instance.currentUser;
+        return Instance.applicationData.userData;
     }
 
     public static bool FindNextBestLevelAndAttribute()
@@ -175,19 +175,19 @@ public class MainManager : SingletonManager<MainManager>
 
     public bool FindNextBestLevelAndAttributePrivate()
     {
-        if(currentPlayer == null)
+        if(GetCurrentPlayer() == null)
         {
             return false;
         }
 
-        for(int i = 0; i < currentPlayer.progressData.levelsProgress.Count; ++i)
+        for(int i = 0; i < GetCurrentPlayer().progressData.levelsProgress.Count; ++i)
         {
-            for(int j = 0; j < currentPlayer.progressData.levelsProgress[i].attributesProgress.Count; ++j)
+            for(int j = 0; j < GetCurrentPlayer().progressData.levelsProgress[i].attributesProgress.Count; ++j)
             {
-                if(currentPlayer.progressData.levelsProgress[i].attributesProgress[j].progress < 1.0f)
+                if(GetCurrentPlayer().progressData.levelsProgress[i].attributesProgress[j].progress < 1.0f)
                 {
                     SetCurrentLevel(i);
-                    SetCurrentAttribute(currentPlayer.progressData.levelsProgress[i].attributesProgress[j].attribute);
+                    SetCurrentAttribute(GetCurrentPlayer().progressData.levelsProgress[i].attributesProgress[j].attribute);
                     SetCurrentProgressLevel(0);
                     return true;
                 }
@@ -219,7 +219,7 @@ public class MainManager : SingletonManager<MainManager>
 
     protected float GetProgressPercentageAtLevelPrivate(int inLevel)
     {
-        if (currentPlayer == null)
+        if (GetCurrentPlayer() == null)
         {
             return 0.0f;
         }
@@ -227,7 +227,7 @@ public class MainManager : SingletonManager<MainManager>
         float valueToReturn = 0.0f;
         for(int i = 0; i < (int)EAttribute.Max; ++i)
         {
-            valueToReturn += currentPlayer.progressData.levelsProgress[inLevel].attributesProgress[i].progress;
+            valueToReturn += GetCurrentPlayer().progressData.levelsProgress[inLevel].attributesProgress[i].progress;
         }
 
         valueToReturn /= (int)EAttribute.Max;
@@ -252,33 +252,26 @@ public class MainManager : SingletonManager<MainManager>
 
     protected float GetAttributeProgressPercentageAtLevelPrivate(EAttribute inAttribute, int inLevel)
     {
-        if(currentPlayer == null)
+        if(GetCurrentPlayer() == null)
         {
             return 0.0f;
         }
 
-        return currentPlayer.progressData.levelsProgress[inLevel].attributesProgress[(int)inAttribute].progress;
+        return GetCurrentPlayer().progressData.levelsProgress[inLevel].attributesProgress[(int)inAttribute].progress;
     }
 
     public static void CreateNewPlayer(string inFirstName, string inSurName, int inAge)
     {
-        if(GetCurrentUser() == null)
-        {
-            return;
-        }
-        
-        GetCurrentUser().players.Add(new PlayerData(inFirstName, inSurName, inAge));
+        Instance.applicationData.CreateNewPlayer(inFirstName, inSurName, inAge);
     }
 
     public static void DeletePlayer(PlayerData playerData)
     {
-        GetCurrentUser().players.Remove(playerData);
-        EventManager.TriggerEvent(EventManager.OnPlayersListChanged);
+        Instance.applicationData.DeletePlayer(playerData);
     }
 
     public static void SetCurrentPlayer(PlayerData playerData)
     {
-        Instance.currentPlayer = playerData;
-        EventManager.TriggerEvent(EventManager.OnPlayerChanged);
+        Instance.applicationData.SetCurrentPlayer(playerData);
     }
 }

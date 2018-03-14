@@ -10,9 +10,15 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
 
     public void Start()
     {
-        if(MainManager.GetCurrentUser() != null)
+        ReadLanguageFromSave();
+        EventManager.StartListening(EventManager.OnApplicationDataLoaded, ReadLanguageFromSave);
+    }
+
+    protected void ReadLanguageFromSave()
+    {
+        if (MainManager.GetCurrentUser() != null)
         {
-            SetLanguage(MainManager.GetCurrentUser().personalData.language);
+            SetLanguage(MainManager.Instance.applicationData.userData.language);
         }
     }
 
@@ -30,7 +36,7 @@ public class SettingsSingleton : SingletonManager<SettingsSingleton>
         Instance.language = inLanguage;
         if(MainManager.GetCurrentUser() != null)
         {
-            MainManager.GetCurrentUser().personalData.language = inLanguage;
+            MainManager.Instance.applicationData.SetLanguage(inLanguage);
         }
         EventManager.TriggerEvent(EventManager.OnLanguageChanged);
     }

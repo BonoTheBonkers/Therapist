@@ -25,6 +25,9 @@ public class EventManager : MonoBehaviour
 
     public static string OnInitializeBoard = "OnInitializeBoard";
 
+    public static string OnApplicationDataChanged = "OnApplicationDataChanged";
+    public static string OnApplicationDataLoaded = "OnApplicationDataLoaded";
+
 
     private Dictionary<string, UnityEvent> eventDictionary;
 
