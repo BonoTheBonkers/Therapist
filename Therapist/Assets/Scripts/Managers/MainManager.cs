@@ -124,6 +124,7 @@ public class MainManager : SingletonManager<MainManager>
         EventManager.TriggerEvent(EventManager.OnCurrentScreenChanged);
         if(inScreen == EGameScreen.Board)
         {
+            currentProgressLevel = 0;
             Instance.GenerateBoard();
         }
     }
@@ -144,7 +145,7 @@ public class MainManager : SingletonManager<MainManager>
     }
     public static float GetCurrentProgressLevelPercentage()
     {
-        return Mathf.Clamp(GetCurrentProgressLevel() / 10.0f, 0.0f, 1.0f);
+        return Mathf.Clamp((float)GetCurrentProgressLevel() / 10.0f, 0.0f, 1.0f);
     }
 
     public static void SetCurrentProgressLevel(int inProgressLevel)

@@ -32,7 +32,8 @@ public class UIButtonBoardProgress : MonoBehaviour
 
     public void OnEnable()
     {
-        ReloadPercentage();
+        currentPercentage = 0.1f;
+        targetPercentage = 0.0f;
         EventManager.StartListening(EventManager.OnCurrentProgressLevelChanged, ReloadPercentage);
     }
 
@@ -51,15 +52,15 @@ public class UIButtonBoardProgress : MonoBehaviour
         if (currentPercentage != targetPercentage)
         {
             currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 0.2f), targetPercentage);
-        }
 
-        if (percentage)
-        {
-            percentage.text = ((int)(currentPercentage * 100.0f)).ToString() + "%";
-        }
-        if (fillImageFull)
-        {
-            fillImageFull.fillAmount = currentPercentage;
+            if (percentage)
+            {
+                percentage.text = ((int)(Mathf.Round(currentPercentage * 100.0f))).ToString() + "%";
+            }
+            if (fillImageFull)
+            {
+                fillImageFull.fillAmount = currentPercentage;
+            }
         }
     }
 

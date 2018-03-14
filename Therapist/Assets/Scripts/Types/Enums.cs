@@ -72,13 +72,13 @@ public enum EDifficulty
 
 public enum EAttribute
 {
-    Size,
-    Brightness,
-    ColorIntensity,
-    Amount,
-    Position,
-    Rotation,
-    Shape,
+    Sizes,
+    SomethingMore,
+    Colors,
+    Amounts,
+    Movements,
+    Mixed,
+    Shapes,
     Development,
     Max
 }

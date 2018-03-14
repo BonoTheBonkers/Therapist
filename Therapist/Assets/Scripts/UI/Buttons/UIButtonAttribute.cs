@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIButtonAttribute : MonoBehaviour
 {
-    public EAttribute attribute = EAttribute.Amount;
+    public EAttribute attribute = EAttribute.Amounts;
     public Text percentage;
     public Image fillImageFull;
     protected Button button;

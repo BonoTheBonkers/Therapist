@@ -38,15 +38,15 @@ public class UIButtonBoardInformationAttribute : MonoBehaviour
 
     protected void ReloadCurrentAttribute()
     {
-        if(MainManager.GetCurrentAttribute() == EAttribute.Amount)
+        if(MainManager.GetCurrentAttribute() == EAttribute.Amounts)
         {
             valueText.text = LocalisationSingleton.GetStringForId(2).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.Brightness)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.SomethingMore)
         {
             valueText.text = LocalisationSingleton.GetStringForId(9).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.ColorIntensity)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.Colors)
         {
             valueText.text = LocalisationSingleton.GetStringForId(3).ToUpper();
         }
@@ -54,19 +54,19 @@ public class UIButtonBoardInformationAttribute : MonoBehaviour
         {
             valueText.text = LocalisationSingleton.GetStringForId(8).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.Position)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.Movements)
         {
             valueText.text = LocalisationSingleton.GetStringForId(4).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.Rotation)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.Mixed)
         {
             valueText.text = LocalisationSingleton.GetStringForId(9).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.Shape)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.Shapes)
         {
             valueText.text = LocalisationSingleton.GetStringForId(5).ToUpper();
         }
-        else if (MainManager.GetCurrentAttribute() == EAttribute.Size)
+        else if (MainManager.GetCurrentAttribute() == EAttribute.Sizes)
         {
             valueText.text = LocalisationSingleton.GetStringForId(1).ToUpper();
         }

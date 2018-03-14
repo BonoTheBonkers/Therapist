@@ -39,11 +39,13 @@ public class UIButtonLevelSelect : MonoBehaviour
 
     public void OnEnable()
     {
+        EventManager.StartListening(EventManager.OnApplicationDataChanged, ReloadPercentage);
         ReloadPercentage();
     }
 
     public void OnDisable()
     {
+        EventManager.StopListening(EventManager.OnApplicationDataChanged, ReloadPercentage);
     }
 
     public void Update()
@@ -56,17 +58,17 @@ public class UIButtonLevelSelect : MonoBehaviour
         if (currentPercentage != targetPercentage)
         {
             currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 1.2f), targetPercentage);
+
+            if (percentage)
+            {
+                percentage.text = ((int)(Mathf.Round(currentPercentage * 100.0f))).ToString() + "%";
+            }
+            if (fillImageFull)
+            {
+                fillImageFull.fillAmount = currentPercentage;
+            }
         }
 
-        if (percentage)
-        {
-            percentage.text = ((int)(currentPercentage * 100.0f)).ToString() + "%";
-        }
-        if (fillImageFull)
-        {
-            fillImageFull.fillAmount = currentPercentage;
-        }
-        
         gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f, Time.deltaTime * 5.0f);
     }
 
@@ -84,5 +86,9 @@ public class UIButtonLevelSelect : MonoBehaviour
         currentPercentage = 0.0f;
         targetPercentage = MainManager.GetProgressPercentageAtLevel(levelValue);
         gameObject.transform.localScale = MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f;
+        if(targetPercentage == currentPercentage)
+        {
+            currentPercentage = 0.1f;
+        }
     }
 }

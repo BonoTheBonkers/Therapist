@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff60999d4ed4f1045bc6b136ae918e8d, type: 3}
-  m_Name: SO_SequenceRotation_01_Placeholder_01
+  m_Name: SO_SequenceSizes_04_Stars_01
   m_EditorClassIdentifier: 
   titleId: -1
-  attributes: 05000000
+  attributes: 00000000
   contraindications: 
   difficulty: 0
   ageRange: {x: 1, y: 99}
