@@ -141,6 +141,8 @@ public class PlayerData
     public FPersonalData personalData = new FPersonalData();
     [SerializeField]
     public FEntireProgressData progressData = new FEntireProgressData();
+    [SerializeField]
+    public List<EContraindications> currentContraindications;
 
     public PlayerData(string inFirstName, string inSurName, int inAge)
     {
@@ -256,8 +258,21 @@ public class FApplicationData
     }
     public void SetCurrentPlayer(PlayerData playerData)
     {
-        userData.currentPlayer = playerData;
-        EventManager.TriggerEvent(EventManager.OnPlayerChanged);
-        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        if(userData.currentPlayer != playerData)
+        {
+            userData.currentPlayer = playerData;
+            EventManager.TriggerEvent(EventManager.OnPlayerChanged);
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+
+    public void SetCurrentPlayerContraindications(List<EContraindications> inContraindications)
+    {
+        if(userData.currentPlayer.currentContraindications != inContraindications)
+        {
+            userData.currentPlayer.currentContraindications = inContraindications;
+            EventManager.TriggerEvent(EventManager.OnContraindicationsChanged);
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
     }
 }
