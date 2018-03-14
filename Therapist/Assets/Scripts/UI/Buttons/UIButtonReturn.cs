@@ -20,7 +20,10 @@ public class UIButtonReturn : MonoBehaviour
     {
         if(UIManager.Instance.newPlayerGameObject.active)
         {
-            UIManager.SetNewPlayerScreenActive(false);
+            if(MainManager.Instance.applicationData.userData.players.Count > 0)
+            {
+                UIManager.SetNewPlayerScreenActive(false);
+            }
         }
         else
         {

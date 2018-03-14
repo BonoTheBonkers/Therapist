@@ -75,10 +75,10 @@ public class UIButtonLevelSelect : MonoBehaviour
     protected void OnButtonClick()
     {
         MainManager.SetCurrentLevel(levelValue);
-        if(MainManager.GetCurrentScreen() == EGameScreen.Levels)
-        {
-            MainManager.SetCurrentScreen(EGameScreen.MainMenu);
-        }
+//         if(MainManager.GetCurrentScreen() == EGameScreen.Levels)
+//         {
+//             MainManager.SetCurrentScreen(EGameScreen.MainMenu);
+//         }
     }
 
     protected void ReloadPercentage()

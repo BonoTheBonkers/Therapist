@@ -17,9 +17,13 @@ public class MainManager : SingletonManager<MainManager>
         LocalisationDatabase.ReloadLocalisationDatabase();
         SequencesConfig.ReloadSequencesDatabase();
         FindNextBestLevelAndAttribute();
-        if(applicationData.userData.currentPlayer == null)
+        if(MainManager.Instance.applicationData.userData.players.Count == 0)
         {
-            UIManager.SetPlayersListActive(true);
+            UIManager.SetNewPlayerScreenActive(true);
+        }
+        else if (MainManager.Instance.applicationData.userData.players.Count == 1)
+        {
+            MainManager.SetCurrentPlayer(MainManager.Instance.applicationData.userData.players[0]);
         }
     }
 

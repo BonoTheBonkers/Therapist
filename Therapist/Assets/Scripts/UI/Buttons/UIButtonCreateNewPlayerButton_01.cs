@@ -23,6 +23,10 @@ public class UIButtonCreateNewPlayerButton_01 : MonoBehaviour
     {
         MainManager.CreateNewPlayer(newPlayerController.firstNameField.text, newPlayerController.surNameField.text, int.Parse(newPlayerController.ageField.text));
         UIManager.SetNewPlayerScreenActive(false);
-        UIManager.SetPlayersListActive(true);
+        if(MainManager.Instance.applicationData.userData.players.Count == 1)
+        {
+            MainManager.SetCurrentPlayer(MainManager.Instance.applicationData.userData.players[0]);
+        }
+        UIManager.SetPlayersListActive(MainManager.Instance.applicationData.userData.players.Count > 1);
     }
 }

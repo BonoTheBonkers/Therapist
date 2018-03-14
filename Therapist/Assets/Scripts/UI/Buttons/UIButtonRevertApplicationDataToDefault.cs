@@ -18,8 +18,11 @@ public class UIButtonRevertApplicationDataToDefault : MonoBehaviour {
 
     protected void OnButtonClick()
     {
-        MainManager.Instance.applicationData = DefaultApplicationData.Instance.defaultApplicationData;
+        MainManager.Instance.applicationData.ResetToDefault();
         EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         MainManager.SetCurrentScreen(EGameScreen.MainMenu);
+        UIManager.SetSettingsScreenActive(false);
+        UIManager.SetPlayersListActive(true);
+        UIManager.SetNewPlayerScreenActive(true);
     }
 }

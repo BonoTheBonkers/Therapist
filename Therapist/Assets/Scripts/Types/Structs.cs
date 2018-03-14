@@ -77,6 +77,13 @@ public class FPersonalData
     public string surName = "SurName";
     [SerializeField]
     public int age = 8;
+
+    public void ResetToDefault()
+    {
+        firstName = "FirstName";
+        surName = "SurName";
+        age = 8;
+    }
 }
 
 [System.Serializable]
@@ -165,6 +172,13 @@ public class UserData
     public List<PlayerData> players;
     [SerializeField]
     public PlayerData currentPlayer;
+    
+    public void ResetToDefault()
+    {
+        personalData.ResetToDefault();
+        currentPlayer = new PlayerData("FirstName", "Surname", 8);
+        players = new List<PlayerData>();
+    }
 }
 
 [System.Serializable]
@@ -200,6 +214,11 @@ public class FVideoSettings
 {
     [SerializeField]
     public bool isHighQuality = true;
+
+    public void ResetToDefault()
+    {
+        isHighQuality = true;
+    }
 }
 
 [System.Serializable]
@@ -213,6 +232,14 @@ public class FAudioSettings
     public float soundsVolume = 1.0f;
     [SerializeField]
     public bool isSoundsMuted = false;
+
+    public void ResetToDefault()
+    {
+        musicVolume = 1.0f;
+        isMusicMuted = false;
+        soundsVolume = 1.0f;
+        isSoundsMuted = false;
+    }
 }
 
 [System.Serializable]
@@ -222,6 +249,12 @@ public class FApplicationSettings
     public FVideoSettings videoSettings;
     [SerializeField]
     public FAudioSettings audioSettings;
+
+    public void ResetToDefault()
+    {
+        videoSettings.ResetToDefault();
+        audioSettings.ResetToDefault();
+    }
 }
 
 [System.Serializable]
@@ -239,6 +272,13 @@ public class FApplicationData
             userData.language = inLanguage;
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         }
+    }
+
+    public void ResetToDefault()
+    {
+        userData.ResetToDefault();
+        applicationSettings.ResetToDefault();
+        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
     }
 
     public void CreateNewPlayer(string inFirstName, string inSurName, int inAge)
