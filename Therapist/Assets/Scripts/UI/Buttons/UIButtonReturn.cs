@@ -18,6 +18,10 @@ public class UIButtonReturn : MonoBehaviour
     
     protected void OnButtonClick()
     {
+        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu)
+        {
+            Application.Quit();
+        }
         if(UIManager.Instance.newPlayerGameObject.active)
         {
             if(MainManager.Instance.applicationData.userData.players.Count > 0)

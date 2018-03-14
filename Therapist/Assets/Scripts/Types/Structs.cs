@@ -303,6 +303,10 @@ public class FApplicationData
             userData.currentPlayer = playerData;
             EventManager.TriggerEvent(EventManager.OnPlayerChanged);
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+            if (MainManager.GetCurrentScreen() == EGameScreen.Board)
+            {
+                MainManager.SetCurrentScreen(EGameScreen.MainMenu);
+            }
         }
     }
 
