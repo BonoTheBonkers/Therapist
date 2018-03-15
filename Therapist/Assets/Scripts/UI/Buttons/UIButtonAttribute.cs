@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonAttribute : MonoBehaviour
+public class UIButtonAttribute : UIButton
 {
     public EAttribute attribute = EAttribute.Amounts;
     public Text percentage;
     public Image fillImageFull;
-    protected Button button;
 
     protected float currentPercentage = 0.0f;
     protected float targetPercentage = 1.0f;
     protected float percentageDifference = 0.0f;
-
-    public void Start()
+    
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.OnButtonClick();
+        MainManager.SetCurrentAttribute(attribute);
+        MainManager.SetCurrentScreen(EGameScreen.Board);
     }
 
     public void OnEnable()
@@ -65,12 +62,6 @@ public class UIButtonAttribute : MonoBehaviour
         {
             fillImageFull.fillAmount = currentPercentage;
         }
-    }
-
-    protected void OnButtonClick()
-    {
-        MainManager.SetCurrentAttribute(attribute);
-        MainManager.SetCurrentScreen(EGameScreen.Board);
     }
     
     protected void ReloadPercentage()

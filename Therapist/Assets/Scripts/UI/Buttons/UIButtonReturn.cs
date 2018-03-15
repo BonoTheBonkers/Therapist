@@ -3,21 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonReturn : MonoBehaviour
+public class UIButtonReturn : UIButton
 {
-    protected Button button;
-
-    public void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-    }
-    
-    protected void OnButtonClick()
-    {
+        base.OnButtonClick();
         if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.active && !UIManager.Instance.playersListGameObject.active && !UIManager.Instance.newPlayerGameObject.active && !UIManager.Instance.settingsGameObject.active)
         {
             Application.Quit();

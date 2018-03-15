@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonCreateNewPlayerButton_01 : MonoBehaviour
+public class UIButtonCreateNewPlayerButton_01 : UIButton
 {
     protected UINewPlayerController newPlayerController;
-    protected Button button;
 
-    public void Start()
+    public override void Start()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-
+        base.Start();
         newPlayerController = GetComponentInParent<UINewPlayerController>();
     }
 
-    protected void OnButtonClick()
+    protected override void OnButtonClick()
     {
         MainManager.CreateNewPlayer(newPlayerController.firstNameField.text, newPlayerController.surNameField.text, int.Parse(newPlayerController.ageField.text));
         UIManager.SetNewPlayerScreenActive(false);

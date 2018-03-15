@@ -67,11 +67,6 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
         return currentTokensController;
     }
 
-    public void InitializeCurrentBoard()
-    {
-        InitializeBoard(currentBoard, currentSequence);
-    }
-
     public static void InitializeBoardPublic(FBoardConfig inBoardConfig, Sequence inSequence)
     {
         if(Instance)

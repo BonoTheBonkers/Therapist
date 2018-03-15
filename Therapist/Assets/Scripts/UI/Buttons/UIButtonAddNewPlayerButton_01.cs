@@ -3,21 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonAddNewPlayerButton_01 : MonoBehaviour
+public class UIButtonAddNewPlayerButton_01 : UIButton
 {
-    protected Button button;
-
-    public void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-    }
-    
-    protected void OnButtonClick()
-    {
+        base.OnButtonClick();
         UIManager.SetNewPlayerScreenActive(true);
         UIManager.SetPlayersListActive(false);
     }

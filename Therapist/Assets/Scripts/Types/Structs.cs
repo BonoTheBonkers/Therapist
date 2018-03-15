@@ -190,8 +190,6 @@ public class FSoundPreset
     public float playDelay = 0.0f;
     [SerializeField]
     public float volumeMultiplier = 1.0f;
-    [SerializeField]
-    public bool isSingleInstance = true;
 
     public AudioClip GetRandomClip()
     {

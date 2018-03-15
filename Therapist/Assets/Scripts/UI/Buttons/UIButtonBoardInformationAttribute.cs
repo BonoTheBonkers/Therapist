@@ -3,20 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonBoardInformationAttribute : MonoBehaviour
+public class UIButtonBoardInformationAttribute : UIButton
 {
     public Text valueText;
 
-    protected Button button;
-    // Use this for initialization
-
-    public void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.OnButtonClick();
     }
 
     public void OnEnable()
@@ -30,10 +23,6 @@ public class UIButtonBoardInformationAttribute : MonoBehaviour
     {
         EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadCurrentAttribute);
         EventManager.StopListening(EventManager.OnLanguageChanged, ReloadCurrentAttribute);
-    }
-
-    protected void OnButtonClick()
-    {
     }
 
     protected void ReloadCurrentAttribute()

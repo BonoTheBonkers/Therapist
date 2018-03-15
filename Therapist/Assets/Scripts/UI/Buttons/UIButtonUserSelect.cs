@@ -68,29 +68,32 @@ public class UIButtonUserSelect : MonoBehaviour
 
     protected void OnSelectButtonClick()
     {
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
         MainManager.SetCurrentPlayer(playerData);
         UIManager.SetPlayersListActive(false);
     }
 
     protected void OnPlayerChanged()
     {
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
         InitializePlayerButton(playerData);
     }
 
     protected void OnChangeNameButtonClick()
     {
-
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
     }
     protected void OnDeleteButtonClick()
     {
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
         MainManager.DeletePlayer(playerData);
     }
     protected void OnShareButtonClick()
     {
-
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
     }
     protected void OnResetButtonClick()
     {
-
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
     }
 }

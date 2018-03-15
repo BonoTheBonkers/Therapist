@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonLanguage : MonoBehaviour
+public class UIButtonLanguage : UIButton
 {
     public Image flagImage;
-    protected Button button;
-    // Use this for initialization
-    void Start ()
+    
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.OnButtonClick();
+        UIManager.SetLanguagesListActive(true);
+        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
+    }
 
+    // Use this for initialization
+    public override void Start ()
+    {
+        base.Start();
         OnLanguageChanged();
     }
 
@@ -27,12 +29,6 @@ public class UIButtonLanguage : MonoBehaviour
     void OnDisable()
     {
         EventManager.StopListening(EventManager.OnLanguageChanged, OnLanguageChanged);
-    }
-
-    protected void OnButtonClick()
-    {
-        UIManager.SetLanguagesListActive(true);
-        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }
 
     protected void OnLanguageChanged()

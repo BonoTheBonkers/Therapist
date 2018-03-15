@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonMainMenuButton : MonoBehaviour
+public class UIButtonMainMenuButton : UIButton
 {
     public EGameScreen newGameScreen = EGameScreen.MainMenu;
-    
-    protected Button button;
 
-    public void Start()
+    public override void Start()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.Start();
     }
 
     public void OnEnable()
@@ -34,8 +28,9 @@ public class UIButtonMainMenuButton : MonoBehaviour
         }
     }
 
-    protected void OnButtonClick()
+    protected override void OnButtonClick()
     {
+        base.OnButtonClick();
         MainManager.SetCurrentScreen(newGameScreen);
     }
 }

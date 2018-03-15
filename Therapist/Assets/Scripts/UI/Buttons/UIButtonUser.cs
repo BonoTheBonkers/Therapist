@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonUser : MonoBehaviour
+public class UIButtonUser : UIButton
 {
     public Image avatarImage;
-    protected Button button;
     protected Text text;
     public int addNewUserTextId = -1;
-    // Use this for initialization
-    void Start()
-    {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-        text = GetComponentInChildren<Text>();
 
+    protected override void OnButtonClick()
+    {
+        base.OnButtonClick();
+        UIManager.SetPlayersListActive(true);
+        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        text = GetComponentInChildren<Text>();
         OnPlayerChanged();
     }
 
@@ -30,12 +31,6 @@ public class UIButtonUser : MonoBehaviour
     void OnDisable()
     {
         EventManager.StopListening(EventManager.OnPlayerChanged, OnPlayerChanged);
-    }
-
-    protected void OnButtonClick()
-    {
-        UIManager.SetPlayersListActive(true);
-        EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }
 
     protected void OnPlayerChanged()

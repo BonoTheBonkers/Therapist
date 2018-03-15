@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonBoardProgress : MonoBehaviour
+public class UIButtonBoardProgress : UIButton
 {
     public Text percentage;
     public Image fillImageFull;
     public Image background;
-    protected Button button;
 
     protected float currentPercentage = 0.0f;
     protected float targetPercentage = 1.0f;
 
-    public void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.OnButtonClick();
+    }
 
+    public override void Start()
+    {
+        base.Start();
         fillImageFull.gameObject.GetComponent<FlatImage>().flatColor = LevelsConfig.GetLevels()[MainManager.GetCurrentLevel()].themeColor;
         fillImageFull.gameObject.GetComponent<FlatImage>().isShadowed = false;
         fillImageFull.gameObject.GetComponent<FlatImage>().ApplyFlatColor();
@@ -62,11 +61,6 @@ public class UIButtonBoardProgress : MonoBehaviour
                 fillImageFull.fillAmount = currentPercentage;
             }
         }
-    }
-
-    protected void OnButtonClick()
-    {
-
     }
 
     protected void ReloadPercentage()

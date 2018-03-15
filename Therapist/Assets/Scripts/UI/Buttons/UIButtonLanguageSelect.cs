@@ -3,32 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class UIButtonLanguageSelect : MonoBehaviour
+public class UIButtonLanguageSelect : UIButton
 {
     public ELanguage language = ELanguage.Polish;
     public Image flagImage;
-    protected Button button;
-    void Start ()
-    {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-        //         flagImage = GetComponentInChildren<Image>();
-        //         if (flagImage)
-        //         {
-        //             Sprite languageFlag;
-        //             if (LocalisationDatabase.Instance.languageFlags.TryGetValue(language, out languageFlag))
-        //             {
-        //                 flagImage.sprite = languageFlag;
-        //             }
-        //         }
-    }
     
-    protected void OnButtonClick()
+    protected override void OnButtonClick()
     {
+        base.OnButtonClick();
         SettingsSingleton.SetLanguage(language);
         UIManager.SetLanguagesListActive(false);
     }

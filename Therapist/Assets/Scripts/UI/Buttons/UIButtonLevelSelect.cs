@@ -3,26 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonLevelSelect : MonoBehaviour
+public class UIButtonLevelSelect : UIButton
 {
     public int levelValue = 0;
     public Text percentage;
     public Text levelValueText;
     public Image fillImageFull;
     public Image background;
-    protected Button button;
 
     protected float currentPercentage = 0.0f;
     protected float targetPercentage = 1.0f;
 
-    public void Start()
+    public override void Start()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-
+        base.Start();
         if(levelValueText)
         {
             levelValueText.text = (levelValue + 1).ToString();
@@ -72,13 +66,10 @@ public class UIButtonLevelSelect : MonoBehaviour
         gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f, Time.deltaTime * 5.0f);
     }
 
-    protected void OnButtonClick()
+    protected override void OnButtonClick()
     {
+        base.OnButtonClick();
         MainManager.SetCurrentLevel(levelValue);
-//         if(MainManager.GetCurrentScreen() == EGameScreen.Levels)
-//         {
-//             MainManager.SetCurrentScreen(EGameScreen.MainMenu);
-//         }
     }
 
     protected void ReloadPercentage()

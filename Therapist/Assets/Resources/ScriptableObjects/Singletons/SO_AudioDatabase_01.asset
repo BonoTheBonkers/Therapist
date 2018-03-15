@@ -32,10 +32,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: aeb822ce7243dae488052b13b2a5217a, type: 3}
     playDelay: 0
     volumeMultiplier: 1
-  onOptionApplied:
+  onButtonClicked:
     audioClips:
     - {fileID: 8300000, guid: 7a7badca50f93664f8ab99f13e3db14e, type: 3}
-    - {fileID: 8300000, guid: 620d13170a439a2408a1eff70b186307, type: 3}
     playDelay: 0
     volumeMultiplier: 1
   initializeBoard:

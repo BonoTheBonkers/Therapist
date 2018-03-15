@@ -3,21 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonSettings : MonoBehaviour
+public class UIButtonSettings : UIButton
 {
-    protected Button button;
-    // Use this for initialization
-    void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
-    }
-
-    protected void OnButtonClick()
-    {
+        base.OnButtonClick();
         UIManager.SetSettingsScreenActive(true);
         EventManager.TriggerEvent(EventManager.OnOptionScreenOpened);
     }

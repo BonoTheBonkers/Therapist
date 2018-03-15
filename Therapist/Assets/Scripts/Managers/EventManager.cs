@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class EventManager : MonoBehaviour
 {
     public static string OnCursorClick = "OnCursorClick";
+    public static string OnButtonClicked = "OnButtonClicked";
 
     public static string OnCorrectAnswer = "OnCorrectAnswer";
     public static string OnWrongAnswer = "OnWrongAnswer";

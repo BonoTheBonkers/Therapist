@@ -9,6 +9,6 @@ public class AudioDatabase : SingletonScriptableObject<AudioDatabase>
     public FSoundPreset correctAnswer;
     public FSoundPreset wrongAnswer;
     public FSoundPreset targetTokenPlaceChanged;
-    public FSoundPreset onOptionApplied;
+    public FSoundPreset onButtonClicked;
     public FSoundPreset initializeBoard;
 }

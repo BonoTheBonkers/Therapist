@@ -3,20 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonBoardInformationLevel : MonoBehaviour
+public class UIButtonBoardInformationLevel : UIButton
 {
     public Text valueText;
 
-    protected Button button;
-    // Use this for initialization
-
-    public void Start()
+    protected override void OnButtonClick()
     {
-        button = GetComponentInChildren<Button>();
-        if (button)
-        {
-            button.onClick.AddListener(OnButtonClick);
-        }
+        base.OnButtonClick();
     }
 
     public void OnEnable()
@@ -28,10 +21,6 @@ public class UIButtonBoardInformationLevel : MonoBehaviour
     public void OnDisable()
     {
         EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadCurrentLevel);
-    }
-
-    protected void OnButtonClick()
-    {
     }
 
     protected void ReloadCurrentLevel()
