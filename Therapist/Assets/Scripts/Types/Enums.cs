@@ -147,3 +147,12 @@ public enum ETokenPlaceType
     CurrentTokens,
     Max
 }
+
+public enum ESettingsSliderType
+{
+    None,
+    Sounds,
+    Music,
+    VideoQuality,
+    Max
+}

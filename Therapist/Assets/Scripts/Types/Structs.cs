@@ -319,4 +319,40 @@ public class FApplicationData
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         }
     }
+
+    public void SetMusicVolume(float inVolume)
+    {
+        if (inVolume != applicationSettings.audioSettings.musicVolume)
+        {
+            applicationSettings.audioSettings.musicVolume = inVolume;
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+
+    public void SetIsMusicMuted(bool inValue)
+    {
+        if (inValue != applicationSettings.audioSettings.isMusicMuted)
+        {
+            applicationSettings.audioSettings.isMusicMuted = inValue;
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+
+    public void SetSoundsVolume(float inVolume)
+    {
+        if (inVolume != applicationSettings.audioSettings.soundsVolume)
+        {
+            applicationSettings.audioSettings.soundsVolume = inVolume;
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
+
+    public void SetIsSoundsMuted(bool inValue)
+    {
+        if (inValue != applicationSettings.audioSettings.isSoundsMuted)
+        {
+            applicationSettings.audioSettings.isSoundsMuted = inValue;
+            EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        }
+    }
 }

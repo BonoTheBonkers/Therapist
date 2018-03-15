@@ -33,6 +33,11 @@ public class AudioManager : SingletonManager<AudioManager>
 
     private void PlayClip(AudioClip clipToPlay, float delay = 0.0f, bool isSingleInstance = true)
     {
+        if(MainManager.Instance.applicationData.applicationSettings.audioSettings.isSoundsMuted)
+        {
+            return;
+        }
+
         if(clipToPlay)
         {
             if(isSingleInstance)
@@ -50,7 +55,7 @@ public class AudioManager : SingletonManager<AudioManager>
                 if (!audioSources[i].isPlaying)
                 {
                     audioSources[i].clip = clipToPlay;
-                    if (delay == 0.0f)
+                    if (delay <= 0.0f)
                     {
                         audioSources[i].Play();
                     }
@@ -58,6 +63,8 @@ public class AudioManager : SingletonManager<AudioManager>
                     {
                         audioSources[i].PlayDelayed(delay);
                     }
+
+                    audioSources[i].volume = MainManager.Instance.applicationData.applicationSettings.audioSettings.soundsVolume;
                     return;
                 }
             }
