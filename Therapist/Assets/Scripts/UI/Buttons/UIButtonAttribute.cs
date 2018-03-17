@@ -56,7 +56,7 @@ public class UIButtonAttribute : UIButton
 
         if (percentage)
         {
-            percentage.text = ((int)(currentPercentage * 100.0f)).ToString() + "%";
+            percentage.text = ((int)(Mathf.Round(currentPercentage * 100.0f))).ToString() + "%";
         }
         if (fillImageFull)
         {
