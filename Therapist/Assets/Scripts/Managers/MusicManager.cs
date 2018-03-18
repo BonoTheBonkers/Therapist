@@ -8,8 +8,10 @@ public class MusicManager : SingletonManager<MusicManager>
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
+        UpdateVolume();
         EventManager.StartListening(EventManager.OnApplicationDataChanged, UpdateVolume);
-	}
+        EventManager.StartListening(EventManager.OnApplicationDataLoaded, UpdateVolume);
+    }
 	
 	void UpdateVolume ()
     {

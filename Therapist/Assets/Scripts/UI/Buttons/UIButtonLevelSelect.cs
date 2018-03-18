@@ -34,6 +34,7 @@ public class UIButtonLevelSelect : UIButton
     public void OnEnable()
     {
         EventManager.StartListening(EventManager.OnApplicationDataChanged, ReloadPercentage);
+        currentPercentage = 0.1f;
         ReloadPercentage();
     }
 
@@ -51,7 +52,7 @@ public class UIButtonLevelSelect : UIButton
 
         if (currentPercentage != targetPercentage)
         {
-            currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 1.2f), targetPercentage);
+            currentPercentage = Mathf.Min(currentPercentage + (Time.deltaTime * 0.5f), targetPercentage);
 
             if (percentage)
             {
@@ -68,18 +69,16 @@ public class UIButtonLevelSelect : UIButton
 
     protected override void OnButtonClick()
     {
-        base.OnButtonClick();
-        MainManager.SetCurrentLevel(levelValue);
+        if(MainManager.GetCurrentScreen() != EGameScreen.Board)
+        {
+            base.OnButtonClick();
+            MainManager.SetCurrentLevel(levelValue);
+        }
     }
 
     protected void ReloadPercentage()
     {
-        currentPercentage = 0.0f;
         targetPercentage = MainManager.GetProgressPercentageAtLevel(levelValue);
         gameObject.transform.localScale = MainManager.GetCurrentLevel() == levelValue ? Vector3.one * 1.0f : Vector3.one * 0.7f;
-        if(targetPercentage == currentPercentage)
-        {
-            currentPercentage = 0.1f;
-        }
     }
 }
