@@ -14,12 +14,16 @@ public class TokenController : MonoBehaviour
     public PointerEventData currentPointerEventData;
     public Image backgroundImage;
     public Image iconImage;
+    public Image highlightImage;
     [HideInInspector]
     public EAttribute attribute;
+
+    protected Color maxHighlightColor = new Color(1.0f, 1.0f, 1.0f, 0.15f);
 
     public void Update()
     {
         MoveToTargetTokenPlace();
+        UpdateHighlight();
     }
 
     public void SetupToken(int inValue, Sprite inImage, TokenPlaceController inTargetTokenPlace, ETokenPlaceType inTokenPlaceType, EAttribute inAttribute, int maxSequenceValue)
@@ -74,6 +78,18 @@ public class TokenController : MonoBehaviour
         {
             gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, targetTokenPlace.gameObject.transform.position, Time.deltaTime * 5.0f);
             gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, targetTokenPlace.gameObject.transform.parent.transform.localScale, Time.deltaTime * 5.0f);
+        }
+    }
+
+    protected void UpdateHighlight()
+    {
+        if(!IsTokenInFinalPlace())
+        {
+            highlightImage.color = maxHighlightColor * Mathf.Abs(Mathf.Sin(Time.fixedTime));
+        }
+        else
+        {
+            highlightImage.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         }
     }
 

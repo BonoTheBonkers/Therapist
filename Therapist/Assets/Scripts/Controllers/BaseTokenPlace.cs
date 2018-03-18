@@ -110,6 +110,17 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
 
     protected void AdjustTokenPlacesPositions()
     {
+        if(tokenPlaceType == ETokenPlaceType.CurrentTokens)
+        {
+            for (int i = 0; i < currentTokenPlaces.Count; i++)
+            {
+                TokenPlaceController temp = currentTokenPlaces[i];
+                int randomIndex = Random.Range(i, currentTokenPlaces.Count);
+                currentTokenPlaces[i] = currentTokenPlaces[randomIndex];
+                currentTokenPlaces[randomIndex] = temp;
+            }
+        }
+
         for(int i = 0; i < currentTokenPlaces.Count; ++i)
         {
             if(currentTokenPlaces[i] != null)
