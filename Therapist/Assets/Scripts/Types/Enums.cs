@@ -156,3 +156,13 @@ public enum ESettingsSliderType
     VideoQuality,
     Max
 }
+
+public enum EReturnConfirmType
+{
+    None,
+    ReturnToAttributes,
+    ReturnToMainMenu,
+    QuitApplication,
+    ResetApllication,
+    Max
+}

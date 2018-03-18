@@ -10,7 +10,7 @@ public class UIButtonReturn : UIButton
         base.OnButtonClick();
         if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.active && !UIManager.Instance.playersListGameObject.active && !UIManager.Instance.newPlayerGameObject.active && !UIManager.Instance.settingsGameObject.active)
         {
-            Application.Quit();
+            UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
         }
         if(UIManager.Instance.newPlayerGameObject.active)
         {
@@ -23,7 +23,14 @@ public class UIButtonReturn : UIButton
         {
             if (MainManager.GetCurrentScreen() == EGameScreen.Board)
             {
-                MainManager.SetCurrentScreen(MainManager.GetPreviousScreen());
+                if(MainManager.GetPreviousScreen() == EGameScreen.AttributeMenu)
+                {
+                    UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.ReturnToAttributes);
+                }
+                else
+                {
+                    UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.ReturnToMainMenu);
+                }
             }
             else
             {

@@ -279,4 +279,56 @@ public class MainManager : SingletonManager<MainManager>
     {
         Instance.applicationData.SetCurrentPlayer(playerData);
     }
+
+    public static void ReturnConfirm()
+    {
+        if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.QuitApplication)
+        {
+            Instance.QuitApplication();
+        }
+        else if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ReturnToAttributes)
+        {
+            Instance.ReturnToAttributes();
+        }
+        else if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ReturnToMainMenu)
+        {
+            Instance.ReturnToMainMenu();
+        }
+        else if (UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ResetApllication)
+        {
+            Instance.ResetApplication();
+        }
+
+        UIReturnConfirmController.HideConfirmScreen();
+    }
+
+    public static void ReturnCancel()
+    {
+        UIReturnConfirmController.Instance.gameObject.SetActive(false);
+    }
+
+    protected void QuitApplication()
+    {
+        Application.Quit();
+    }
+
+    protected void ReturnToAttributes()
+    {
+        MainManager.SetCurrentScreen(EGameScreen.AttributeMenu);
+    }
+
+    protected void ReturnToMainMenu()
+    {
+        MainManager.SetCurrentScreen(EGameScreen.MainMenu);
+    }
+
+    protected void ResetApplication()
+    {
+        applicationData.ResetToDefault();
+        EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        SetCurrentScreen(EGameScreen.MainMenu);
+        UIManager.SetSettingsScreenActive(false);
+        UIManager.SetPlayersListActive(true);
+        UIManager.SetNewPlayerScreenActive(true);
+    }
 }
