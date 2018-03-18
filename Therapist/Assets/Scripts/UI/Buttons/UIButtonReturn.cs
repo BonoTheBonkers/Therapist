@@ -8,11 +8,18 @@ public class UIButtonReturn : UIButton
     protected override void OnButtonClick()
     {
         base.OnButtonClick();
-        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.active && !UIManager.Instance.playersListGameObject.active && !UIManager.Instance.newPlayerGameObject.active && !UIManager.Instance.settingsGameObject.active)
+
+        if(UIReturnConfirmController.Instance.gameObject.activeInHierarchy)
+        {
+            MainManager.ReturnCancel();
+            return;
+        }
+
+        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.activeInHierarchy && !UIManager.Instance.playersListGameObject.activeInHierarchy && !UIManager.Instance.newPlayerGameObject.activeInHierarchy && !UIManager.Instance.settingsGameObject.activeInHierarchy)
         {
             UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
         }
-        if(UIManager.Instance.newPlayerGameObject.active)
+        if(UIManager.Instance.newPlayerGameObject.activeInHierarchy)
         {
             if(MainManager.Instance.applicationData.userData.players.Count > 0)
             {

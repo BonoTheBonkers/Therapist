@@ -17,7 +17,7 @@ public class MusicManager : SingletonManager<MusicManager>
     {
         if (audioSource)
         {
-            audioSource.enabled = MainManager.Instance.applicationData.applicationSettings.audioSettings.isMusicMuted;
+            audioSource.enabled = !MainManager.Instance.applicationData.applicationSettings.audioSettings.isMusicMuted;
             audioSource.volume =  MainManager.Instance.applicationData.applicationSettings.audioSettings.musicVolume * 0.3f;
         }
 	}
