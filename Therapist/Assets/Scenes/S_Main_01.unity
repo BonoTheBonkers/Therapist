@@ -2659,7 +2659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: COLORS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &166192273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2763,7 +2763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIEW STATISTICS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &171729993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4395,7 +4395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT DIFFICULTY
+  m_Text: TEXT UNKNOWN
 --- !u!222 &292644714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4619,7 +4619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DEVELOPMENT
+  m_Text: TEXT UNKNOWN
 --- !u!222 &296521500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5085,7 +5085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AMOUNTS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &325878561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5829,7 +5829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MOVEMENTS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &393811812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6417,7 +6417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ADD USER
+  m_Text: TEXT UNKNOWN
 --- !u!222 &444895365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6635,7 +6635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SIZES
+  m_Text: TEXT UNKNOWN
 --- !u!222 &485265988
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8392,7 +8392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CORRECT
+  m_Text: TEXT UNKNOWN
 --- !u!222 &600375754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10892,7 +10892,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT DIFFICULTY
+  m_Text: TEXT UNKNOWN
 --- !u!222 &749222648
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11921,7 +11921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MODIFY SETTINGS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &840195994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12450,7 +12450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MIXED
+  m_Text: TEXT UNKNOWN
 --- !u!222 &869578859
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14012,7 +14012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT EXERCISE
+  m_Text: TEXT UNKNOWN
 --- !u!222 &985843168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14272,7 +14272,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e16dc5eba249c54d8636a043c6bf063, type: 2}
   - {fileID: 11400000, guid: e7ca29fb6000e584bb8f6cbe849fcb1e, type: 2}
   - {fileID: 11400000, guid: 32df3a12788b03f42b0be7aed700ce8f, type: 2}
-  - {fileID: 0}
 --- !u!1 &1027116114
 GameObject:
   m_ObjectHideFlags: 0
@@ -14639,7 +14638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SIZES
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1049690708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15288,7 +15287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIRST NAME
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1075142257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18447,7 +18446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SOMETHING MORE
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1339465350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18556,7 +18555,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: THERAPIST
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1345908276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18769,7 +18768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SURNAME
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1357859969
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20649,7 +20648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT OR MODIFY PLAYER
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1490347397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22905,7 +22904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIEW STATISTICS
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1640858822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26568,7 +26567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT LANGUAGE
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1896218181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26701,7 +26700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUICK PLAY
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1915158913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27559,7 +27558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1963277635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27836,7 +27835,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AGE
+  m_Text: TEXT UNKNOWN
 --- !u!222 &1985783604
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28889,7 +28888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SHAPES
+  m_Text: TEXT UNKNOWN
 --- !u!222 &2068964172
 CanvasRenderer:
   m_ObjectHideFlags: 0

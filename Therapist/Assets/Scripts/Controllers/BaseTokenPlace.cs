@@ -63,12 +63,12 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
                                 }
                                 if(exampleSequence)
                                 {
-                                    newToken.SetupToken(inBoardConfig.sequencesValues[i].value, exampleSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                                    newToken.SetupToken(inBoardConfig.sequencesValues[i].value, exampleSequence.sprites[GetCurrentSpriteIndex(inBoardConfig.sequencesValues[i].value, MainManager.GetCurrentAttribute())], newTokenPlace, tokenPlaceType, MainManager.GetCurrentAttribute(), GetSequenceMaxValue(inBoardConfig));
                                 }
                             }
                             else
                             {
-                                newToken.SetupToken(inBoardConfig.sequencesValues[i].value, inSequence.sprites[inBoardConfig.sequencesValues[i].value], newTokenPlace, tokenPlaceType);
+                                newToken.SetupToken(inBoardConfig.sequencesValues[i].value, inSequence.sprites[GetCurrentSpriteIndex(inBoardConfig.sequencesValues[i].value, MainManager.GetCurrentAttribute())], newTokenPlace, tokenPlaceType, MainManager.GetCurrentAttribute(), GetSequenceMaxValue(inBoardConfig));
                             }
                             Vector3 newPosition = newToken.transform.position;
                             newPosition.y = 1000.0f;
@@ -82,6 +82,30 @@ public class BaseTokenPlace : MonoBehaviour, IBoardInitializable
         }
 
         AdjustTokenPlacesPositions();
+    }
+
+    protected int GetCurrentSpriteIndex(int value, EAttribute attribute)
+    {
+        if(attribute == EAttribute.Sizes)
+        {
+            return 0;
+        }
+        return value;
+    }
+
+    protected int GetSequenceMaxValue(FBoardConfig inBoardConfig)
+    {
+        int valueToReturn = 0;
+
+        for(int i = 0; i < inBoardConfig.sequencesValues.Count; ++i)
+        {
+            if(inBoardConfig.sequencesValues[i].value > valueToReturn)
+            {
+                valueToReturn = inBoardConfig.sequencesValues[i].value;
+            }
+        }
+
+        return valueToReturn;
     }
 
     protected void AdjustTokenPlacesPositions()

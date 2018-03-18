@@ -14,18 +14,29 @@ public class TokenController : MonoBehaviour
     public PointerEventData currentPointerEventData;
     public Image backgroundImage;
     public Image iconImage;
+    [HideInInspector]
+    public EAttribute attribute;
 
     public void Update()
     {
         MoveToTargetTokenPlace();
     }
 
-    public void SetupToken(int inValue, Sprite inImage, TokenPlaceController inTargetTokenPlace, ETokenPlaceType inTokenPlaceType)
+    public void SetupToken(int inValue, Sprite inImage, TokenPlaceController inTargetTokenPlace, ETokenPlaceType inTokenPlaceType, EAttribute inAttribute, int maxSequenceValue)
     {
         value = inValue;
         iconImage.sprite = inImage;
         targetTokenPlace = inTargetTokenPlace;
         tokenPlaceType = inTokenPlaceType;
+        attribute = inAttribute;
+        if(attribute == EAttribute.Sizes && maxSequenceValue > 0)
+        {
+            iconImage.transform.localScale = Vector3.one * ((0.4f) + (0.6f * ((float)value / (float)maxSequenceValue)));
+        }
+        else
+        {
+            iconImage.transform.localScale = Vector3.one;
+        }
     }
 
     public void TrySetTargetTokenPlace(TokenPlaceController newTargetTokenPlace)

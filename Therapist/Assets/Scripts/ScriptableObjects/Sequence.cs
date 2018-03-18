@@ -16,7 +16,5 @@ public class Sequence : ScriptableObject
     [Tooltip("Best adviced age range for player")]
     public Vector2 ageRange = new Vector2(1, 99);
     [Tooltip("List of images to be used in board of this sequence")]
-    public List<Texture2D> images;
-    [Tooltip("List of images to be used in board of this sequence")]
     public List<Sprite> sprites;
 }

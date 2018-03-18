@@ -51,13 +51,20 @@ public class SequencesConfig : SingletonScriptableObject<SequencesConfig>
 
         for (int i = 0; i < Instance.sequences.Count; ++i)
         {
-            for (int j = 0; j < Instance.sequences[i].attributes.Count; ++j)
+            if(Instance.sequences[i] != null)
             {
-                FSequencesDatabase sequencesDatabase;
-                if (sequencesSorted.TryGetValue(Instance.sequences[i].attributes[j], out sequencesDatabase))
+                for (int j = 0; j < Instance.sequences[i].attributes.Count; ++j)
                 {
-                    sequencesDatabase.sequences.Add(Instance.sequences[i]);
+                    FSequencesDatabase sequencesDatabase;
+                    if (sequencesSorted.TryGetValue(Instance.sequences[i].attributes[j], out sequencesDatabase))
+                    {
+                        sequencesDatabase.sequences.Add(Instance.sequences[i]);
+                    }
                 }
+            }
+            else
+            {
+                Instance.sequences.RemoveAt(i);
             }
         }
 
