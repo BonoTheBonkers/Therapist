@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
     public static string OnPlayerChanged = "OnPlayerChanged";
     public static string OnContraindicationsChanged = "OnContraindicationsChanged";
     public static string OnOptionScreenOpened = "OnOptionScreenOpened";
+    public static string OnConfirmScreenShowed = "OnConfirmScreenShowed";
 
     public static string OnInitializeBoard = "OnInitializeBoard";
 

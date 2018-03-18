@@ -17,7 +17,8 @@ public class MainManager : SingletonManager<MainManager>
         LocalisationDatabase.ReloadLocalisationDatabase();
         SequencesConfig.ReloadSequencesDatabase();
         FindNextBestLevelAndAttribute();
-        if(MainManager.Instance.applicationData.userData.players.Count == 0)
+        AttributeScreenController.Instance.OnCurrentScreenChanged();
+        if (MainManager.Instance.applicationData.userData.players.Count == 0)
         {
             UIManager.SetNewPlayerScreenActive(true);
         }

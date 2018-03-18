@@ -21,11 +21,13 @@ public class WinScreenController : MonoBehaviour
         GetCanvasGroup().blocksRaycasts = false;
         EventManager.StartListening(EventManager.OnCorrectAnswer, OnCorrectAnswer);
         EventManager.StartListening(EventManager.OnCurrentScreenChanged, OnCurrentScreenChanged);
+        EventManager.StartListening(EventManager.OnConfirmScreenShowed, OnCurrentScreenChanged);
     }
     void OnDisable()
     {
         EventManager.StopListening(EventManager.OnCorrectAnswer, OnCorrectAnswer);
         EventManager.StopListening(EventManager.OnCurrentScreenChanged, OnCurrentScreenChanged);
+        EventManager.StopListening(EventManager.OnConfirmScreenShowed, OnCurrentScreenChanged);
     }
 
     public CanvasGroup GetCanvasGroup()
@@ -52,6 +54,10 @@ public class WinScreenController : MonoBehaviour
 
     public void OnCurrentScreenChanged()
     {
+        if(shouldBeActive)
+        {
+            MainManager.OnWin();
+        }
         HideScreen(true);
     }
 

@@ -44,6 +44,7 @@ public class UIReturnConfirmController : SingletonManager<UIReturnConfirmControl
         }
         returnConfirmType = inReturnConfirmType;
         Instance.gameObject.SetActive(true);
+        EventManager.TriggerEvent(EventManager.OnConfirmScreenShowed);
     }
 
     public static void HideConfirmScreen()

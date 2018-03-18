@@ -15,6 +15,7 @@ public class UIButtonBoardInformationAttribute : UIButton
     public void OnEnable()
     {
         EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReloadCurrentAttribute);
+        EventManager.StartListening(EventManager.OnCurrentAttributeChanged, ReloadCurrentAttribute);
         EventManager.StartListening(EventManager.OnLanguageChanged, ReloadCurrentAttribute);
         ReloadCurrentAttribute();
     }
@@ -22,6 +23,7 @@ public class UIButtonBoardInformationAttribute : UIButton
     public void OnDisable()
     {
         EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReloadCurrentAttribute);
+        EventManager.StopListening(EventManager.OnCurrentAttributeChanged, ReloadCurrentAttribute);
         EventManager.StopListening(EventManager.OnLanguageChanged, ReloadCurrentAttribute);
     }
 
