@@ -6,6 +6,8 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
 {
     public FBoardConfig currentBoard;
     public Sequence currentSequence;
+    public GameObject tokensParent;
+    public GameObject draggedParent;
 
     protected ExampleSequenceController exampleSequenceController;
     protected CurrentSequenceController currentSequenceController;

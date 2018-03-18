@@ -287,7 +287,7 @@ public class FApplicationData
     }
     public void DeletePlayer(PlayerData playerData)
     {
-        if(userData.players.Count > 1)
+        //if(userData.players.Count > 1)
         {
             userData.players.Remove(playerData);
             EventManager.TriggerEvent(EventManager.OnPlayersListChanged);

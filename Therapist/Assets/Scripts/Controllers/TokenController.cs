@@ -31,12 +31,14 @@ public class TokenController : MonoBehaviour
         attribute = inAttribute;
         if(attribute == EAttribute.Sizes && maxSequenceValue > 0)
         {
-            iconImage.transform.localScale = Vector3.one * ((0.4f) + (0.6f * ((float)value / (float)maxSequenceValue)));
+            iconImage.transform.localScale = Vector3.one * ((0.4f) + (0.4f * ((float)value / (float)maxSequenceValue)));
         }
         else
         {
             iconImage.transform.localScale = Vector3.one;
         }
+
+        gameObject.transform.parent = BoardController.Instance.tokensParent.gameObject.transform;
     }
 
     public void TrySetTargetTokenPlace(TokenPlaceController newTargetTokenPlace)
@@ -101,11 +103,13 @@ public class TokenController : MonoBehaviour
 
     public void OnTokenBeginDrag(PointerEventData eventData)
     {
+        gameObject.transform.parent = BoardController.Instance.draggedParent.gameObject.transform;
         currentPointerEventData = eventData;
     }
 
     public void OnTokenEndDrag(PointerEventData eventData)
     {
+        gameObject.transform.parent = BoardController.Instance.tokensParent.gameObject.transform;
         currentPointerEventData = null;
     }
 }

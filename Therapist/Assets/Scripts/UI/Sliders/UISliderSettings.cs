@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UISliderSettings : MonoBehaviour
+public class UISliderSettings : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 {
     public ESettingsSliderType settingsSliderType;
     protected Text text;
@@ -87,5 +88,21 @@ public class UISliderSettings : MonoBehaviour
         {
             //@TODO
         }
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
+    }
+
+    protected void OnSliderPointer()
+    {
+        EventManager.TriggerEvent(EventManager.OnButtonClicked);
+    }
+
+    public void OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData)
+    {
+        OnSliderPointer();
+    }
+
+    public void OnEndDrag(UnityEngine.EventSystems.PointerEventData eventData)
+    {
+        OnSliderPointer();
     }
 }
