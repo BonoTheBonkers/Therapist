@@ -223,19 +223,19 @@ public class FVideoSettings
 public class FAudioSettings
 {
     [SerializeField]
-    public float musicVolume = 1.0f;
+    public float musicVolume = 0.75f;
     [SerializeField]
     public bool isMusicMuted = false;
     [SerializeField]
-    public float soundsVolume = 1.0f;
+    public float soundsVolume = 0.75f;
     [SerializeField]
     public bool isSoundsMuted = false;
 
     public void ResetToDefault()
     {
-        musicVolume = 1.0f;
+        musicVolume = 0.75f;
         isMusicMuted = false;
-        soundsVolume = 1.0f;
+        soundsVolume = 0.75f;
         isSoundsMuted = false;
     }
 }
