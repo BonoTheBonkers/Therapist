@@ -31,22 +31,6 @@ MonoBehaviour:
     - value: 1
       IsSolvedOnStart: 0
     - value: 2
-      IsSolvedOnStart: 1
-  - exampleConfig: 1
-    sequencesValues:
-    - value: 0
-      IsSolvedOnStart: 0
-    - value: 1
-      IsSolvedOnStart: 1
-    - value: 2
-      IsSolvedOnStart: 1
-  - exampleConfig: 1
-    sequencesValues:
-    - value: 0
-      IsSolvedOnStart: 1
-    - value: 1
-      IsSolvedOnStart: 0
-    - value: 2
       IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
@@ -59,10 +43,22 @@ MonoBehaviour:
   - exampleConfig: 1
     sequencesValues:
     - value: 0
+      IsSolvedOnStart: 1
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0
+  - exampleConfig: 1
+    sequencesValues:
+    - value: 0
       IsSolvedOnStart: 0
     - value: 1
-      IsSolvedOnStart: 0
+      IsSolvedOnStart: 1
     - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
       IsSolvedOnStart: 1
   - exampleConfig: 1
     sequencesValues:
@@ -72,6 +68,18 @@ MonoBehaviour:
       IsSolvedOnStart: 0
     - value: 2
       IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 1
+  - exampleConfig: 1
+    sequencesValues:
+    - value: 0
+      IsSolvedOnStart: 0
+    - value: 1
+      IsSolvedOnStart: 1
+    - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
     - value: 0
@@ -80,6 +88,8 @@ MonoBehaviour:
       IsSolvedOnStart: 0
     - value: 2
       IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 1
   - exampleConfig: 1
     sequencesValues:
     - value: 0
@@ -88,6 +98,8 @@ MonoBehaviour:
       IsSolvedOnStart: 0
     - value: 2
       IsSolvedOnStart: 0
+    - value: 3
+      IsSolvedOnStart: 0
   - exampleConfig: 1
     sequencesValues:
     - value: 0
@@ -95,4 +107,6 @@ MonoBehaviour:
     - value: 1
       IsSolvedOnStart: 0
     - value: 2
+      IsSolvedOnStart: 0
+    - value: 3
       IsSolvedOnStart: 0
