@@ -18,189 +18,189 @@ MonoBehaviour:
     backgroundColor: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
     themeAmbientLight: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
     themeAmbientDark: {r: 0.9058824, g: 0.29803923, b: 0.23529413, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 1
-    fullColor: {r: 0.83823526, g: 0.44128868, b: 0.17874137, a: 1}
-    shadowedColor: {r: 0.7205882, g: 0.35702965, b: 0.11656572, a: 1}
-    backgroundColor: {r: 0.77205884, g: 0.49192104, b: 0.24410684, a: 1}
+    fullColor: {r: 0.9044118, g: 0.5241592, b: 0.27265355, a: 1}
+    shadowedColor: {r: 0.8308824, g: 0.4778674, b: 0.24437715, a: 1}
+    backgroundColor: {r: 0.6838235, g: 0.45170933, b: 0.24637759, a: 1}
     themeAmbientLight: {r: 0.90196085, g: 0.49411768, b: 0.13333334, a: 1}
     themeAmbientDark: {r: 0.90196085, g: 0.49411768, b: 0.13333334, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 2
     fullColor: {r: 0.63235295, g: 0.52759796, b: 0.102292374, a: 1}
     shadowedColor: {r: 0.52205884, g: 0.47154415, b: 0.1458694, a: 1}
     backgroundColor: {r: 0.7352941, g: 0.61241746, b: 0.11353808, a: 1}
     themeAmbientLight: {r: 1, g: 0.80392164, b: 0.007843138, a: 1}
     themeAmbientDark: {r: 1, g: 0.80392164, b: 0.007843138, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 3
     fullColor: {r: 0.66176474, g: 0.536224, b: 0.24329586, a: 1}
     shadowedColor: {r: 0.5661765, g: 0.46751186, b: 0.23729454, a: 1}
     backgroundColor: {r: 0.8014706, g: 0.68655384, b: 0.41841477, a: 1}
     themeAmbientLight: {r: 0.94117653, g: 0.8705883, b: 0.7058824, a: 1}
     themeAmbientDark: {r: 0.94117653, g: 0.8705883, b: 0.7058824, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.9705882, g: 0.9705882, b: 0.9705882, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 4
-    fullColor: {r: 0.05709344, g: 0.35207614, b: 0.64705884, a: 1}
-    shadowedColor: {r: 0.083044976, g: 0.27681658, b: 0.4705882, a: 1}
+    fullColor: {r: 0.036007773, g: 0.42609212, b: 0.8161765, a: 1}
+    shadowedColor: {r: 0.11299739, g: 0.40576342, b: 0.6985294, a: 1}
     backgroundColor: {r: 0.22404845, g: 0.38408306, b: 0.5441177, a: 1}
     themeAmbientLight: {r: 0.20392159, g: 0.28627452, b: 0.36862746, a: 1}
     themeAmbientDark: {r: 0.20392159, g: 0.28627452, b: 0.36862746, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 5
     fullColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 1}
     shadowedColor: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
     backgroundColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 1}
     themeAmbientLight: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 1}
     themeAmbientDark: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 6
     fullColor: {r: 0.60784316, g: 0.34901962, b: 0.7137255, a: 1}
-    shadowedColor: {r: 0.5568628, g: 0.26666668, b: 0.6784314, a: 1}
-    backgroundColor: {r: 0.46058422, g: 0.0047577904, b: 0.64705884, a: 1}
+    shadowedColor: {r: 0.64653987, g: 0.22404847, b: 0.8235294, a: 1}
+    backgroundColor: {r: 0.56718093, g: 0.084342554, b: 0.7647059, a: 1}
     themeAmbientLight: {r: 0.60784316, g: 0.34901962, b: 0.7137255, a: 1}
     themeAmbientDark: {r: 0.60784316, g: 0.34901962, b: 0.7137255, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 7
     fullColor: {r: 0.227451, g: 0.43529415, b: 0.5058824, a: 1}
     shadowedColor: {r: 0.20784315, g: 0.38431376, b: 0.44705886, a: 1}
     backgroundColor: {r: 0.227451, g: 0.43529415, b: 0.5058824, a: 1}
     themeAmbientLight: {r: 0.227451, g: 0.43529415, b: 0.5058824, a: 1}
     themeAmbientDark: {r: 0.227451, g: 0.43529415, b: 0.5058824, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 8
-    fullColor: {r: 0.1364079, g: 0.4377839, b: 0.6397059, a: 1}
-    shadowedColor: {r: 0.092776805, g: 0.38323155, b: 0.5735294, a: 1}
+    fullColor: {r: 0.11386246, g: 0.5608275, b: 0.8602941, a: 1}
+    shadowedColor: {r: 0.111970164, g: 0.5285434, b: 0.8014706, a: 1}
     backgroundColor: {r: 0.3049308, g: 0.5362156, b: 0.6911765, a: 1}
     themeAmbientLight: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
     themeAmbientDark: {r: 0.20392159, g: 0.59607846, b: 0.8588236, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 9
     fullColor: {r: 0.14094938, g: 0.5808823, b: 0.32750323, a: 1}
     shadowedColor: {r: 0.084558815, g: 0.5, b: 0.2607269, a: 1}
-    backgroundColor: {r: 0.06433822, g: 0.625, b: 0.30208716, a: 1}
+    backgroundColor: {r: 0.12489187, g: 0.5147059, b: 0.29019272, a: 1}
     themeAmbientLight: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
     themeAmbientDark: {r: 0.09191178, g: 0.625, b: 0.31796813, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 10
     fullColor: {r: 0.10196079, g: 0.7372549, b: 0.6117647, a: 1}
     shadowedColor: {r: 0.08627451, g: 0.627451, b: 0.52156866, a: 1}
     backgroundColor: {r: 0.10196079, g: 0.7372549, b: 0.6117647, a: 1}
     themeAmbientLight: {r: 0.10196079, g: 0.7372549, b: 0.6117647, a: 1}
     themeAmbientDark: {r: 0.10196079, g: 0.7372549, b: 0.6117647, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 11
     fullColor: {r: 0.92549026, g: 0.94117653, b: 0.9450981, a: 1}
     shadowedColor: {r: 0.7411765, g: 0.76470596, b: 0.7803922, a: 1}
     backgroundColor: {r: 0.92549026, g: 0.94117653, b: 0.9450981, a: 1}
     themeAmbientLight: {r: 0.92549026, g: 0.94117653, b: 0.9450981, a: 1}
     themeAmbientDark: {r: 0.92549026, g: 0.94117653, b: 0.9450981, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 12
     fullColor: {r: 0.58431375, g: 0.64705884, b: 0.6509804, a: 1}
     shadowedColor: {r: 0.49803925, g: 0.54901963, b: 0.5529412, a: 1}
     backgroundColor: {r: 0.58431375, g: 0.64705884, b: 0.6509804, a: 1}
     themeAmbientLight: {r: 0.58431375, g: 0.64705884, b: 0.6509804, a: 1}
     themeAmbientDark: {r: 0.58431375, g: 0.64705884, b: 0.6509804, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 13
-    fullColor: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
-    shadowedColor: {r: 0.1764706, g: 0.3137255, b: 0.21176472, a: 1}
+    fullColor: {r: 0.18501297, g: 0.42647058, b: 0.25801176, a: 1}
+    shadowedColor: {r: 0.18836506, g: 0.38235295, b: 0.2382477, a: 1}
     backgroundColor: {r: 0.22707613, g: 0.5147059, b: 0.31403396, a: 1}
     themeAmbientLight: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
     themeAmbientDark: {r: 0.20392159, g: 0.37254903, b: 0.25490198, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 14
     fullColor: {r: 0.43786108, g: 0.3730536, b: 0.6764706, a: 1}
     shadowedColor: {r: 0.3755887, g: 0.30687717, b: 0.63235295, a: 1}
-    backgroundColor: {r: 0.47244427, g: 0.3970588, b: 0.75, a: 1}
+    backgroundColor: {r: 0.5188526, g: 0.44009516, b: 0.8088235, a: 1}
     themeAmbientLight: {r: 0.454902, g: 0.36862746, b: 0.7725491, a: 1}
     themeAmbientDark: {r: 0.454902, g: 0.36862746, b: 0.7725491, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 15
     fullColor: {r: 0.36862746, g: 0.27058825, b: 0.20392159, a: 1}
     shadowedColor: {r: 0.3137255, g: 0.23137257, b: 0.17254902, a: 1}
     backgroundColor: {r: 0.36862746, g: 0.27058825, b: 0.20392159, a: 1}
     themeAmbientLight: {r: 0.36862746, g: 0.27058825, b: 0.20392159, a: 1}
     themeAmbientDark: {r: 0.36862746, g: 0.27058825, b: 0.20392159, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 16
     fullColor: {r: 0.36862746, g: 0.20392159, b: 0.36862746, a: 1}
     shadowedColor: {r: 0.30980393, g: 0.16862746, b: 0.30980393, a: 1}
     backgroundColor: {r: 0.36862746, g: 0.20392159, b: 0.36862746, a: 1}
     themeAmbientLight: {r: 0.36862746, g: 0.20392159, b: 0.36862746, a: 1}
     themeAmbientDark: {r: 0.36862746, g: 0.20392159, b: 0.36862746, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 17
     fullColor: {r: 0.88235295, g: 0.38927338, b: 0.42449343, a: 1}
     shadowedColor: {r: 0.85098046, g: 0.32941177, b: 0.34901962, a: 1}
     backgroundColor: {r: 0.6397059, g: 0.3057418, b: 0.32959643, a: 1}
     themeAmbientLight: {r: 0.93725497, g: 0.4431373, b: 0.4784314, a: 1}
     themeAmbientDark: {r: 0.93725497, g: 0.4431373, b: 0.4784314, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 18
     fullColor: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
     shadowedColor: {r: 0.48798078, g: 0.5661765, b: 0.23729454, a: 1}
     backgroundColor: {r: 0.39935178, g: 0.46323532, b: 0.19415009, a: 1}
     themeAmbientLight: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
     themeAmbientDark: {r: 0.64705884, g: 0.77647066, b: 0.23137257, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 19
     fullColor: {r: 0.9568628, g: 0.48627454, b: 0.76470596, a: 1}
     shadowedColor: {r: 0.8313726, g: 0.36078432, b: 0.61960787, a: 1}
     backgroundColor: {r: 0.9117647, g: 0.5229239, b: 0.75298804, a: 1}
     themeAmbientLight: {r: 0.9568628, g: 0.48627454, b: 0.76470596, a: 1}
     themeAmbientDark: {r: 0.9568628, g: 0.48627454, b: 0.76470596, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 20
     fullColor: {r: 0.47450984, g: 0.18823531, b: 0.16470589, a: 1}
     shadowedColor: {r: 0.40000004, g: 0.14901961, b: 0.12941177, a: 1}
     backgroundColor: {r: 0.47450984, g: 0.18823531, b: 0.16470589, a: 1}
     themeAmbientLight: {r: 0.47450984, g: 0.18823531, b: 0.16470589, a: 1}
     themeAmbientDark: {r: 0.47450984, g: 0.18823531, b: 0.16470589, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 21
     fullColor: {r: 0.6392157, g: 0.5254902, b: 0.4431373, a: 1}
     shadowedColor: {r: 0.5568628, g: 0.44705886, b: 0.36862746, a: 1}
     backgroundColor: {r: 0.6392157, g: 0.5254902, b: 0.4431373, a: 1}
     themeAmbientLight: {r: 0.6392157, g: 0.5254902, b: 0.4431373, a: 1}
     themeAmbientDark: {r: 0.6392157, g: 0.5254902, b: 0.4431373, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 22
     fullColor: {r: 0.72156864, g: 0.78823537, b: 0.9450981, a: 1}
     shadowedColor: {r: 0.6, g: 0.67058825, b: 0.8352942, a: 1}
     backgroundColor: {r: 0.72156864, g: 0.78823537, b: 0.9450981, a: 1}
     themeAmbientLight: {r: 0.72156864, g: 0.78823537, b: 0.9450981, a: 1}
     themeAmbientDark: {r: 0.72156864, g: 0.78823537, b: 0.9450981, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
   - flatColor: 23
     fullColor: {r: 0.3137255, g: 0.39607847, b: 0.6313726, a: 1}
     shadowedColor: {r: 0.22352943, g: 0.29803923, b: 0.5058824, a: 1}
     backgroundColor: {r: 0.3137255, g: 0.39607847, b: 0.6313726, a: 1}
     themeAmbientLight: {r: 0.3137255, g: 0.39607847, b: 0.6313726, a: 1}
     themeAmbientDark: {r: 0.3137255, g: 0.39607847, b: 0.6313726, a: 1}
-    fontFullColor: {r: 1, g: 1, b: 1, a: 1}
-    fontShadowedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    fontFullColor: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    fontShadowedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
