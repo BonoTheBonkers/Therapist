@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardController : SingletonManager<BoardController>, IBoardInitializable
+public class BoardController : UIController, IBoardInitializable
 {
     public FBoardConfig currentBoard;
+    [HideInInspector]
     public Sequence currentSequence;
     public GameObject tokensParent;
     public GameObject draggedParent;
@@ -15,17 +16,15 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
 
     protected List<TokenController> tokenControllers = new List<TokenController>();
 
-    void Start()
+    public override void OnEnable()
     {
-    }
-
-    void OnEnable()
-    {
+        base.OnEnable();
         EventManager.StartListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
     }
 
-    void OnDisable()
+    public override void OnDisable()
     {
+        base.OnDisable();
         EventManager.StopListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
     }
 
@@ -69,13 +68,6 @@ public class BoardController : SingletonManager<BoardController>, IBoardInitiali
         return currentTokensController;
     }
 
-    public static void InitializeBoardPublic(FBoardConfig inBoardConfig, Sequence inSequence)
-    {
-        if(Instance)
-        {
-            Instance.InitializeBoard(inBoardConfig, inSequence);
-        }
-    }
 
     public void InitializeBoard(FBoardConfig inBoardConfig, Sequence inSequence)
     {

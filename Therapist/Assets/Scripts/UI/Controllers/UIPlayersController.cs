@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIPlayersController : MonoBehaviour
+public class UIPlayersController : UIController
 {
     protected List<GameObject> playersGameObjects = new List<GameObject>();
 
-	void OnEnable ()
+	public override void OnEnable ()
     {
+        base.OnEnable();
         RedrawPlayersList();
         EventManager.StartListening(EventManager.OnPlayersListChanged, RedrawPlayersList);
 	}
-	
-	void OnDisable ()
+
+    public override void OnDisable ()
     {
+        base.OnDisable();
         RemovePlayersList();
         EventManager.StopListening(EventManager.OnPlayersListChanged, RedrawPlayersList);
     }

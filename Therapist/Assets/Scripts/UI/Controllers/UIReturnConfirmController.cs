@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIReturnConfirmController : SingletonManager<UIReturnConfirmController>
+public class UIReturnConfirmController : UIController
 {
     [HideInInspector]
     public EReturnConfirmType returnConfirmType;
@@ -12,15 +12,7 @@ public class UIReturnConfirmController : SingletonManager<UIReturnConfirmControl
     public int returnQuitApplicationTextId = -1;
     public int returnResetApllicationTextId = -1;
 
-    public static void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)
-    {
-        if(Instance)
-        {
-            Instance.ShowConfirmScreenPrivate(inReturnConfirmType);
-        }
-    }
-
-    protected void ShowConfirmScreenPrivate(EReturnConfirmType inReturnConfirmType)
+    public void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)
     {
         FlatFont flatFont = GetComponentInChildren<FlatFont>();
         if(flatFont)
@@ -43,20 +35,12 @@ public class UIReturnConfirmController : SingletonManager<UIReturnConfirmControl
             }
         }
         returnConfirmType = inReturnConfirmType;
-        Instance.gameObject.SetActive(true);
+        SetUIActive(true);
         EventManager.TriggerEvent(EventManager.OnConfirmScreenShowed);
     }
 
-    public static void HideConfirmScreen()
+    public void HideConfirmScreen()
     {
-        if (Instance)
-        {
-            Instance.HideConfirmScreenPrivate();
-        }
-    }
-
-    protected void HideConfirmScreenPrivate()
-    {
-        Instance.gameObject.SetActive(false);
+        SetUIActive(false);
     }
 }

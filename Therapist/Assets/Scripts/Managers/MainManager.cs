@@ -67,7 +67,7 @@ public class MainManager : SingletonManager<MainManager>
             Sequence bestSequence = null;
             if (GetRandomSequence(currentAttribute, bestBoardConfig, ref bestSequence))
             {
-                BoardController.InitializeBoardPublic(bestBoardConfig, bestSequence);
+                UIManager.InitializeBoardPublic(bestBoardConfig, bestSequence);
             }
         }
     }
@@ -283,29 +283,29 @@ public class MainManager : SingletonManager<MainManager>
 
     public static void ReturnConfirm()
     {
-        if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.QuitApplication)
+        if(UIManager.Instance.returnController.returnConfirmType == EReturnConfirmType.QuitApplication)
         {
             Instance.QuitApplication();
         }
-        else if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ReturnToAttributes)
+        else if(UIManager.Instance.returnController.returnConfirmType == EReturnConfirmType.ReturnToAttributes)
         {
             Instance.ReturnToAttributes();
         }
-        else if(UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ReturnToMainMenu)
+        else if(UIManager.Instance.returnController.returnConfirmType == EReturnConfirmType.ReturnToMainMenu)
         {
             Instance.ReturnToMainMenu();
         }
-        else if (UIReturnConfirmController.Instance.returnConfirmType == EReturnConfirmType.ResetApllication)
+        else if (UIManager.Instance.returnController.returnConfirmType == EReturnConfirmType.ResetApllication)
         {
             Instance.ResetApplication();
         }
 
-        UIReturnConfirmController.HideConfirmScreen();
+        UIManager.Instance.returnController.HideConfirmScreen();
     }
 
     public static void ReturnCancel()
     {
-        UIReturnConfirmController.Instance.gameObject.SetActive(false);
+        UIManager.HideConfirmScreen();
     }
 
     protected void QuitApplication()

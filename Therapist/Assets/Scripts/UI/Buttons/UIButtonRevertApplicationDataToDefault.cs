@@ -8,6 +8,6 @@ public class UIButtonRevertApplicationDataToDefault : UIButton
     protected override void OnButtonClick()
     {
         base.OnButtonClick();
-        UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.ResetApllication);
+        UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.ResetApllication);
     }
 }

@@ -6,18 +6,24 @@ using UnityEngine.UI;
 public class UIManager : SingletonManager<UIManager>
 {
     public List<FGameObjectsForScreens> gameObjectForScreen = new List<FGameObjectsForScreens>();
-    public GameObject languagesListGameObject;
-    public GameObject playersListGameObject;
-    public GameObject newPlayerGameObject;
-    public GameObject settingsGameObject;
+    public UIController languagesListGameObject;
+    public UIController playersListGameObject;
+    public UIController newPlayerGameObject;
+    public UIController settingsGameObject;
     [HideInInspector]
     public GameObject currentlyDraggedGameObject;
+    public BoardController boardController;
+    public UIReturnConfirmController returnController;
 
     public void Start()
     {
         EventManager.StartListening(EventManager.OnCurrentScreenChanged, UpdateCurrentScreen);
         SetLanguagesListActive(false);
         //UpdateCurrentScreen();
+    }
+    public static void InitializeBoardPublic(FBoardConfig inBoardConfig, Sequence inSequence)
+    {
+        Instance.boardController.InitializeBoard(inBoardConfig, inSequence);
     }
 
     protected void UpdateCurrentScreen()
@@ -30,21 +36,37 @@ public class UIManager : SingletonManager<UIManager>
 
     public static void SetLanguagesListActive(bool newIsActive)
     {
-        Instance.languagesListGameObject.SetActive(newIsActive);
+        Instance.languagesListGameObject.SetUIActive(newIsActive);
     }
 
     public static void SetPlayersListActive(bool newIsActive)
     {
-        Instance.playersListGameObject.SetActive(newIsActive);
+        Instance.playersListGameObject.SetUIActive(newIsActive);
     }
 
     public static void SetNewPlayerScreenActive(bool newIsActive)
     {
-        Instance.newPlayerGameObject.SetActive(newIsActive);
+        Instance.newPlayerGameObject.SetUIActive(newIsActive);
     }
 
     public static void SetSettingsScreenActive(bool newIsActive)
     {
-        Instance.settingsGameObject.SetActive(newIsActive);
+        Instance.settingsGameObject.SetUIActive(newIsActive);
+    }
+
+    public static void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)
+    {
+        if (Instance.returnController)
+        {
+            Instance.returnController.ShowConfirmScreen(inReturnConfirmType);
+        }
+    }
+
+    public static void HideConfirmScreen()
+    {
+        if (Instance.returnController)
+        {
+            Instance.returnController.HideConfirmScreen();
+        }
     }
 }

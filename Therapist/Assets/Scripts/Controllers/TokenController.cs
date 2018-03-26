@@ -42,7 +42,7 @@ public class TokenController : MonoBehaviour
             iconImage.transform.localScale = Vector3.one;
         }
 
-        gameObject.transform.parent = BoardController.Instance.tokensParent.gameObject.transform;
+        gameObject.transform.SetParent(UIManager.Instance.boardController.tokensParent.gameObject.transform);
     }
 
     public void TrySetTargetTokenPlace(TokenPlaceController newTargetTokenPlace)
@@ -119,13 +119,13 @@ public class TokenController : MonoBehaviour
 
     public void OnTokenBeginDrag(PointerEventData eventData)
     {
-        gameObject.transform.parent = BoardController.Instance.draggedParent.gameObject.transform;
+        gameObject.transform.SetParent(UIManager.Instance.boardController.draggedParent.gameObject.transform);
         currentPointerEventData = eventData;
     }
 
     public void OnTokenEndDrag(PointerEventData eventData)
     {
-        gameObject.transform.parent = BoardController.Instance.tokensParent.gameObject.transform;
+        gameObject.transform.SetParent(UIManager.Instance.boardController.tokensParent.gameObject.transform);
         currentPointerEventData = null;
     }
 }

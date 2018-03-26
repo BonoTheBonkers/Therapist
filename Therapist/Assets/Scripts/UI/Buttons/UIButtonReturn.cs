@@ -9,17 +9,18 @@ public class UIButtonReturn : UIButton
     {
         base.OnButtonClick();
 
-        if(UIReturnConfirmController.Instance.gameObject.activeInHierarchy)
+        if(UIManager.Instance.returnController.IsUIActive())
         {
             MainManager.ReturnCancel();
+            Debug.Log("asd");
             return;
         }
 
-        if(MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.activeInHierarchy && !UIManager.Instance.playersListGameObject.activeInHierarchy && !UIManager.Instance.newPlayerGameObject.activeInHierarchy && !UIManager.Instance.settingsGameObject.activeInHierarchy)
+        if (MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive())
         {
-            UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
+            UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
         }
-        if(UIManager.Instance.newPlayerGameObject.activeInHierarchy)
+        if(UIManager.Instance.newPlayerGameObject.IsUIActive())
         {
             if(MainManager.Instance.applicationData.userData.players.Count > 0)
             {
@@ -30,15 +31,15 @@ public class UIButtonReturn : UIButton
         {
             if (MainManager.GetCurrentScreen() == EGameScreen.Board)
             {
-                if(!UIManager.Instance.languagesListGameObject.activeInHierarchy && !UIManager.Instance.playersListGameObject.activeInHierarchy && !UIManager.Instance.newPlayerGameObject.activeInHierarchy && !UIManager.Instance.settingsGameObject.activeInHierarchy)
+                if(!UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive())
                 {
                     if (MainManager.GetPreviousScreen() == EGameScreen.AttributeMenu)
                     {
-                        UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.ReturnToAttributes);
+                        UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.ReturnToAttributes);
                     }
                     else
                     {
-                        UIReturnConfirmController.ShowConfirmScreen(EReturnConfirmType.ReturnToMainMenu);
+                        UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.ReturnToMainMenu);
                     }
                 }
             }
