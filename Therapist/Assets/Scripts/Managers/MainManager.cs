@@ -33,14 +33,14 @@ public class MainManager : SingletonManager<MainManager>
     {
         //GenerateBoard();
         SetCurrentScreen(EGameScreen.MainMenu);
-        EventManager.StartListening(EventManager.OnBoardChanged, RandomizeNewColor);
+        EventManager.StartListening(EventManager.OnWinBoard, RandomizeNewColor);
         EventManager.StartListening(EventManager.OnBoardScreenClosed, SetColorFromLevel);
     }
     public void OnDisable()
     {
         //GenerateBoard();
         SetCurrentScreen(EGameScreen.MainMenu);
-        EventManager.StopListening(EventManager.OnBoardChanged, RandomizeNewColor);
+        EventManager.StopListening(EventManager.OnWinBoard, RandomizeNewColor);
         EventManager.StartListening(EventManager.OnBoardScreenClosed, SetColorFromLevel);
     }
 
@@ -119,6 +119,7 @@ public class MainManager : SingletonManager<MainManager>
             }
         }
         EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
+        EventManager.TriggerEvent(EventManager.OnWinBoard);
         GenerateBoard();
     }
 
