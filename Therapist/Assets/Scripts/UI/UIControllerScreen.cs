@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIMainMenuController : UIControllerScreen
+public class UIControllerScreen : UIController
 {
 }

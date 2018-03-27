@@ -12,6 +12,12 @@ public class UIReturnConfirmController : UIController
     public int returnQuitApplicationTextId = -1;
     public int returnResetApllicationTextId = -1;
 
+    public override void Start()
+    {
+        base.Start();
+        ShowSpeed = 10.0f;
+        HideSpeed = 4.0f;
+    }
     public void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)
     {
         FlatFont flatFont = GetComponentInChildren<FlatFont>();

@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     CanvasGroup canvasGroup;
-    bool shouldBeActive = false;
+    protected bool shouldBeActive = false;
+
+    protected float ShowSpeed = 1.5f;
+    protected float HideSpeed = 1.5f;
 
     public virtual void Start()
     {
@@ -25,11 +28,11 @@ public class UIController : MonoBehaviour
         {
             if(shouldBeActive)
             {
-                canvasGroup.alpha = Mathf.Min(canvasGroup.alpha + (Time.deltaTime * 2.0f), 1.0f);
+                canvasGroup.alpha = Mathf.Min(canvasGroup.alpha + (Time.deltaTime * ShowSpeed), 1.0f);
             }
             else
             {
-                canvasGroup.alpha = Mathf.Max(canvasGroup.alpha - (Time.deltaTime * 2.0f), 0.0f);
+                canvasGroup.alpha = Mathf.Max(canvasGroup.alpha - (Time.deltaTime * HideSpeed), 0.0f);
                 if(canvasGroup.alpha <= 0.0f)
                 {
                     gameObject.SetActive(false);

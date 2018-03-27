@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIPlayersController : UIController
+public class UIPlayersController : UIControllerSettings
 {
     protected List<GameObject> playersGameObjects = new List<GameObject>();
 

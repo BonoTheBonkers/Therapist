@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISettingsScreenController : UIController
+public class UISettingsScreenController : UIControllerSettings
 {
 }
