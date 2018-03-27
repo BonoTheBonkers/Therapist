@@ -323,6 +323,7 @@ public class FApplicationData
         if (inVolume != applicationSettings.audioSettings.musicVolume)
         {
             applicationSettings.audioSettings.musicVolume = inVolume;
+            applicationSettings.audioSettings.isMusicMuted = false;
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         }
     }
@@ -341,6 +342,7 @@ public class FApplicationData
         if (inVolume != applicationSettings.audioSettings.soundsVolume)
         {
             applicationSettings.audioSettings.soundsVolume = inVolume;
+            applicationSettings.audioSettings.isSoundsMuted = false;
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         }
     }

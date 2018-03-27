@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class UISliderSettings : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 {
+    public Sprite buttonOnIcon;
+    public Sprite buttonOffIcon;
+    public Image iconImage;
     public ESettingsSliderType settingsSliderType;
     protected Text text;
     protected Slider slider;
@@ -46,10 +49,18 @@ public class UISliderSettings : MonoBehaviour, IBeginDragHandler, IEndDragHandle
             if (settingsSliderType == ESettingsSliderType.Music)
             {
                 slider.value = MainManager.Instance.applicationData.applicationSettings.audioSettings.musicVolume;
+                if(button)
+                {
+                    iconImage.sprite = MainManager.Instance.applicationData.applicationSettings.audioSettings.isMusicMuted ? buttonOffIcon : buttonOnIcon;
+                }
             }
             else if (settingsSliderType == ESettingsSliderType.Sounds)
             {
                 slider.value = MainManager.Instance.applicationData.applicationSettings.audioSettings.soundsVolume;
+                if (button)
+                {
+                    iconImage.sprite = MainManager.Instance.applicationData.applicationSettings.audioSettings.isSoundsMuted ? buttonOffIcon : buttonOnIcon;
+                }
             }
             else if (settingsSliderType == ESettingsSliderType.VideoQuality)
             {
