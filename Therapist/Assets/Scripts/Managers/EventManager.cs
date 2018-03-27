@@ -24,6 +24,8 @@ public class EventManager : MonoBehaviour
     public static string OnContraindicationsChanged = "OnContraindicationsChanged";
     public static string OnOptionScreenOpened = "OnOptionScreenOpened";
     public static string OnConfirmScreenShowed = "OnConfirmScreenShowed";
+    public static string OnCurrentThemeColorChanged = "OnCurrentThemeColorChanged";
+    public static string OnBoardScreenClosed = "OnBoardScreenClosed";
 
     public static string OnInitializeBoard = "OnInitializeBoard";
 

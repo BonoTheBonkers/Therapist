@@ -18,6 +18,7 @@ public class UIReturnConfirmController : UIController
         ShowSpeed = 10.0f;
         HideSpeed = 4.0f;
     }
+
     public void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)
     {
         FlatFont flatFont = GetComponentInChildren<FlatFont>();

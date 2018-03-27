@@ -20,12 +20,14 @@ public class BoardController : UIController, IBoardInitializable
     {
         base.OnEnable();
         EventManager.StartListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
+        EventManager.StartListening(EventManager.OnBoardChanged, OnBoardChanged);
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
         EventManager.StopListening(EventManager.OnTargetTokenPlaceChanged, OnTargetTokenPlaceChanged);
+        EventManager.StopListening(EventManager.OnBoardChanged, OnBoardChanged);
     }
 
     public void OnTargetTokenPlaceChanged()
@@ -39,6 +41,10 @@ public class BoardController : UIController, IBoardInitializable
         }
 
         EventManager.TriggerEvent(EventManager.OnCorrectAnswer);
+    }
+
+    public void OnBoardChanged()
+    {
     }
 
     public ExampleSequenceController GetExampleSequenceController()

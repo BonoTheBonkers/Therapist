@@ -64,7 +64,7 @@ public class FlatImage : MonoBehaviour
     {
         if(themePart != EThemePart.None)
         {
-            EventManager.StartListening(EventManager.OnCurrentLevelChanged, ReadColorForLevel);
+            EventManager.StartListening(EventManager.OnCurrentThemeColorChanged, ReadColor);
             ForceColorForLevel();
         }
     }
@@ -72,20 +72,20 @@ public class FlatImage : MonoBehaviour
     {
         if (themePart != EThemePart.None)
         {
-           EventManager.StopListening(EventManager.OnCurrentLevelChanged, ReadColorForLevel);
+           EventManager.StopListening(EventManager.OnCurrentThemeColorChanged, ReadColor);
         }
     }
 
-    protected void ReadColorForLevel()
+    protected void ReadColor()
     {
         currentLerpTime = 1.0f;
         previousColor = GetImage() ? GetImage().color : (GetText() ? GetText().color : Color.white);
-        targetColor = ColorsSingleton.GetColorFromThemeForCurrentLevel(themePart);
+        targetColor = ColorsSingleton.GetColorFromTheme(MainManager.currentThemeColor, themePart);
     }
 
     protected void ForceColorForLevel()
     {
-        ReadColorForLevel();
+        ReadColor();
         currentLerpTime = 0.0f;
         ApplyColor(targetColor);
     }

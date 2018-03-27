@@ -14,7 +14,7 @@ PlayerSettings:
   productName: Therapist
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.23421283, g: 0.2794118, b: 0.24387605, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.09488538, g: 0.19852942, b: 0.095600165, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1

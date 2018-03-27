@@ -47,7 +47,7 @@ public class AttributeScreenController : SingletonManager<AttributeScreenControl
 
         ReloadCurrentAttribute();
         currentTime = 0.0f;
-        GetCanvasGroup().blocksRaycasts = true;
+        //GetCanvasGroup().blocksRaycasts = true;
         shouldBeActive = true;
     }
 

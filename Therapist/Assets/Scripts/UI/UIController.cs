@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    CanvasGroup canvasGroup;
+    [HideInInspector]
+    public CanvasGroup canvasGroup;
     protected bool shouldBeActive = false;
 
     protected float ShowSpeed = 1.5f;

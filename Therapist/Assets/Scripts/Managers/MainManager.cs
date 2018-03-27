@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainManager : SingletonManager<MainManager>
 {
     public FApplicationData applicationData;
+    public static EFlatColor currentThemeColor = EFlatColor.ForestGreen;
 
     protected static EGameScreen currentScreen = EGameScreen.MainMenu;
     protected static EGameScreen previousScreen = EGameScreen.MainMenu;
@@ -32,6 +33,15 @@ public class MainManager : SingletonManager<MainManager>
     {
         //GenerateBoard();
         SetCurrentScreen(EGameScreen.MainMenu);
+        EventManager.StartListening(EventManager.OnBoardChanged, RandomizeNewColor);
+        EventManager.StartListening(EventManager.OnBoardScreenClosed, SetColorFromLevel);
+    }
+    public void OnDisable()
+    {
+        //GenerateBoard();
+        SetCurrentScreen(EGameScreen.MainMenu);
+        EventManager.StopListening(EventManager.OnBoardChanged, RandomizeNewColor);
+        EventManager.StartListening(EventManager.OnBoardScreenClosed, SetColorFromLevel);
     }
 
     public void Update()
@@ -124,6 +134,10 @@ public class MainManager : SingletonManager<MainManager>
 
     public static void SetCurrentScreen(EGameScreen inScreen)
     {
+        if(currentScreen == EGameScreen.Board && inScreen != currentScreen)
+        {
+            EventManager.TriggerEvent(EventManager.OnBoardScreenClosed);
+        }
         previousScreen = currentScreen;
         currentScreen = inScreen;
         EventManager.TriggerEvent(EventManager.OnCurrentScreenChanged);
@@ -142,6 +156,18 @@ public class MainManager : SingletonManager<MainManager>
     {
         currentLevel = inLevel;
         EventManager.TriggerEvent(EventManager.OnCurrentLevelChanged);
+        SetColorFromLevel();
+    }
+    public static void SetColorFromLevel()
+    {
+        currentThemeColor = LevelsConfig.GetLevels()[currentLevel].themeColor;
+        EventManager.TriggerEvent(EventManager.OnCurrentThemeColorChanged);
+    }
+
+    protected void RandomizeNewColor()
+    {
+        currentThemeColor = LevelsConfig.GetLevels()[Random.Range(0, LevelsConfig.GetLevels().Count - 1)].themeColor;
+        EventManager.TriggerEvent(EventManager.OnCurrentThemeColorChanged);
     }
 
     public static int GetCurrentProgressLevel()
