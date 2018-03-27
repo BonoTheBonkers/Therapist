@@ -70,7 +70,7 @@ public class UIButtonUserSelect : MonoBehaviour
     {
         EventManager.TriggerEvent(EventManager.OnButtonClicked);
         MainManager.SetCurrentPlayer(playerData);
-        UIManager.SetPlayersListActive(false);
+        //UIManager.SetPlayersListActive(false);
     }
 
     protected void OnPlayerChanged()

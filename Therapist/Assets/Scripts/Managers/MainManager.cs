@@ -355,6 +355,7 @@ public class MainManager : SingletonManager<MainManager>
         EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         SetCurrentScreen(EGameScreen.MainMenu);
         UIManager.SetSettingsScreenActive(false);
+        UIManager.SetAdvancedSettingsScreenActive(false);
         UIManager.SetPlayersListActive(true);
         UIManager.SetNewPlayerScreenActive(true);
     }

@@ -12,7 +12,7 @@ public class UIButtonLanguageSelect : UIButton
     {
         base.OnButtonClick();
         SettingsSingleton.SetLanguage(language);
-        UIManager.SetLanguagesListActive(false);
+        //UIManager.SetLanguagesListActive(false);
     }
 
     public void Awake()

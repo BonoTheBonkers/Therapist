@@ -10,6 +10,7 @@ public class UIManager : SingletonManager<UIManager>
     public UIController playersListGameObject;
     public UIController newPlayerGameObject;
     public UIController settingsGameObject;
+    public UIController advancedSettingsGameObject;
     [HideInInspector]
     public GameObject currentlyDraggedGameObject;
     public BoardController boardController;
@@ -52,6 +53,11 @@ public class UIManager : SingletonManager<UIManager>
     public static void SetSettingsScreenActive(bool newIsActive)
     {
         Instance.settingsGameObject.SetUIActive(newIsActive);
+    }
+
+    public static void SetAdvancedSettingsScreenActive(bool newIsActive)
+    {
+        Instance.advancedSettingsGameObject.SetUIActive(newIsActive);
     }
 
     public static void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)

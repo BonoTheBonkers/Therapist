@@ -12,7 +12,6 @@ public class UIButtonReturn : UIButton
         if(UIManager.Instance.returnController.IsUIActive())
         {
             MainManager.ReturnCancel();
-            Debug.Log("asd");
             return;
         }
 
@@ -50,7 +49,11 @@ public class UIButtonReturn : UIButton
 
             UIManager.SetLanguagesListActive(false);
             UIManager.SetPlayersListActive(false);
-            UIManager.SetSettingsScreenActive(false);
+            if(!UIManager.Instance.advancedSettingsGameObject.IsUIActive())
+            {
+                UIManager.SetSettingsScreenActive(false);
+            }
+            UIManager.SetAdvancedSettingsScreenActive(false);
         }
     }
 }
