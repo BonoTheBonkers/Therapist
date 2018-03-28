@@ -38,7 +38,6 @@ public class UIController : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                 }
-
             }
         }
     }
@@ -53,6 +52,22 @@ public class UIController : MonoBehaviour
         else
         {
             shouldBeActive = false;
+        }
+    }
+
+    public virtual void SetUIActiveInstant(bool value)
+    {
+        SetUIActive(value);
+        if (canvasGroup != null)
+        {
+            if (value)
+            {
+                canvasGroup.alpha = 1.0f;
+            }
+            else
+            {
+                canvasGroup.alpha = 0.0f;
+            }
         }
     }
 

@@ -27,6 +27,8 @@ public class MainManager : SingletonManager<MainManager>
         {
             MainManager.SetCurrentPlayer(MainManager.Instance.applicationData.userData.players[0]);
         }
+
+        EventManager.TriggerEvent(EventManager.OnAccountLogIn);
     }
 
     public void OnEnable()
@@ -359,5 +361,6 @@ public class MainManager : SingletonManager<MainManager>
         UIManager.SetAdvancedSettingsScreenActive(false);
         UIManager.SetPlayersListActive(true);
         UIManager.SetNewPlayerScreenActive(true);
+        UIManager.SetWelcomeScreenActiveInstant(true);
     }
 }

@@ -166,3 +166,27 @@ public enum EReturnConfirmType
     ResetApllication,
     Max
 }
+
+public enum EAccountLogInFeedback
+{
+    None,
+    NoConnectionToInternet,
+    NoConnectionToDatabase,
+    IncorrectLoginSpelling,
+    LoginDoesntExistInDatabase,
+    IncorrectLoginOrPassword,
+    Success,
+    Max
+}
+
+public enum EAccountCreateFeedback
+{
+    None,
+    NoConnectionToInternet,
+    NoConnectionToDatabase,
+    LoginAlreadyExists,
+    WrongLoginSpelling,
+    WrongPasswordSpelling,
+    Success,
+    Max
+}

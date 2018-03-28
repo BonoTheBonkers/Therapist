@@ -28,6 +28,9 @@ public class EventManager : MonoBehaviour
     public static string OnBoardScreenClosed = "OnBoardScreenClosed";
     public static string OnWinBoard = "OnWinBoard";
 
+    public static string OnAccountLogIn = "OnAccountLogIn";
+    public static string OnAccountLogOut = "OnAccountLogOut";
+
     public static string OnInitializeBoard = "OnInitializeBoard";
 
     public static string OnApplicationDataChanged = "OnApplicationDataChanged";

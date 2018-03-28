@@ -26,4 +26,28 @@ public class DatabaseManager : SingletonManager<DatabaseManager>
         value = value.Remove(value.IndexOf("|"));
         return value;
     }
+
+    public static bool CheckInternetConnection()
+    {
+        //@TODO
+        return true;
+    }
+
+    public static bool CheckConnectionToDatabase()
+    {
+        //@TODO
+        return true;
+    }
+
+    public static bool IsLoginExistInDatabase(string inLogin)
+    {
+        //@TODO
+        return true;
+    }
+
+    public static bool IsLoginAndPasswordCorrect(string inLogin, string inPassword)
+    {
+        //@TODO
+        return true;
+    }
 }

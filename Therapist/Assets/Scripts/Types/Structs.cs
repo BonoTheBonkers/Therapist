@@ -87,6 +87,38 @@ public class FPersonalData
 }
 
 [System.Serializable]
+public class FAccountData
+{
+    [SerializeField]
+    public string login = "";
+    [SerializeField]
+    public string password = "";
+
+    public void ResetToDefault()
+    {
+        login = "";
+        password = "";
+        EventManager.TriggerEvent(EventManager.OnAccountLogOut);
+    }
+
+    public bool IsAccountLogedIn()
+    {
+        return login != "" && password != "";
+    }
+
+    public void LogIn(string inLogin, string inPassword)
+    {
+        login = inLogin;
+        password = inPassword;
+    }
+
+    public void LogOut()
+    {
+        ResetToDefault();
+    }
+}
+
+[System.Serializable]
 public class FEntireProgressData
 {
     [SerializeField]
@@ -163,6 +195,8 @@ public class PlayerData
 public class UserData
 {
     [SerializeField]
+    public FAccountData accountData;
+    [SerializeField]
     public FPersonalData personalData;
     [SerializeField]
     public ELanguage language;
@@ -175,6 +209,7 @@ public class UserData
     
     public void ResetToDefault()
     {
+        accountData.ResetToDefault();
         personalData.ResetToDefault();
         currentPlayer = new PlayerData("FirstName", "Surname", 8);
         players = new List<PlayerData>();
@@ -262,6 +297,23 @@ public class FApplicationData
     public UserData userData;
     [SerializeField]
     public FApplicationSettings applicationSettings;
+
+    public bool IsAccountLogedIn()
+    {
+        return userData.accountData.IsAccountLogedIn();
+    }
+
+    public void LogIn(string inLogin, string inPassword)
+    {
+        EventManager.TriggerEvent(EventManager.OnAccountLogIn);
+        userData.accountData.LogIn(inLogin, inPassword);
+    }
+
+    public void LogOut()
+    {
+        EventManager.TriggerEvent(EventManager.OnAccountLogOut);
+        userData.accountData.LogOut();
+    }
 
     public void SetLanguage(ELanguage inLanguage)
     {
@@ -354,5 +406,10 @@ public class FApplicationData
             applicationSettings.audioSettings.isSoundsMuted = inValue;
             EventManager.TriggerEvent(EventManager.OnApplicationDataChanged);
         }
+    }
+
+    public string GetCurrentLogin()
+    {
+        return userData.accountData.login;
     }
 }

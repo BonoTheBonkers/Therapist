@@ -55,5 +55,12 @@ public class UIButtonReturn : UIButton
             }
             UIManager.SetAdvancedSettingsScreenActive(false);
         }
+        if (!UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive())
+        {
+            UIManager.SetWelcomeScreenActive(false);
+        }
+        UIManager.SetLogInScreenActive(false);
+        Debug.Log("asd");
+        UIManager.SetRegisterScreenActive(false);
     }
 }
