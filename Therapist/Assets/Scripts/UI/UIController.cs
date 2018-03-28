@@ -9,8 +9,8 @@ public class UIController : MonoBehaviour
     public CanvasGroup canvasGroup;
     protected bool shouldBeActive = false;
 
-    protected float ShowSpeed = 1.5f;
-    protected float HideSpeed = 1.5f;
+    protected float ShowSpeed = 2.0f;
+    protected float HideSpeed = 2.0f;
 
     public virtual void Start()
     {

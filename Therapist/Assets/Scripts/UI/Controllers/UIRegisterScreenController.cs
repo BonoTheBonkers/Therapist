@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIRegisterScreenController : UIController
+public class UIRegisterScreenController : UIControllerSettings
 {
     public override void Start()
     {

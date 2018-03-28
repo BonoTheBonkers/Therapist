@@ -15,7 +15,7 @@ public class UIButtonReturn : UIButton
             return;
         }
 
-        if (MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive())
+        if (MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive())
         {
             UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
         }
@@ -30,7 +30,7 @@ public class UIButtonReturn : UIButton
         {
             if (MainManager.GetCurrentScreen() == EGameScreen.Board)
             {
-                if(!UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive())
+                if(!UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive())
                 {
                     if (MainManager.GetPreviousScreen() == EGameScreen.AttributeMenu)
                     {
@@ -49,18 +49,21 @@ public class UIButtonReturn : UIButton
 
             UIManager.SetLanguagesListActive(false);
             UIManager.SetPlayersListActive(false);
-            if(!UIManager.Instance.advancedSettingsGameObject.IsUIActive())
+            if (!UIManager.Instance.aboutScreenGameObject.IsUIActive())
+            {
+                UIManager.SetAdvancedSettingsScreenActive(false);
+            }
+            if (!UIManager.Instance.advancedSettingsGameObject.IsUIActive())
             {
                 UIManager.SetSettingsScreenActive(false);
             }
-            UIManager.SetAdvancedSettingsScreenActive(false);
         }
         if (!UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive())
         {
             UIManager.SetWelcomeScreenActive(false);
         }
         UIManager.SetLogInScreenActive(false);
-        Debug.Log("asd");
         UIManager.SetRegisterScreenActive(false);
+        UIManager.SetAboutScreenActive(false);
     }
 }

@@ -26,6 +26,7 @@ public class UIWelcomeScreenController : UIController
         shouldBeActive = false;
         EventManager.StartListening(EventManager.OnAccountLogIn, UpdateLogin);
         EventManager.StartListening(EventManager.OnAccountLogOut, UpdateLogin);
+        UpdateLogin();
     }
 
     public override void Update()
@@ -70,5 +71,6 @@ public class UIWelcomeScreenController : UIController
             IsAskingAboutLogIn = false;
             currentTime = 1.6f;
         }
+        UIManager.SetSettingsScreenActive(false);
     }
 }

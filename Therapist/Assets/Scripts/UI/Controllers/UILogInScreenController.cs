@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UILogInScreenController : UIController
+public class UILogInScreenController : UIControllerSettings
 {
     public override void Start()
     {

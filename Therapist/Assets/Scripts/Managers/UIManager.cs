@@ -14,6 +14,7 @@ public class UIManager : SingletonManager<UIManager>
     public UIController welcomeScreenGameObject;
     public UILogInScreenController logInScreenGameObject;
     public UIRegisterScreenController registerScreenGameObject;
+    public UIAboutScreenController aboutScreenGameObject;
     [HideInInspector]
     public GameObject currentlyDraggedGameObject;
     public BoardController boardController;
@@ -22,6 +23,7 @@ public class UIManager : SingletonManager<UIManager>
     public void Start()
     {
         EventManager.StartListening(EventManager.OnCurrentScreenChanged, UpdateCurrentScreen);
+        EventManager.StartListening(EventManager.OnAccountLogOut, ForceWelcomeScreen);
         SetLanguagesListActive(false);
         welcomeScreenGameObject.SetUIActiveInstant(true);
         //UpdateCurrentScreen();
@@ -37,6 +39,11 @@ public class UIManager : SingletonManager<UIManager>
         {
             current.gameObject.SetActive(current.screen == MainManager.GetCurrentScreen());
         }
+    }
+
+    protected void ForceWelcomeScreen()
+    {
+        SetWelcomeScreenActiveInstant(true);
     }
 
     public static void SetLanguagesListActive(bool newIsActive)
@@ -80,6 +87,10 @@ public class UIManager : SingletonManager<UIManager>
     public static void SetRegisterScreenActive(bool newIsActive)
     {
         Instance.registerScreenGameObject.SetUIActive(newIsActive);
+    }
+    public static void SetAboutScreenActive(bool newIsActive)
+    {
+        Instance.aboutScreenGameObject.SetUIActive(newIsActive);
     }
 
     public static void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)

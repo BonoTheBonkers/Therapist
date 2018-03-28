@@ -4,4 +4,9 @@ using UnityEngine;
 
 public class UIButtonAboutApplication : UIButton
 {
+    protected override void OnButtonClick()
+    {
+        base.OnButtonClick();
+        UIManager.SetAboutScreenActive(true);
+    }
 }
