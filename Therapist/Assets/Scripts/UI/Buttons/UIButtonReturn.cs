@@ -15,7 +15,7 @@ public class UIButtonReturn : UIButton
             return;
         }
 
-        if (MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive())
+        if (MainManager.GetCurrentScreen() == EGameScreen.MainMenu && !UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive() && !UIManager.Instance.boardSelectionScreenGameObject.IsUIActive())
         {
             UIManager.Instance.returnController.ShowConfirmScreen(EReturnConfirmType.QuitApplication);
         }
@@ -30,7 +30,7 @@ public class UIButtonReturn : UIButton
         {
             if (MainManager.GetCurrentScreen() == EGameScreen.Board)
             {
-                if(!UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive())
+                if(!UIManager.Instance.languagesListGameObject.IsUIActive() && !UIManager.Instance.playersListGameObject.IsUIActive() && !UIManager.Instance.newPlayerGameObject.IsUIActive() && !UIManager.Instance.settingsGameObject.IsUIActive() && !UIManager.Instance.registerScreenGameObject.IsUIActive() && !UIManager.Instance.logInScreenGameObject.IsUIActive() && !UIManager.Instance.welcomeScreenGameObject.IsUIActive() && !UIManager.Instance.boardSelectionScreenGameObject.IsUIActive())
                 {
                     if (MainManager.GetPreviousScreen() == EGameScreen.AttributeMenu)
                     {
@@ -65,5 +65,6 @@ public class UIButtonReturn : UIButton
         UIManager.SetLogInScreenActive(false);
         UIManager.SetRegisterScreenActive(false);
         UIManager.SetAboutScreenActive(false);
+        UIManager.SetBoardSelectionScreenActive(false);
     }
 }

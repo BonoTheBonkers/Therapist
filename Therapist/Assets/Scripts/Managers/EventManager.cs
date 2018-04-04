@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     public static string OnLanguageChanged = "OnLanguageChanged";
     public static string OnCurrentLevelChanged = "OnCurrentLevelChanged";
     public static string OnBoardChanged = "OnBoardChanged";
+    public static string OnBoardTypeChanged = "OnBoardTypeChanged";
     public static string OnSequenceChanged = "OnSequenceChanged";
     public static string OnCurrentScreenChanged = "OnCurrentScreenChanged";
     public static string OnCurrentProgressLevelChanged = "OnCurrentProgressLevelChanged";

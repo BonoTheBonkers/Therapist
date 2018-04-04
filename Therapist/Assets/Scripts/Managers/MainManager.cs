@@ -12,6 +12,7 @@ public class MainManager : SingletonManager<MainManager>
     protected static int currentLevel = 0;
     protected static EAttribute currentAttribute = EAttribute.Development;
     protected static int currentProgressLevel = 0;
+    protected static EBoardType boardType = EBoardType.Sequences;
 
     public void Start()
     {
@@ -161,6 +162,17 @@ public class MainManager : SingletonManager<MainManager>
         EventManager.TriggerEvent(EventManager.OnCurrentLevelChanged);
         SetColorFromLevel();
     }
+
+    public static EBoardType GetCurrentBoardType()
+    {
+        return boardType;
+    }
+    public static void SetCurrentBoardType(EBoardType inBoardType)
+    {
+        boardType = inBoardType;
+        EventManager.TriggerEvent(EventManager.OnBoardTypeChanged);
+    }
+
     public static void SetColorFromLevel()
     {
         currentThemeColor = LevelsConfig.GetLevels()[currentLevel].themeColor;

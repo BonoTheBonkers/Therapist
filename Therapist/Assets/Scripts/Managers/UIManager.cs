@@ -15,6 +15,7 @@ public class UIManager : SingletonManager<UIManager>
     public UILogInScreenController logInScreenGameObject;
     public UIRegisterScreenController registerScreenGameObject;
     public UIAboutScreenController aboutScreenGameObject;
+    public UIBoardSelectionController boardSelectionScreenGameObject;
     [HideInInspector]
     public GameObject currentlyDraggedGameObject;
     public BoardController boardController;
@@ -91,6 +92,11 @@ public class UIManager : SingletonManager<UIManager>
     public static void SetAboutScreenActive(bool newIsActive)
     {
         Instance.aboutScreenGameObject.SetUIActive(newIsActive);
+    }
+
+    public static void SetBoardSelectionScreenActive(bool newIsActive)
+    {
+        Instance.boardSelectionScreenGameObject.SetUIActive(newIsActive);
     }
 
     public static void ShowConfirmScreen(EReturnConfirmType inReturnConfirmType)

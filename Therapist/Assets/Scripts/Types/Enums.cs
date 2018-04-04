@@ -190,3 +190,12 @@ public enum EAccountCreateFeedback
     Success,
     Max
 }
+
+public enum EBoardType
+{
+    None,
+    Sequences,
+    Arrays,
+    Categorization,
+    Max
+}
