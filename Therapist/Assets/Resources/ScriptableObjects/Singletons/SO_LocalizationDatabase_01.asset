@@ -14,11 +14,11 @@ MonoBehaviour:
   reloadLocalisationDatabase: 0
   flags:
   - {fileID: 21300000, guid: c9200e05a08026d49ab5e9f789ce185d, type: 3}
-  - {fileID: 21300000, guid: 73f118faa205c6e4994cffb3671c96c3, type: 3}
+  - {fileID: 21300000, guid: 5dcc80e1fef87e545a71c62de488f082, type: 3}
   - {fileID: 21300000, guid: 827b8af65a790c04cb04ea03c251a5af, type: 3}
   - {fileID: 21300000, guid: ed6cb390cc3a4524aae6c7ab7b688571, type: 3}
   - {fileID: 21300000, guid: 3682fd9384966e54ea0628a4dfde04e1, type: 3}
-  - {fileID: 21300000, guid: b142db3f5ce928349bc1712ba79fd3af, type: 3}
+  - {fileID: 21300000, guid: 73f7e5f0c3958194eb8233b69575e9fa, type: 3}
   - {fileID: 21300000, guid: c8d8bf6eccf9a0944ad6d357a0ef2a58, type: 3}
   - {fileID: 21300000, guid: c0356deb232484f41962b7fb20856740, type: 3}
   - {fileID: 21300000, guid: b6d9b430ba19f354c93ee855a7fae242, type: 3}
